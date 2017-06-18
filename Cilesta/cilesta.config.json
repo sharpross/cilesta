@@ -1,0 +1,44 @@
+﻿[
+  {
+    "Key": "data",
+    "Parametres": [
+      {
+        "Key": "type",
+        "Value": "postgresql"
+      },
+      {
+        "Key": "host",
+        "Value": "localhost"
+      },
+      {
+        "Key": "port",
+        "Value": "5432"
+      },
+      {
+        "Key": "database",
+        "Value": "cilesta"
+      },
+      {
+        "Key": "user",
+        "Value": "postgre"
+      },
+      {
+        "Key": "password",
+        "Value": "cnhflbdfhb2"
+      }
+    ]
+  },
+  {
+    "Key": "log",
+    "Parametres": [
+      {
+        "Key": "enabled",
+        "Value": "true" //true,false
+      },
+      {
+        "Key": "type",
+        "Value": "text" //text, db, empty
+      }
+    ]
+  }
+]
