@@ -40,5 +40,18 @@
         "Value": "text" //text, db, empty
       }
     ]
+  },
+  {
+    "Key": "security",
+    "Parametres": [
+      {
+        "Key": "expiresDefault",
+        "Value": "3" 
+      },
+      {
+        "Key": "expiresExtend",
+        "Value": "21" 
+      }
+    ]
   }
 ]

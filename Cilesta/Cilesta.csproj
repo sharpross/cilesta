@@ -163,6 +163,7 @@
   <ItemGroup>
     <Compile Include="App_Start\Module.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -223,6 +224,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -249,6 +251,14 @@
     <ProjectReference Include="..\Cilesta.Logging.Katarina\Cilesta.Logging.Katarina.csproj">
       <Project>{6d3b3796-6571-4fa1-9d10-6574538783bf}</Project>
       <Name>Cilesta.Logging.Katarina</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Security.Katarina\Cilesta.Security.Katarina.csproj">
+      <Project>{b97085eb-d2c1-4a69-8c26-784bbb81ad29}</Project>
+      <Name>Cilesta.Security.Katarina</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Security\Cilesta.Security.csproj">
+      <Project>{F0F2D004-EDDA-4666-B4CF-2747344D18F4}</Project>
+      <Name>Cilesta.Security</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cilesta.Web.Katarina\Cilesta.Web.Katarina.csproj">
       <Project>{48adc878-5691-47c8-a780-72d724f1bb35}</Project>
