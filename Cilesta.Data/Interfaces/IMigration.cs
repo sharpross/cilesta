@@ -1,14 +1,10 @@
 ﻿namespace Cilesta.Data.Interfaces
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+    using Castle.Windsor;
 
     public interface IMigration
     {
-        //IWindsorContainer Container { get; set; }
+        IWindsorContainer Container { get; set; }
 
         void Migrate();
     }

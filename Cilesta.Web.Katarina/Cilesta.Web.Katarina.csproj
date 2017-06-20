@@ -71,10 +71,11 @@
     <Compile Include="Filtres\CilestaHandleErrorAttribute.cs" />
     <Compile Include="Implimentation\CilestaController.cs" />
     <Compile Include="Implimentation\CilestaControllerFactory.cs" />
-    <Compile Include="Implimentation\CilestaValueProvider.cs" />
     <Compile Include="Implimentation\FilterContainer.cs" />
+    <Compile Include="Implimentation\JsonNetResult.cs" />
     <Compile Include="Implimentation\PreActivation.cs" />
     <Compile Include="Implimentation\RouteContainer.cs" />
+    <Compile Include="Models\JsonResultModel.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebApplication.cs" />
