@@ -1,6 +1,6 @@
 ﻿namespace Cilesta.Security.Models
 {
-    public interface IUserModel
+    public interface IUserModel : Data.Models.IEntity
     {
         string Login { get; set; }
 

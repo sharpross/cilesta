@@ -6,7 +6,7 @@
     using Cilesta.Data.Models;
     using Cilesta.Logging.Interfaces;
 
-    public interface IDomainService<T> where T: IEntity
+    public interface IDataService<T> where T: IEntity
     {
         ILogger Log { get; set; }
 

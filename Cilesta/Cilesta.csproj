@@ -246,6 +246,10 @@
       <Project>{37d96218-e119-4efa-8e96-7399b5acfae7}</Project>
       <Name>Cilesta.Data.Katarina</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Data\Cilesta.Data.csproj">
+      <Project>{7f0f91ee-c9d7-41e9-9027-116044c6744f}</Project>
+      <Name>Cilesta.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cilesta.Logging.Katarina\Cilesta.Logging.Katarina.csproj">
       <Project>{6d3b3796-6571-4fa1-9d10-6574538783bf}</Project>
       <Name>Cilesta.Logging.Katarina</Name>

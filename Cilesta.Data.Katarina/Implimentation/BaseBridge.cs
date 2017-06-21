@@ -89,7 +89,7 @@
 
         private void ApplyMapping(FluentMappingsContainer fluentMappings)
         {
-
+            
         }
 
         public void Delete(T entity)

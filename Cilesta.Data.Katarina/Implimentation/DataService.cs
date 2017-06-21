@@ -7,11 +7,11 @@
     using Cilesta.Data.Katarina.Models;
     using Cilesta.Logging.Interfaces;
 
-    public class DomainService<T> : IDomainService<T> where T : Entity
+    public class DataService<T> : IDataService<T> where T : Entity
     {
         public ILogger Log { get; set; }
 
-        private IBridge<T> _bridge { get; set; }
+        public IBridge<T> _bridge { get; set; }
         
         public void Delete(T entity)
         {

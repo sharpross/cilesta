@@ -59,7 +59,7 @@
     <Compile Include="Bridges\PostrgeSqlBridge.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Implimentation\BaseBridge.cs" />
-    <Compile Include="Implimentation\DomainService.cs" />
+    <Compile Include="Implimentation\DataService.cs" />
     <Compile Include="Models\Entity.cs">
       <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
     </Compile>
@@ -82,6 +82,10 @@
     <ProjectReference Include="..\Cilesta.Logging\Cilesta.Logging.csproj">
       <Project>{9C5ED0EF-01B0-47BE-918F-A10660A2F8CE}</Project>
       <Name>Cilesta.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Security\Cilesta.Security.csproj">
+      <Project>{f0f2d004-edda-4666-b4cf-2747344d18f4}</Project>
+      <Name>Cilesta.Security</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

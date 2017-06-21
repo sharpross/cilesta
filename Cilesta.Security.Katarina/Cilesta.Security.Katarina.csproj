@@ -36,6 +36,15 @@
     <Reference Include="Castle.Windsor, Version=3.4.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Windsor.3.4.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
+    <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.2\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.1.1.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -47,8 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\UserSystem.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Implimentation\AuthService.cs" />
+    <Compile Include="Implimentation\Migration.cs" />
+    <Compile Include="Implimentation\UserService.cs" />
+    <Compile Include="Mappings\UserMapping.cs" />
     <Compile Include="Models\AuthResult.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Module.cs" />
@@ -63,12 +75,21 @@
       <Project>{d0649389-fdc1-4f75-b590-0023f670f1de}</Project>
       <Name>Cilesta.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Data.Katarina\Cilesta.Data.Katarina.csproj">
+      <Project>{37d96218-e119-4efa-8e96-7399b5acfae7}</Project>
+      <Name>Cilesta.Data.Katarina</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Data\Cilesta.Data.csproj">
+      <Project>{7f0f91ee-c9d7-41e9-9027-116044c6744f}</Project>
+      <Name>Cilesta.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cilesta.Security\Cilesta.Security.csproj">
       <Project>{f0f2d004-edda-4666-b4cf-2747344d18f4}</Project>
       <Name>Cilesta.Security</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

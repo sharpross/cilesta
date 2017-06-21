@@ -1,6 +1,6 @@
 ﻿namespace Cilesta.Security.Models
 {
-    public interface ILoginModel
+    public interface ILoginModel    
     {
         string Login { get; set; }
 
