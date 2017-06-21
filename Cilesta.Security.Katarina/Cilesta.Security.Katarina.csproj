@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.4.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.4.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -45,6 +51,7 @@
     <Compile Include="Implimentation\AuthService.cs" />
     <Compile Include="Models\AuthResult.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,11 +59,17 @@
       <Project>{4861d901-1a4d-45e2-93de-3a671b601477}</Project>
       <Name>Cilesta.Configuration</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Core\Cilesta.Core.csproj">
+      <Project>{d0649389-fdc1-4f75-b590-0023f670f1de}</Project>
+      <Name>Cilesta.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cilesta.Security\Cilesta.Security.csproj">
       <Project>{f0f2d004-edda-4666-b4cf-2747344d18f4}</Project>
       <Name>Cilesta.Security</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

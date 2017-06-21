@@ -1,10 +1,11 @@
-﻿namespace Cilesta.Core.IoC
+﻿namespace Cilesta.Web.Implimentation
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
     using Castle.Windsor;
+    using Cilesta.Logging.Interfaces;
 
     public class ModuleActivator
     {
@@ -14,10 +15,13 @@
         private IEnumerable<Assembly> Assembly { get; set; }
 
         private IWindsorContainer Container { get; set; }
-        
+
+        private Logging.Interfaces.ILogger Log { get; set; }
+
         public void RegisterComponents(IWindsorContainer container)
         {
             this.Container = container;
+            this.Log = this.Container.Resolve<ILogger>();
 
             this.Assembly = this.GetAllAssembly();
 
@@ -32,8 +36,15 @@
 
                 foreach (var module in modules)
                 {
-                    this.InitMethod(module, MethodNameValidate);
-                    this.InitMethod(module, MethodNameComponents);
+                    try
+                    {
+                        this.InitMethod(module, MethodNameValidate);
+                        this.InitMethod(module, MethodNameComponents);
+                    }
+                    catch (Exception ex)
+                    {
+                        this.Log.Error(ex);
+                    }
                 }
             }
         }
@@ -42,6 +53,14 @@
         {
             var instance = Activator.CreateInstance(module);
             var methodInitComponents = module.GetMethod(method);
+            var propertyValue = module.GetProperty("Code");
+
+            if (propertyValue != null)
+            {
+                var moduleName = propertyValue.GetValue(instance);
+
+                this.Log.Message("Init module: " + moduleName + "(" + method + ")");
+            }
 
             switch (method)
             {
@@ -53,7 +72,7 @@
                     methodInitComponents.Invoke(instance, new object[] { this.Container });
                     break;
             }
-            
+
         }
 
         private List<Assembly> GetAllAssembly()

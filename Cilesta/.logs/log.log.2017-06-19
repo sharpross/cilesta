@@ -1,0 +1,61 @@
+2017-06-19 00:46:13,108  NOTICE: App started!
+2017-06-19 00:46:19,346  ERROR: The controller for path '/Content/css' could not be found.
+System.Web.HttpException (0x80004005): The controller for path '/Content/css' could not be found.
+   в Cilesta.Web.Katarina.Implimentation.WindsorControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType) в D:\GitHub\cilesta\Cilesta.Web.Katarina\Implimentation\CilestaControllerFactory.cs:строка 26
+   в System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   в System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   в System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   в System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   в System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   в System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   в System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2017-06-19 00:46:19,906  ERROR: The controller for path '/bundles/bootstrap' could not be found.
+System.Web.HttpException (0x80004005): The controller for path '/bundles/bootstrap' could not be found.
+   в Cilesta.Web.Katarina.Implimentation.WindsorControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType) в D:\GitHub\cilesta\Cilesta.Web.Katarina\Implimentation\CilestaControllerFactory.cs:строка 26
+   в System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   в System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   в System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   в System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   в System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   в System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   в System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2017-06-19 00:46:19,907  ERROR: The controller for path '/bundles/modernizr' could not be found.
+System.Web.HttpException (0x80004005): The controller for path '/bundles/modernizr' could not be found.
+   в Cilesta.Web.Katarina.Implimentation.WindsorControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType) в D:\GitHub\cilesta\Cilesta.Web.Katarina\Implimentation\CilestaControllerFactory.cs:строка 26
+   в System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   в System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   в System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   в System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   в System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   в System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   в System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2017-06-19 00:46:19,907  ERROR: The controller for path '/bundles/jquery' could not be found.
+System.Web.HttpException (0x80004005): The controller for path '/bundles/jquery' could not be found.
+   в Cilesta.Web.Katarina.Implimentation.WindsorControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType) в D:\GitHub\cilesta\Cilesta.Web.Katarina\Implimentation\CilestaControllerFactory.cs:строка 26
+   в System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   в System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   в System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   в System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   в System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   в System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   в System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2017-06-19 00:46:20,731  ERROR: The controller for path '/bundles/jquery' could not be found.
+System.Web.HttpException (0x80004005): The controller for path '/bundles/jquery' could not be found.
+   в Cilesta.Web.Katarina.Implimentation.WindsorControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType) в D:\GitHub\cilesta\Cilesta.Web.Katarina\Implimentation\CilestaControllerFactory.cs:строка 26
+   в System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   в System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   в System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   в System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   в System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   в System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   в System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2017-06-19 00:46:21,262  ERROR: The controller for path '/bundles/bootstrap' could not be found.
+System.Web.HttpException (0x80004005): The controller for path '/bundles/bootstrap' could not be found.
+   в Cilesta.Web.Katarina.Implimentation.WindsorControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType) в D:\GitHub\cilesta\Cilesta.Web.Katarina\Implimentation\CilestaControllerFactory.cs:строка 26
+   в System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   в System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   в System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   в System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   в System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   в System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   в System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)

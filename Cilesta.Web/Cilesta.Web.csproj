@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implimentation\ModuleActivator.cs" />
     <Compile Include="Interfaces\ICilestaController.cs" />
     <Compile Include="Interfaces\ICilestaValueProvider.cs" />
     <Compile Include="Interfaces\IFilterContainer.cs" />

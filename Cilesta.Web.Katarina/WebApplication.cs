@@ -5,8 +5,8 @@
     using System.Web.Routing;
     using Castle.MicroKernel.Registration;
     using Castle.Windsor;
-    using Cilesta.Configuration.Interfaces;
     using Cilesta.Core.IoC;
+    using Cilesta.Web.Implimentation;
     using Cilesta.Web.Interfaces;
     using Cilesta.Web.Katarina.Implimentation;
 
@@ -29,13 +29,7 @@
             activator.RegisterComponents(Container);
 
             DependencyResolver.SetResolver(new CilestaDependencyResolver(Container));
-
-            var configuration = Container.Resolve<IAppConfiguration>();
-            var loggerType = configuration[Logging.Constants.Key][Logging.Constants.Type];
-
-            Logger = Container.Resolve<Logging.Interfaces.ILogger>(loggerType);
-            Logger.Init();
-
+            
             var filterContainers = Container.ResolveAll<IFilterContainer>();
             foreach (var filterContainer in filterContainers)
             {

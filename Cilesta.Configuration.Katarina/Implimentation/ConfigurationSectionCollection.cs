@@ -12,15 +12,7 @@
         {
             get
             {
-                foreach (var section in this)
-                {
-                    if (section.Key == key)
-                    {
-                        var aa = 0;
-                        //return section.Parametres;
-                    }
-                }
-
+                
                 return null;
             }
         }

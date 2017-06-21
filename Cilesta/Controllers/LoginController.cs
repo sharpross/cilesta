@@ -1,9 +1,6 @@
 ﻿namespace Cilesta.Controllers
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
     using System.Web.Mvc;
     using Cilesta.Security.Interfaces;
     using Cilesta.Security.Katarina.Models;
@@ -13,16 +10,26 @@
     {
         public IAuthService AuthService { get; set; }
 
-        public string Login(LoginModel model)
+        [HttpPost]
+        public JsonNetResult Login(LoginModel model)
         {
+            this.AuthService = this.Container.Resolve<IAuthService>();
+
             var result = this.AuthService.Login(model);
 
             if (result.Success)
             {
-                result.Message = Security.Constants.MessageLoginSuccess;
+                
+                return JsonNetResult.Success(result);
             }
 
-            return string.Empty;
+            return JsonNetResult.Fail(result);
+        }
+
+        [HttpPost]
+        public JsonNetResult Logout()
+        {
+            return JsonNetResult.Success();
         }
     }
 }

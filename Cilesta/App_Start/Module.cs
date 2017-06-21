@@ -8,7 +8,7 @@
 
     public class Module : IModule
     {
-        public string Code => "";
+        public string Code => "Cilesta.App_Start";
 
         public string[] Depends => new string[1];
 

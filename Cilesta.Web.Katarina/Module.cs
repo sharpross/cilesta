@@ -18,7 +18,6 @@
             container.Register(Component.For<IControllerFactory>().ImplementedBy<WindsorControllerFactory>().LifeStyle.Transient);
             container.Register(Component.For<IFilterContainer>().ImplementedBy<FilterContainer>().LifeStyle.Transient);
             container.Register(Component.For<IRouteContainer>().ImplementedBy<RouteContainer>().LifeStyle.Transient);
-            container.Register(Component.For<ICilestaValueProvider>().ImplementedBy<CilestaValueProvider>().LifeStyle.Transient);
         }
 
         public void Validate()

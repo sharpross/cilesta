@@ -69,7 +69,6 @@
   <ItemGroup>
     <Compile Include="IModule.cs" />
     <Compile Include="IoC\CilestaDependencyResolver.cs" />
-    <Compile Include="IoC\ModuleActivator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WindsorExtentions.cs" />
   </ItemGroup>
