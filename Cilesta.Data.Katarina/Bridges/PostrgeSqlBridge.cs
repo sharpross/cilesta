@@ -1,5 +1,6 @@
 ﻿namespace Cilesta.Data.Katarina.Bridges
 {
+    using System.Text;
     using Cilesta.Data.Katarina.Implimentation;
     using Cilesta.Data.Models;
     using FluentNHibernate.Cfg.Db;
@@ -8,9 +9,12 @@
     {
         protected override string BuildConnectionString()
         {
+            var sb = new StringBuilder();
+            sb.Append("Server = ");
+            sb.Append(string.Empty);
             var connectionString = string.Format("Server = {0}; Port = {1}; Database ={2}; Uid = {3}; Pwd = {4}");
 
-            return connectionString;
+            return sb.ToString();
         }
 
         protected override IPersistenceConfigurer GetDatabaseConfiguration()

@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
-
-namespace Cilesta.Security.Utils
+﻿namespace Cilesta.Security.Utils
 {
-    public class CookiHelper
+    using System;
+    using System.Web;
+
+    public static class CookiHelper
     {
-        public static void SetCookie(HttpResponse response)
+        public static void SetCookie(HttpResponseBase response)
         {
-            HttpCookie cookie = new HttpCookie(Security.Constants.CookieName);
+            HttpCookie cookie = new HttpCookie(Constants.CookieName);
             cookie["Module"] = "katarina";
             cookie["App"] = "cilesta";
             cookie.Expires = DateTime.Now.AddDays(1);
@@ -19,9 +15,9 @@ namespace Cilesta.Security.Utils
             response.Cookies.Add(cookie);
         }
 
-        public static void RemoveCookie(HttpResponse response)
+        public static void RemoveCookie(HttpResponseBase response)
         {
-            response.Cookies.Remove(Security.Constants.CookieName);
+            response.Cookies.Remove(Constants.CookieName);
         }
     }
 }

@@ -1,12 +1,10 @@
 ﻿namespace Cilesta.Security.Katarina.Entities
 {
-    using Cilesta.Data.Models;
     using Cilesta.Security.Models;
+    using Data.Katarina.Models;
 
-    public class User : IUserModel, IEntity
+    public class User : Entity, IUserModel
     {
-        public ulong Id { get; set; }
-
         public virtual string Login { get; set; }
 
         public virtual string Password { get; set; }

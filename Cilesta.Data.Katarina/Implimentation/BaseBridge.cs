@@ -1,21 +1,22 @@
 ﻿namespace Cilesta.Data.Katarina.Implimentation
 {
-    using Cilesta.Data.Interfaces;
-    using Cilesta.Data.Models;
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Linq.Expressions;
-    using NHibernate;
-    using FluentNHibernate.Cfg.Db;
+    using Castle.Windsor;
+    using Cilesta.Data.Interfaces;
+    using Cilesta.Data.Models;
     using FluentNHibernate.Cfg;
-    using NHibernate.Tool.hbm2ddl;
+    using FluentNHibernate.Cfg.Db;
+    using NHibernate;
     using NHibernate.Cfg;
+    using NHibernate.Tool.hbm2ddl;
 
     public abstract class BaseBridge<T> : IDisposable, IBridge<T> where T : class, IEntity
     {
+        public IWindsorContainer Container { get; set; }
+
         protected ISession _session;
 
         private object lockObj = new object();
@@ -89,7 +90,12 @@
 
         private void ApplyMapping(FluentMappingsContainer fluentMappings)
         {
-            
+            var mappings = this.Container.ResolveAll<IMapping>();
+
+            foreach (var mapping in mappings)
+            {
+                fluentMappings.Add(mapping.GetType());
+            }
         }
 
         public void Delete(T entity)

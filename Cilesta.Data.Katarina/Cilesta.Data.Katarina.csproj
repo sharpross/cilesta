@@ -60,10 +60,12 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Implimentation\BaseBridge.cs" />
     <Compile Include="Implimentation\DataService.cs" />
+    <Compile Include="Implimentation\Migrator.cs" />
     <Compile Include="Models\Entity.cs">
       <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
     </Compile>
     <Compile Include="Module.cs" />
+    <Compile Include="ModuleExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

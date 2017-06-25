@@ -1,15 +1,17 @@
 ﻿namespace Cilesta.Security.Katarina.Implimentation
 {
-    using Cilesta.Security.Interfaces;
     using Cilesta.Security.Katarina.Entities;
+    using Cilesta.Security.Katarina.Interfaces;
     using Cilesta.Security.Katarina.Models;
     using Cilesta.Security.Models;
 
     public class AuthService : IAuthService
     {
+        public IUserService UserService { get; set; }
+        
         public IUserModel GetCurrentUser()
         {
-            UserSystem user = null;
+            User user = null;
 
             return user;
         }

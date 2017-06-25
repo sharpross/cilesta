@@ -6,9 +6,9 @@
     using Cilesta.Data.Models;
     using Cilesta.Logging.Interfaces;
 
-    public interface IDataService<T> where T: IEntity
+    public interface IDataService<T> where T: class, IEntity
     {
-        ILogger Log { get; set; }
+        ILogger Log { get; }
 
         T Get(ulong id);
 

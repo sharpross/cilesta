@@ -42,8 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
-    <Compile Include="Interfaces\IAuthService.cs" />
-    <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Models\IAuthResult.cs" />
     <Compile Include="Models\ILoginModel.cs" />
     <Compile Include="Models\IUserModel.cs" />

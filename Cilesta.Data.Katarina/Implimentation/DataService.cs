@@ -3,49 +3,76 @@
     using System;
     using System.Collections.Generic;
     using System.Linq.Expressions;
+    using Castle.Windsor;
     using Cilesta.Data.Interfaces;
-    using Cilesta.Data.Katarina.Models;
+    using Cilesta.Data.Models;
     using Cilesta.Logging.Interfaces;
 
-    public class DataService<T> : IDataService<T> where T : Entity
+    public class DataService<T> : IDataService<T> where T : class, IEntity
     {
-        public ILogger Log { get; set; }
+        public IWindsorContainer Container { get; set; }
 
-        public IBridge<T> _bridge { get; set; }
+        private ILogger log;
+        public ILogger Log 
+        { 
+            get 
+            {
+                if (this.log == null)
+                {
+                    this.log = this.Container.Resolve<ILogger>();
+                }
+
+                return this.log;
+            }
+        }
+
+        private IBridge<T> bridge;
+        public IBridge<T> Bridge 
+        {
+            get
+            {
+                if (this.bridge == null)
+                {
+                    this.bridge = (IBridge<T>)this.Container.Resolve(typeof(IBridge<>).MakeGenericType(typeof(T)));
+                }
+
+                return this.bridge;
+            }
+        }
         
         public void Delete(T entity)
         {
-            this._bridge.Delete(entity);
+            this.Bridge.Delete(entity);
         }
 
         public void Delete(IList<T> entities)
         {
-            this._bridge.Delete(entities);
+            this.Bridge.Delete(entities);
         }
 
         public T Get(ulong id)
         {
-            return this._bridge.Get(id);
+            return this.Bridge.Get(id);
         }
 
         public IList<T> GetAll()
         {
-            return this._bridge.GetAll();
+            return this.Bridge.GetAll();
         }
 
         public IList<T> GetAll(Expression<Func<T>> alias)
         {
-            return this._bridge.GetAll(alias);
+            return this.Bridge.GetAll(alias);
         }
 
         public void Save(T entity)
         {
-            this._bridge.Save(entity);
+            this.Bridge.Save(entity);
         }
 
         public void Save(IList<T> entities)
         {
-            this._bridge.Save(entities);
+            this.Bridge.Save(entities);
         }
     }
 }

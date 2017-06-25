@@ -6,6 +6,7 @@
     using Castle.MicroKernel.Registration;
     using Castle.Windsor;
     using Cilesta.Core.IoC;
+    using Cilesta.Data.Interfaces;
     using Cilesta.Web.Implimentation;
     using Cilesta.Web.Interfaces;
     using Cilesta.Web.Katarina.Implimentation;
@@ -29,7 +30,7 @@
             activator.RegisterComponents(Container);
 
             DependencyResolver.SetResolver(new CilestaDependencyResolver(Container));
-            
+
             var filterContainers = Container.ResolveAll<IFilterContainer>();
             foreach (var filterContainer in filterContainers)
             {
@@ -41,6 +42,9 @@
             {
                 routeContainer.Init(RouteTable.Routes);
             }
+
+            var migrator = Container.Resolve<IMigrator>();
+            migrator.InitMigrations();
         }
 
         protected void Application_Error(object sender, EventArgs e)

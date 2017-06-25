@@ -1,4 +1,4 @@
-﻿namespace Cilesta.Security.Interfaces
+﻿namespace Cilesta.Security.Katarina.Interfaces
 {
     using Cilesta.Security.Models;
 

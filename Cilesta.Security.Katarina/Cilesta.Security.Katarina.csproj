@@ -60,6 +60,8 @@
     <Compile Include="Implimentation\AuthService.cs" />
     <Compile Include="Implimentation\Migration.cs" />
     <Compile Include="Implimentation\UserService.cs" />
+    <Compile Include="Interfaces\IAuthService.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Mappings\UserMapping.cs" />
     <Compile Include="Models\AuthResult.cs" />
     <Compile Include="Models\LoginModel.cs" />
@@ -83,14 +85,23 @@
       <Project>{7f0f91ee-c9d7-41e9-9027-116044c6744f}</Project>
       <Name>Cilesta.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Logging\Cilesta.Logging.csproj">
+      <Project>{9c5ed0ef-01b0-47be-918f-a10660a2f8ce}</Project>
+      <Name>Cilesta.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cilesta.Security\Cilesta.Security.csproj">
       <Project>{f0f2d004-edda-4666-b4cf-2747344d18f4}</Project>
       <Name>Cilesta.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Utils\Cilesta.Utils.csproj">
+      <Project>{D01CCC7A-2ABE-451F-BBA0-63BD1B1AE339}</Project>
+      <Name>Cilesta.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,9 +1,9 @@
 ﻿namespace Cilesta.Controllers
 {
-    using System;
     using System.Web.Mvc;
-    using Cilesta.Security.Interfaces;
+    using Cilesta.Security.Katarina.Interfaces;
     using Cilesta.Security.Katarina.Models;
+    using Cilesta.Security.Utils;
     using Cilesta.Web.Katarina.Implimentation;
 
     public class LoginController : CilestaController
@@ -19,7 +19,7 @@
 
             if (result.Success)
             {
-                
+                CookiHelper.SetCookie(this.HttpContext.Response);
                 return JsonNetResult.Success(result);
             }
 
