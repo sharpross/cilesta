@@ -22,9 +22,11 @@
             var admin = new User()
             {
                 Email = "rt.sharpross@gmail.com",
-                Login = "rt.sharpross",
+                Login = "admin",
                 Password = password
             };
+
+            this.UserService.Save(admin);
         }
 
         public bool Need()

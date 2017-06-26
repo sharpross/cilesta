@@ -1,192 +1,154 @@
-2017-06-21 20:00:06,118  NOTICE: App started!
-2017-06-21 20:01:16,911  ERROR: Ссылка на объект не указывает на экземпляр объекта.
-System.NullReferenceException: Ссылка на объект не указывает на экземпляр объекта.
-   в Cilesta.Web.Katarina.Filtres.CilestaHandleErrorAttribute.OnException(ExceptionContext filterContext) в D:\GitHub\cilesta\Cilesta.Web.Katarina\Filtres\CilestaHandleErrorAttribute.cs:строка 13
-   в System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
-   в System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   в System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
-   в System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   в System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
-   в System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
-   в System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   в System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
-   в System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
-   в System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   в System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-2017-06-21 20:12:57,445  NOTICE: App started!
-2017-06-21 20:13:14,927  ERROR: No component for supporting the service Cilesta.Security.Interfaces.IAuthService was found
-Castle.MicroKernel.ComponentNotFoundException: No component for supporting the service Cilesta.Security.Interfaces.IAuthService was found
-   в Castle.MicroKernel.DefaultKernel.Castle.MicroKernel.IKernelInternal.Resolve(Type service, IDictionary arguments, IReleasePolicy policy)
-   в Castle.MicroKernel.DefaultKernel.Resolve(Type service, IDictionary arguments)
-   в Castle.Windsor.WindsorContainer.Resolve[T]()
-   в Cilesta.Controllers.LoginController.Login(LoginModel model) в D:\GitHub\cilesta\Cilesta\Controllers\LoginController.cs:строка 18
-   в lambda_method(Closure , ControllerBase , Object[] )
-   в System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
-   в System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
-   в System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
-   в System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   в System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
-   в System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   в System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
-   в System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
-   в System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   в System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
-   в System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
-   в System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   в System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-2017-06-21 21:33:03,398  NOTICE: App started!
-2017-06-21 21:38:35,508  NOTICE: App started!
-2017-06-21 21:39:54,589  NOTICE: App started!
-2017-06-21 21:39:54,813  NOTICE: Init module: Cilesta.Configuration.Katarina
-2017-06-21 21:39:54,813  NOTICE: Init module: Cilesta.Configuration.Katarina
-2017-06-21 21:39:54,814  NOTICE: Init module: Cilesta.Data.Katarina
-2017-06-21 21:39:54,814  NOTICE: Init module: Cilesta.Data.Katarina
-2017-06-21 21:39:54,817  NOTICE: Init module: 
-2017-06-21 21:39:54,818  NOTICE: Init module: 
-2017-06-21 21:39:54,834  NOTICE: Init module: Cilesta.Logging.Katarina
-2017-06-21 21:39:54,834  NOTICE: Init module: Cilesta.Logging.Katarina
-2017-06-21 21:39:54,835  NOTICE: Init module: Cilesta.Security.Katarina
-2017-06-21 21:39:54,835  NOTICE: Init module: Cilesta.Security.Katarina
-2017-06-21 21:39:54,836  NOTICE: Init module: Cilesta.Web.Katarina
-2017-06-21 21:39:54,836  NOTICE: Init module: Cilesta.Web.Katarina
-2017-06-21 21:45:01,002  NOTICE: App started!
-2017-06-21 21:45:01,203  NOTICE: Init module: Cilesta.Configuration.Katarina
-2017-06-21 21:45:01,203  NOTICE: Init module: Cilesta.Configuration.Katarina
-2017-06-21 21:45:01,204  NOTICE: Init module: Cilesta.Data.Katarina
-2017-06-21 21:45:01,204  NOTICE: Init module: Cilesta.Data.Katarina
-2017-06-21 21:45:01,209  NOTICE: Init module: 
-2017-06-21 21:45:01,210  NOTICE: Init module: 
-2017-06-21 21:45:01,220  NOTICE: Init module: Cilesta.Logging.Katarina
-2017-06-21 21:45:01,221  NOTICE: Init module: Cilesta.Logging.Katarina
-2017-06-21 21:45:01,222  NOTICE: Init module: Cilesta.Security.Katarina
-2017-06-21 21:45:01,222  NOTICE: Init module: Cilesta.Security.Katarina
-2017-06-21 21:45:01,223  NOTICE: Init module: Cilesta.Web.Katarina
-2017-06-21 21:45:01,223  NOTICE: Init module: Cilesta.Web.Katarina
-2017-06-21 22:07:45,874  NOTICE: App started!
-2017-06-21 22:07:46,048  NOTICE: Init module: Cilesta.Configuration.Katarina
-2017-06-21 22:07:46,048  NOTICE: Init module: Cilesta.Configuration.Katarina
-2017-06-21 22:07:46,049  NOTICE: Init module: Cilesta.Data.Katarina
-2017-06-21 22:07:46,049  NOTICE: Init module: Cilesta.Data.Katarina
-2017-06-21 22:07:46,052  NOTICE: Init module: 
-2017-06-21 22:07:46,053  NOTICE: Init module: 
-2017-06-21 22:07:46,064  NOTICE: Init module: Cilesta.Logging.Katarina
-2017-06-21 22:07:46,065  NOTICE: Init module: Cilesta.Logging.Katarina
-2017-06-21 22:07:46,066  NOTICE: Init module: Cilesta.Security.Katarina
-2017-06-21 22:07:46,066  NOTICE: Init module: Cilesta.Security.Katarina
-2017-06-21 22:07:46,067  NOTICE: Init module: Cilesta.Web.Katarina
-2017-06-21 22:07:46,067  NOTICE: Init module: Cilesta.Web.Katarina
-2017-06-21 22:08:09,920  ERROR: Пользователь с указанным логином/паролем не найдены.
-System.UnauthorizedAccessException: Пользователь с указанным логином/паролем не найдены.
-   в Cilesta.Controllers.LoginController.Login(LoginModel model) в D:\GitHub\cilesta\Cilesta\Controllers\LoginController.cs:строка 26
-   в lambda_method(Closure , ControllerBase , Object[] )
-   в System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
-   в System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
-   в System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
-   в System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
-2017-06-21 22:10:00,167  NOTICE: App started!
-2017-06-21 22:10:00,304  NOTICE: Init module: Cilesta.Configuration.Katarina
-2017-06-21 22:10:00,304  NOTICE: Init module: Cilesta.Configuration.Katarina
-2017-06-21 22:10:00,305  NOTICE: Init module: Cilesta.Data.Katarina
-2017-06-21 22:10:00,305  NOTICE: Init module: Cilesta.Data.Katarina
-2017-06-21 22:10:00,308  NOTICE: Init module: 
-2017-06-21 22:10:00,308  NOTICE: Init module: 
-2017-06-21 22:10:00,320  NOTICE: Init module: Cilesta.Logging.Katarina
-2017-06-21 22:10:00,321  NOTICE: Init module: Cilesta.Logging.Katarina
-2017-06-21 22:10:00,322  NOTICE: Init module: Cilesta.Security.Katarina
-2017-06-21 22:10:00,322  NOTICE: Init module: Cilesta.Security.Katarina
-2017-06-21 22:10:00,323  NOTICE: Init module: Cilesta.Web.Katarina
-2017-06-21 22:10:00,323  NOTICE: Init module: Cilesta.Web.Katarina
-2017-06-21 22:15:11,183  NOTICE: App started!
-2017-06-21 22:15:19,774  NOTICE: Init module: Cilesta.Configuration.Katarina
-2017-06-21 22:15:25,606  NOTICE: Init module: Cilesta.Configuration.Katarina
-2017-06-21 22:15:34,854  NOTICE: Init module: Cilesta.Data.Katarina
-2017-06-21 22:15:34,855  NOTICE: Init module: Cilesta.Data.Katarina
-2017-06-21 22:15:34,858  NOTICE: Init module: 
-2017-06-21 22:15:34,858  NOTICE: Init module: 
-2017-06-21 22:15:34,869  NOTICE: Init module: Cilesta.Logging.Katarina
-2017-06-21 22:15:34,870  NOTICE: Init module: Cilesta.Logging.Katarina
-2017-06-21 22:15:34,871  NOTICE: Init module: Cilesta.Security.Katarina
-2017-06-21 22:15:34,871  NOTICE: Init module: Cilesta.Security.Katarina
-2017-06-21 22:15:34,872  NOTICE: Init module: Cilesta.Web.Katarina
-2017-06-21 22:15:34,872  NOTICE: Init module: Cilesta.Web.Katarina
-2017-06-21 22:17:32,106  NOTICE: App started!
-2017-06-21 22:17:32,251  NOTICE: Init module: Cilesta.Configuration.Katarina
-2017-06-21 22:17:32,251  NOTICE: Init module: Cilesta.Configuration.Katarina
-2017-06-21 22:17:32,252  NOTICE: Init module: Cilesta.Data.Katarina
-2017-06-21 22:17:32,252  NOTICE: Init module: Cilesta.Data.Katarina
-2017-06-21 22:17:32,255  NOTICE: Init module: Cilesta.App_Start
-2017-06-21 22:17:32,255  NOTICE: Init module: Cilesta.App_Start
-2017-06-21 22:17:32,266  NOTICE: Init module: Cilesta.Logging.Katarina
-2017-06-21 22:17:32,266  NOTICE: Init module: Cilesta.Logging.Katarina
-2017-06-21 22:17:32,267  NOTICE: Init module: Cilesta.Security.Katarina
-2017-06-21 22:17:32,267  NOTICE: Init module: Cilesta.Security.Katarina
-2017-06-21 22:17:32,268  NOTICE: Init module: Cilesta.Web.Katarina
-2017-06-21 22:17:32,269  NOTICE: Init module: Cilesta.Web.Katarina
-2017-06-21 22:20:23,951  NOTICE: App started!
-2017-06-21 22:20:24,095  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
-2017-06-21 22:20:24,096  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
-2017-06-21 22:20:24,096  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
-2017-06-21 22:20:24,097  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
-2017-06-21 22:20:24,099  NOTICE: Init module: Cilesta.App_Start(Validate)
-2017-06-21 22:20:24,099  NOTICE: Init module: Cilesta.App_Start(InitComponents)
-2017-06-21 22:20:24,110  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
-2017-06-21 22:20:24,111  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
-2017-06-21 22:20:24,111  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
-2017-06-21 22:20:24,112  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
-2017-06-21 22:20:24,112  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
-2017-06-21 22:20:24,113  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
-2017-06-21 22:48:38,763  NOTICE: App started!
-2017-06-21 22:48:38,933  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
-2017-06-21 22:48:38,933  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
-2017-06-21 22:48:38,934  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
-2017-06-21 22:48:38,934  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
-2017-06-21 22:48:38,936  NOTICE: Init module: Cilesta.App_Start(Validate)
-2017-06-21 22:48:38,937  NOTICE: Init module: Cilesta.App_Start(InitComponents)
-2017-06-21 22:48:38,947  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
-2017-06-21 22:48:38,948  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
-2017-06-21 22:48:38,948  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
-2017-06-21 22:48:38,948  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
-2017-06-21 22:48:38,949  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
-2017-06-21 22:48:38,949  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-06-21 11:40:43,861  NOTICE: App started!
+2017-06-21 11:41:35,069  ERROR: ?????? ?? ?????? ?? ????????? ?? ????????? ???????.
+System.NullReferenceException: ?????? ?? ?????? ?? ????????? ?? ????????? ???????.
+   ? Cilesta.Web.Katarina.Filtres.CilestaHandleErrorAttribute.OnException(ExceptionContext filterContext) ? C:\GitHub\cilesta\Cilesta.Web.Katarina\Filtres\CilestaHandleErrorAttribute.cs:?????? 13
+   ? System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   ? System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   ? System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   ? System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   ? System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   ? System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2017-06-21 11:42:05,217  ERROR: ?????? ?? ?????? ?? ????????? ?? ????????? ???????.
+System.NullReferenceException: ?????? ?? ?????? ?? ????????? ?? ????????? ???????.
+   ? Cilesta.Web.Katarina.Filtres.CilestaHandleErrorAttribute.OnException(ExceptionContext filterContext) ? C:\GitHub\cilesta\Cilesta.Web.Katarina\Filtres\CilestaHandleErrorAttribute.cs:?????? 13
+   ? System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   ? System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   ? System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   ? System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   ? System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   ? System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2017-06-21 11:42:54,327  NOTICE: App started!
+2017-06-21 11:44:00,443  ERROR: ?????? ?? ?????? ?? ????????? ?? ????????? ???????.
+System.NullReferenceException: ?????? ?? ?????? ?? ????????? ?? ????????? ???????.
+   ? Cilesta.Web.Katarina.Filtres.CilestaHandleErrorAttribute.OnException(ExceptionContext filterContext) ? C:\GitHub\cilesta\Cilesta.Web.Katarina\Filtres\CilestaHandleErrorAttribute.cs:?????? 13
+   ? System.Web.Mvc.ControllerActionInvoker.InvokeExceptionFilters(ControllerContext controllerContext, IList`1 filters, Exception exception)
+   ? System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   ? System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   ? System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   ? System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   ? System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2017-06-21 11:46:01,527  NOTICE: App started!
+2017-06-21 13:22:15,790  NOTICE: App started!
+2017-06-21 13:22:43,129  ERROR: ?????? ?? ?????? ?? ????????? ?? ????????? ???????.
+System.NullReferenceException: ?????? ?? ?????? ?? ????????? ?? ????????? ???????.
+   ? Cilesta.Controllers.LoginController.Login(LoginModel model) ? C:\GitHub\cilesta\Cilesta\Controllers\LoginController.cs:?????? 19
+   ? lambda_method(Closure , ControllerBase , Object[] )
+   ? System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   ? System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   ? System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   ? System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   ? System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   ? System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   ? System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   ? System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   ? System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   ? System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   ? System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   ? System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   ? System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2017-06-21 13:27:13,427  NOTICE: App started!
+2017-06-21 13:27:35,696  ERROR: РЎСЃС‹Р»РєР° РЅР° РѕР±СЉРµРєС‚ РЅРµ СѓРєР°Р·С‹РІР°РµС‚ РЅР° СЌРєР·РµРјРїР»СЏСЂ РѕР±СЉРµРєС‚Р°.
+System.NullReferenceException: РЎСЃС‹Р»РєР° РЅР° РѕР±СЉРµРєС‚ РЅРµ СѓРєР°Р·С‹РІР°РµС‚ РЅР° СЌРєР·РµРјРїР»СЏСЂ РѕР±СЉРµРєС‚Р°.
+   РІ Cilesta.Controllers.LoginController.Login(LoginModel model) РІ C:\GitHub\cilesta\Cilesta\Controllers\LoginController.cs:СЃС‚СЂРѕРєР° 19
+   РІ lambda_method(Closure , ControllerBase , Object[] )
+   РІ System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   РІ System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   РІ System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   РІ System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   РІ System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   РІ System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   РІ System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   РІ System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   РІ System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   РІ System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   РІ System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   РІ System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   РІ System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   РІ System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   РІ System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   РІ System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   РІ System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   РІ System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   РІ System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   РІ System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   РІ System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   РІ System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   РІ System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   РІ System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   РІ System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   РІ System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   РІ System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   РІ System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   РІ System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   РІ System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   РІ System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   РІ System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   РІ System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   РІ System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2017-06-21 13:30:56,002  NOTICE: App started!

@@ -19,7 +19,7 @@
         {
             var configuration = container.Resolve<IAppConfiguration>();
 
-            if (configuration[Constants._Key][Constants._DatabaseType] == Constants._Key_Mysql)
+            if (configuration[Constants.Key][Constants.Type] == Constants.Key_Mysql)
             {
                 container.Register(
                     Component.For<IBridge<IEntity>>()

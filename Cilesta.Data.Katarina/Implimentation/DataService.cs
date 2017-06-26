@@ -42,37 +42,102 @@
         
         public void Delete(T entity)
         {
-            this.Bridge.Delete(entity);
+            try
+            {
+                this.Bridge.Delete(entity);
+            }
+            catch (Exception ex)
+            {
+                this.Log.Error(ex);
+                throw;
+            }
         }
 
         public void Delete(IList<T> entities)
         {
-            this.Bridge.Delete(entities);
+            try
+            {
+                this.Bridge.Delete(entities);
+            }
+            catch (Exception ex)
+            {
+                this.Log.Error(ex);
+                throw;
+            }
         }
 
         public T Get(ulong id)
         {
-            return this.Bridge.Get(id);
+            try
+            {
+                return this.Bridge.Get(id);
+            }
+            catch (Exception ex)
+            {
+                this.Log.Error(ex);
+                throw;
+            }
         }
 
         public IList<T> GetAll()
         {
-            return this.Bridge.GetAll();
+            try
+            {
+                return this.Bridge.GetAll();
+            }
+            catch (Exception ex)
+            {
+                this.Log.Error(ex);
+                throw;
+            }
         }
 
         public IList<T> GetAll(Expression<Func<T>> alias)
         {
-            return this.Bridge.GetAll(alias);
+            try
+            {
+                return this.Bridge.GetAll(alias);
+            }
+            catch (Exception ex)
+            {
+                this.Log.Error(ex);
+                throw;
+            }
         }
 
         public void Save(T entity)
         {
-            this.Bridge.Save(entity);
+            try
+            {
+                this.Bridge.Save(entity);
+            }
+            catch (Exception ex)
+            {
+                this.Log.Error(ex);
+                throw;
+            }
         }
 
         public void Save(IList<T> entities)
         {
-            this.Bridge.Save(entities);
+            try
+            {
+                this.Bridge.Save(entities);
+            }
+            catch (Exception ex)
+            {
+                this.Log.Error(ex);
+                throw;
+            }
+        }
+
+        public bool OnBefore(OperationType operation, object obj)
+        {
+            var result = true;
+
+
+
+            return result;
         }
     }
 }

@@ -20,7 +20,7 @@
       },
       {
         "Key": "user",
-        "Value": "postgre"
+        "Value": "postgres"
       },
       {
         "Key": "password",

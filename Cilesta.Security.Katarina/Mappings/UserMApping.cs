@@ -9,10 +9,10 @@
         public UserMapping()
         {
             Table("users");
-            Map(x => x.Id);
-            Map(x => x.Login);
-            Map(x => x.Password);
-            Map(x => x.Email);
+            Id(x => x.Id);
+            Map(x => x.Login).Not.Nullable();
+            Map(x => x.Password).Not.Nullable();
+            Map(x => x.Email).Not.Nullable();
         }
     }
 }

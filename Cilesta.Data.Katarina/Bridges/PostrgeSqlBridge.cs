@@ -1,6 +1,7 @@
 ﻿namespace Cilesta.Data.Katarina.Bridges
 {
     using System.Text;
+    using Cilesta.Configuration.Interfaces;
     using Cilesta.Data.Katarina.Implimentation;
     using Cilesta.Data.Models;
     using FluentNHibernate.Cfg.Db;
@@ -9,11 +10,20 @@
     {
         protected override string BuildConnectionString()
         {
-            var sb = new StringBuilder();
-            sb.Append("Server = ");
-            sb.Append(string.Empty);
-            var connectionString = string.Format("Server = {0}; Port = {1}; Database ={2}; Uid = {3}; Pwd = {4}");
+            var configuration = this.Container.Resolve<IAppConfiguration>();
 
+            var sb = new StringBuilder();
+            sb.Append("Server=");
+            sb.Append(configuration[Constants.Key][Constants.Host]);
+            sb.Append("; Port=");
+            sb.Append(configuration[Constants.Key][Constants.Port]);
+            sb.Append("; Database=");
+            sb.Append(configuration[Constants.Key][Constants.DataBase]);
+            sb.Append("; Uid=");
+            sb.Append(configuration[Constants.Key][Constants.User]);
+            sb.Append("; Pwd=");
+            sb.Append(configuration[Constants.Key][Constants.Password]);
+            
             return sb.ToString();
         }
 

@@ -8,6 +8,6 @@
         /// <summary>
         /// Идентификатор
         /// </summary>
-        ulong Id { get; set; }
+        int Id { get; set; }
     }
 }

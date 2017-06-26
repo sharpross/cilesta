@@ -23,5 +23,7 @@
         void Delete(T entity);
 
         void Delete(IList<T> entities);
+
+        bool OnBefore(OperationType operation, object obj);
     }
 }
