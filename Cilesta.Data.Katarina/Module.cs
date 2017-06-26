@@ -24,14 +24,14 @@
                 container.Register(
                     Component.For<IBridge<IEntity>>()
                     .ImplementedBy<MySqlBridge<IEntity>>()
-                    .LifeStyle.Transient);
+                    .LifeStyle.PerWebRequest);
             }
             else
             {
                 container.Register(
                     Component.For<IBridge<IEntity>>()
                     .ImplementedBy<PostrgeSqlBridge<IEntity>>()
-                    .LifeStyle.Transient);
+                    .LifeStyle.PerWebRequest);
             }
 
             container.Register(Component.For<IMigrator>().ImplementedBy<Migrator>().LifeStyle.Transient);

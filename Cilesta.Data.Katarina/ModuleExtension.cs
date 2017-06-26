@@ -10,26 +10,23 @@
 
     public static class ModuleExtension
     {
-        public static void RegisterDataSource<E>(this IWindsorContainer container) 
-            where E : class, IEntity
+        public static void RegisterDataSource<T>(this IWindsorContainer container) 
+            where T : class, IEntity
         {
-            //container.Register(Component.For<S>().ImplementedBy<S>().LifeStyle.Transient);
-            //container.Register(Component.For<IBridge<E>>().ImplementedBy<PostrgeSqlBridge<E>>().LifeStyle.Transient);
-
             var configuration = container.Resolve<IAppConfiguration>();
 
             if (configuration[Constants.Key][Constants.Type] == Constants.Key_Mysql)
             {
                 container.Register(
-                    Component.For<IBridge<E>>()
-                    .ImplementedBy<MySqlBridge<E>>()
+                    Component.For<IBridge<T>>()
+                    .ImplementedBy<MySqlBridge<T>>()
                     .LifeStyle.Transient);
             }
             else
             {
                 container.Register(
-                    Component.For<IBridge<E>>()
-                    .ImplementedBy<PostrgeSqlBridge<E>>()
+                    Component.For<IBridge<T>>()
+                    .ImplementedBy<PostrgeSqlBridge<T>>()
                     .LifeStyle.Transient);
             }
         }

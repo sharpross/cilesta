@@ -1,4 +1,4 @@
-﻿namespace Cilesta.Data.Interfaces
+﻿namespace Cilesta.Domain.Interfaces
 {
     using System;
     using System.Collections.Generic;
@@ -6,7 +6,7 @@
     using Cilesta.Data.Models;
     using Cilesta.Logging.Interfaces;
 
-    public interface IDataService<T> where T: class, IEntity
+    public interface IDomainService<T> where T : class, IEntity
     {
         ILogger Log { get; }
 
@@ -25,5 +25,7 @@
         void Delete(IList<T> entities);
 
         bool OnBefore(OperationType operation, object obj);
+
+        void OnAfter(OperationType operation, object obj);
     }
 }

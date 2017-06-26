@@ -57,16 +57,11 @@
         {
             var databaseConfiguration = this.GetDatabaseConfiguration();
 
-            var showSql = "false";
-
-#if DEBUG
-            showSql = "true";
-#endif
+            
 
             ISessionFactory sessionFactory = Fluently.Configure()
                 .ExposeConfiguration(c =>
                     c.SetProperty(NHibernate.Cfg.Environment.WrapResultSets, "true")
-                    .SetProperty(NHibernate.Cfg.Environment.ShowSql, showSql)
                     .SetProperty(NHibernate.Cfg.Environment.UseQueryCache, "true")
                     .SetProperty(NHibernate.Cfg.Environment.BatchSize, "1000")
                     )

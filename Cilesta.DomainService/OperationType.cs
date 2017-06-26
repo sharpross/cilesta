@@ -1,6 +1,6 @@
-﻿namespace Cilesta.Data
+﻿namespace Cilesta.Domain
 {
-    public enum  OperationType
+    public enum OperationType
     {
         Get = 0,
 
