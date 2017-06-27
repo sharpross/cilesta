@@ -68,14 +68,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\DataController.cs" />
+    <Compile Include="Controllers\ListController.cs" />
     <Compile Include="Filtres\CilestaHandleErrorAttribute.cs" />
     <Compile Include="Implimentation\CilestaController.cs" />
     <Compile Include="Implimentation\CilestaControllerFactory.cs" />
+    <Compile Include="Implimentation\DataController.cs" />
     <Compile Include="Implimentation\FilterContainer.cs" />
     <Compile Include="Implimentation\JsonNetResult.cs" />
     <Compile Include="Implimentation\PreActivation.cs" />
     <Compile Include="Implimentation\RouteContainer.cs" />
     <Compile Include="Models\JsonResultModel.cs" />
+    <Compile Include="Models\ListParams.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebApplication.cs" />
@@ -96,6 +100,10 @@
     <ProjectReference Include="..\Cilesta.Data\Cilesta.Data.csproj">
       <Project>{7F0F91EE-C9D7-41E9-9027-116044C6744F}</Project>
       <Name>Cilesta.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cilesta.DomainService\Cilesta.Domain.csproj">
+      <Project>{38E15EDA-8AEC-489A-A6E2-423486BBE126}</Project>
+      <Name>Cilesta.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cilesta.Logging.Katarina\Cilesta.Logging.Katarina.csproj">
       <Project>{6D3B3796-6571-4FA1-9D10-6574538783BF}</Project>

@@ -41,16 +41,16 @@
             }
         }
 
-        private IList<IDomainInterceptor> _interceptors;
+        private IList<IDomainInterceptor> interceptors;
         public IList<IDomainInterceptor> Interceptors
         {
             get 
             {
-                if (this._interceptors == null)
+                if (this.interceptors == null)
                 {
-                    this._interceptors = this.Container.ResolveAll<IDomainInterceptor>();
+                    this.interceptors = this.Container.ResolveAll<IDomainInterceptor>();
                 }
-                return this._interceptors;
+                return this.interceptors;
             }
         }
 

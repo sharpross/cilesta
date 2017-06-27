@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq.Expressions;
     using Cilesta.Data.Models;
+    using Cilesta.Domain.Models;
     using Cilesta.Logging.Interfaces;
 
     public interface IDomainService<T> where T : class, IEntity
@@ -23,6 +24,8 @@
         void Delete(T entity);
 
         void Delete(IList<T> entities);
+
+        IList<T> List(ListParams listParams);
 
         bool OnBefore(OperationType operation, object obj);
 

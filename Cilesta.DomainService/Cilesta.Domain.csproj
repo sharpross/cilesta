@@ -45,14 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="Interfaces\IDomainInterceptor.cs" />
     <Compile Include="Interfaces\IDomainService.cs" />
+    <Compile Include="Models\ListParams.cs" />
     <Compile Include="OperationType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Cilesta.Configuration\Cilesta.Configuration.csproj">
       <Project>{4861d901-1a4d-45e2-93de-3a671b601477}</Project>
