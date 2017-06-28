@@ -5,5 +5,7 @@
     public interface IAppConfiguration
     {
         IConfigurationSection this[string key] { get; }
+
+        void Update(IConfigurationSection cfg);
     }
 }

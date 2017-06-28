@@ -20,5 +20,7 @@
         void Delete(T entity);
 
         void Delete(IList<T> entities);
+
+        void List<T>(Expression<Func<T>> alias);
     }
 }

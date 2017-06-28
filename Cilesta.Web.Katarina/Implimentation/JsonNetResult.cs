@@ -51,6 +51,14 @@
             };
         }
 
+        public static JsonNetResult List(IList<object> list)
+        {
+            return new JsonNetResult()
+            {
+                Data = list
+            };
+        }
+
         public static JsonNetResult Fail(object data)
         {
             return new JsonNetResult()

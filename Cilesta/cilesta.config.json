@@ -1,5 +1,14 @@
 ﻿[
   {
+    "Key": "app",
+    "Parametres": [
+      {
+        "Key": "intalled",
+        "Value":  "false"
+      }
+    ]
+  },
+  {
     "Key": "data",
     "Parametres": [
       {
@@ -46,11 +55,11 @@
     "Parametres": [
       {
         "Key": "expiresDefault",
-        "Value": "3" 
+        "Value": "3"
       },
       {
         "Key": "expiresExtend",
-        "Value": "21" 
+        "Value": "21"
       }
     ]
   }

@@ -57,8 +57,6 @@
         {
             var databaseConfiguration = this.GetDatabaseConfiguration();
 
-            
-
             ISessionFactory sessionFactory = Fluently.Configure()
                 .ExposeConfiguration(c =>
                     c.SetProperty(NHibernate.Cfg.Environment.WrapResultSets, "true")
@@ -172,7 +170,7 @@
         {
             try
             {
-                return this.Session.QueryOver(alias).List().ToList<T>();
+                return this.Session.QueryOver<T>(alias).List().ToList<T>();
             }
             catch (Exception ex)
             {
@@ -219,6 +217,11 @@
                     throw ex;
                 }
             }
+        }
+
+        public void List<T1>(Expression<Func<T1>> alias)
+        {
+            throw new NotImplementedException();
         }
     }
 }

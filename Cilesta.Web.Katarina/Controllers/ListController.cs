@@ -11,7 +11,6 @@
 
         public JsonNetResult List(ListParams listParams)
         {
-            
             return JsonNetResult.Success();
         }
     }

@@ -1,5 +1,6 @@
 ﻿namespace Cilesta.Configuration.Katarina.Implimentation
 {
+    using System;
     using System.IO;
     using System.Threading.Tasks;
     using System.Web.Hosting;
@@ -47,6 +48,23 @@
             }
 
             this.Configuration = JsonHelper.Deserialize<ConfigurationSectionCollection>(configText);
+        }
+
+        public void Update(IConfigurationSection cfg)
+        {
+            var strCfg = JsonHelper.Serialize(cfg);
+
+            this.WriteToFile(strCfg);
+        }
+
+        private async void WriteToFile(string cfg)
+        {
+            var path = HostingHelper.GetAppDirectory() + "\\" + Constants.AppConfigurationFileName;
+
+            using (StreamWriter writer = File.CreateText(path))
+            {
+                await writer.WriteLineAsync(cfg);
+            }
         }
     }
 }

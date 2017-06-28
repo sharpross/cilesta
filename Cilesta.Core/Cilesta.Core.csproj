@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="IModule.cs" />
     <Compile Include="IoC\CilestaDependencyResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

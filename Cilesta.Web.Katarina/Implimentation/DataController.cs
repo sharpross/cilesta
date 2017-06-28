@@ -7,10 +7,8 @@
     using System.Threading.Tasks;
     using Cilesta.Data.Models;
 
-    public class DataController<T> : CilestaController where <T> : class, IEntity
+    public class DataController 
     {
-        public IDomainService<T> Service { get; set; }
-
-
+        
     }
 }

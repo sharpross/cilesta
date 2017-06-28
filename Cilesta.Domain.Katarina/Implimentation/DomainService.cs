@@ -2,11 +2,13 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Linq.Expressions;
     using Castle.Windsor;
     using Cilesta.Data.Interfaces;
     using Cilesta.Data.Models;
     using Cilesta.Domain.Interfaces;
+    using Cilesta.Domain.Models;
     using Cilesta.Logging.Interfaces;
 
     public class DomainService<T> : IDomainService<T> where T : class, IEntity
@@ -200,6 +202,18 @@
         private void OnException(Exception ex)
         {
             this.Log.Error(ex);
+        }
+
+        public IList<T> List(ListParams listParams)
+        {
+            var result = Bridge.GetAll();
+
+            if (listParams.Page > 0)
+            {
+                result.Skip(listParams.Page * listParams.Count);
+            }
+
+            return result.ToList();
         }
     }
 }
