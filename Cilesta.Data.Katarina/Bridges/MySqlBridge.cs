@@ -16,10 +16,8 @@
         protected override IPersistenceConfigurer GetDatabaseConfiguration()
         {
             var connectionString = this.ConnectionString;
-
-            var configuration = MySQLConfiguration.Standard.ConnectionString(connectionString);
-
-            return configuration;
+            
+            return MySQLConfiguration.Standard.ConnectionString(connectionString); ;
         }
     }
 }

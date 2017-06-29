@@ -4,7 +4,7 @@
     using Castle.Windsor;
     using Cilesta.Core;
     using Cilesta.Data.Interfaces;
-    using Cilesta.Data.Katarina;
+    using Cilesta.Domain.Katarina;
     using Cilesta.Security.Katarina.Entities;
     using Cilesta.Security.Katarina.Implimentation;
     using Cilesta.Security.Katarina.Interfaces;
@@ -18,7 +18,7 @@
 
         public void InitComponents(IWindsorContainer container)
         {
-            container.RegisterDataSource<User>();
+            container.RegisterDomainService<User>();
 
             container.Register(Component.For<IAuthService>().ImplementedBy<AuthService>().LifeStyle.Transient);
             container.Register(Component.For<IUserService>().ImplementedBy<UserService>().LifeStyle.Transient);

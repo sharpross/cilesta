@@ -31,19 +31,7 @@
         {
             var connectionString = this.ConnectionString;
 
-            var showSql = false;
-
-#if DEBUG
-            showSql = true;
-#endif
-            if (showSql)
-            {
-                return PostgreSQLConfiguration.Standard.ShowSql().ConnectionString(connectionString);
-            }
-            else
-            {
-                return PostgreSQLConfiguration.Standard.ConnectionString(connectionString);
-            }
+            return PostgreSQLConfiguration.Standard.ConnectionString(connectionString);
         }
     }
 }

@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Cilesta.Web.Katarina.Models
+﻿namespace Cilesta.Web.Katarina.Models
 {
-    public class ListParams : Nullable
+    public class ListParams 
     {
         public int Count { get; set; }
 

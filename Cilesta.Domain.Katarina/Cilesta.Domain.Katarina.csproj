@@ -47,12 +47,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implimentation\DomainService.cs" />
+    <Compile Include="ModuleExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cilesta.Core\Cilesta.Core.csproj">
       <Project>{d0649389-fdc1-4f75-b590-0023f670f1de}</Project>
       <Name>Cilesta.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Data.Katarina\Cilesta.Data.Katarina.csproj">
+      <Project>{37D96218-E119-4EFA-8E96-7399B5ACFAE7}</Project>
+      <Name>Cilesta.Data.Katarina</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cilesta.Data\Cilesta.Data.csproj">
       <Project>{7f0f91ee-c9d7-41e9-9027-116044c6744f}</Project>

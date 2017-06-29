@@ -9,19 +9,31 @@
     using System.Web.Mvc;
     using Cilesta.Utils.Json;
     using Cilesta.Web.Katarina.Models;
+    using Newtonsoft.Json;
 
     public class JsonNetResult : ActionResult
     {
+        [JsonProperty("Data")]
         public object Data { get; set; }
 
         public int StatusCode { get; private set; }
 
         public string ContentType { get; private set; }
 
+        [JsonProperty("Exception")]
         public string Exception { get; private set; }
 
         public bool IsSuccess { get; private set; }
         
+        [JsonProperty("Count")]
+        public int? Count { get; set; }
+
+        [JsonProperty("Page")]
+        public int? Page { get; set; }
+
+        [JsonProperty("Page")]
+        public bool? IsList { get; set; }
+
         public JsonNetResult() : base()
         {
             this.StatusCode = 200;
@@ -51,11 +63,14 @@
             };
         }
 
-        public static JsonNetResult List(IList<object> list)
+        public static JsonNetResult List(object list, int? page, int? count)
         {
             return new JsonNetResult()
             {
-                Data = list
+                Data = list,
+                IsList = true,
+                Count = count.HasValue ? count.Value : count,
+                Page = page.HasValue ? page.Value : page,
             };
         }
 

@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Linq.Expressions;
     using Castle.Windsor;
+    using Cilesta.Configuration.Interfaces;
     using Cilesta.Data.Interfaces;
     using Cilesta.Data.Models;
     using FluentNHibernate.Cfg;
@@ -40,12 +41,32 @@
         {
             get
             {
-                if (this._session == null)
+                if (this._session == null)  
                 {
                     this._session = this.GetSession();
                 }
 
                 return this._session;
+            }
+        }
+
+        private bool installed;
+        private bool IsInstalled
+        {
+            get
+            {
+                if (!installed)
+                {
+                    var configuration = this.Container.Resolve<IAppConfiguration>();
+                    var value = configuration[Core.Constants.Key][Core.Constants.Installed];
+
+                    if (!bool.TryParse(value, out installed))
+                    {
+                        throw new Exception("Отсуствует параметр Installed в файле конфигурации");
+                    }
+                }
+
+                return installed;
             }
         }
 
@@ -68,8 +89,6 @@
                 {
                     this.ApplyMapping(m.FluentMappings);
                 })
-                .ExposeConfiguration(cfg => new SchemaExport(cfg)
-                .Create(false, false))
                 .ExposeConfiguration(BuildSchema)
                 .BuildSessionFactory();
 
@@ -78,7 +97,10 @@
 
         private void BuildSchema(Configuration config)
         {
-            new SchemaExport(config).Create(false, true);
+            if (!this.IsInstalled)
+            {
+                new SchemaExport(config).Create(false, true);
+            }
         }
 
         private void ApplyMapping(FluentMappingsContainer fluentMappings)
@@ -142,7 +164,7 @@
             GC.Collect();
         }
 
-        public T Get(ulong id)
+        public T Get(int id)
         {
             try
             {

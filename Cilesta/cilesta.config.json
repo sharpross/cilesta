@@ -3,8 +3,8 @@
     "Key": "app",
     "Parametres": [
       {
-        "Key": "intalled",
-        "Value":  "false"
+        "Key": "installed",
+        "Value": "true"
       }
     ]
   },

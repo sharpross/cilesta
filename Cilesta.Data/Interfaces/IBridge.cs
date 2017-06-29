@@ -7,7 +7,7 @@
 
     public interface IBridge<T> where T : class, IEntity
     {
-        T Get(ulong id);
+        T Get(int id);
 
         IList<T> GetAll();
 

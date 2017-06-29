@@ -88,7 +88,7 @@
             }
         }
 
-        public T Get(ulong id)
+        public T Get(int id)
         {
             try
             {

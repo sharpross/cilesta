@@ -11,7 +11,7 @@
     {
         ILogger Log { get; }
 
-        T Get(ulong id);
+        T Get(int id);
 
         IList<T> GetAll();
 

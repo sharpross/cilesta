@@ -30,6 +30,5 @@
                     .LifeStyle.Transient);
             }
         }
-        
     }
 }

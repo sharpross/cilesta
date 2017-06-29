@@ -7,7 +7,7 @@
     public class DataController<T> : ListController<T> where T : class, IEntity
     {
         [HttpGet]
-        public JsonNetResult Get(ulong id)
+        public JsonNetResult Get(int id)
         {
             var obj = this.Service.Get(id);
 
