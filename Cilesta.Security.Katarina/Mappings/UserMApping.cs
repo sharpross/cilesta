@@ -10,9 +10,15 @@
         {
             Table("users");
             Id(x => x.Id);
-            Map(x => x.Login).Not.Nullable();
-            Map(x => x.Password).Not.Nullable();
-            Map(x => x.Email).Not.Nullable();
+            Map(x => x.Login)
+                .Not
+                .Nullable();
+            Map(x => x.Password)
+                .Not
+                .Nullable();
+            Map(x => x.Email)
+                .Not
+                .Nullable();
         }
     }
 }

@@ -1,12 +1,10 @@
 ﻿namespace Cilesta.Web.Interfaces
 {
     using Castle.Core.Logging;
-    using Castle.Windsor;
+    using Cilesta.Core;
 
-    public interface ICilestaController
+    public interface ICilestaController : IWindsorController
     {
-        IWindsorContainer Container { get; set; }
-
         ILogger Log { get; set; }
     }
 }

@@ -18,11 +18,8 @@
             StringBuilder sb = new StringBuilder();
 
             for (int i = 0; i < hash.Length; i++)
-
             {
-
                 sb.Append(hash[i].ToString("X2"));
-
             }
 
             result = sb.ToString();

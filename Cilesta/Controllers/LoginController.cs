@@ -19,7 +19,7 @@
 
             if (result.Success)
             {
-                CookiHelper.SetCookie(this.HttpContext.Response);
+                CookiHelper.SetCookie(this.HttpContext.Response, result.Login);
                 return JsonNetResult.Success(result);
             }
 

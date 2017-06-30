@@ -116,6 +116,10 @@
       <Project>{9c5ed0ef-01b0-47be-918f-a10660a2f8ce}</Project>
       <Name>Cilesta.Logging</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Security.Katarina\Cilesta.Security.Katarina.csproj">
+      <Project>{B97085EB-D2C1-4A69-8C26-784BBB81AD29}</Project>
+      <Name>Cilesta.Security.Katarina</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cilesta.Utils\Cilesta.Utils.csproj">
       <Project>{d01ccc7a-2abe-451f-bba0-63bd1b1ae339}</Project>
       <Name>Cilesta.Utils</Name>

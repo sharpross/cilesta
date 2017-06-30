@@ -5,5 +5,7 @@
         bool Success { get; set; }
 
         string Message { get; set; }
+
+        string Login { get; set; }
     }
 }

@@ -69,8 +69,8 @@
             {
                 Data = list,
                 IsList = true,
-                Count = count.HasValue ? count.Value : count,
-                Page = page.HasValue ? page.Value : page,
+                Count = count,
+                Page = page,
             };
         }
 
@@ -95,7 +95,9 @@
             {
                 Status = this.StatusCode,
                 Result = this.Data,
-                Exception = this.Exception
+                Exception = this.Exception,
+                Count = this.Count,
+                Page = this.Page
             };
 
             var resultStr = JsonHelper.Serialize(result);

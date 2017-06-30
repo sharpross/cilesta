@@ -4,12 +4,11 @@
     using System.Web;
 
     public static class CookiHelper
-    {
-        public static void SetCookie(HttpResponseBase response)
+    { 
+        public static void SetCookie(HttpResponseBase response, string login)
         {
             HttpCookie cookie = new HttpCookie(Constants.CookieName);
-            cookie["Module"] = "katarina";
-            cookie["App"] = "cilesta";
+            cookie["module"] = "cilesta";
             cookie.Expires = DateTime.Now.AddDays(1);
 
             response.Cookies.Add(cookie);

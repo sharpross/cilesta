@@ -2,8 +2,10 @@
 {
     using System.Web.Mvc;
     using Cilesta.Data.Models;
+    using Cilesta.Security.Katarina.Attributes;
     using Cilesta.Web.Katarina.Implimentation;
 
+    [AuthorizeAccesse]
     public class DataController<T> : ListController<T> where T : class, IEntity
     {
         [HttpGet]

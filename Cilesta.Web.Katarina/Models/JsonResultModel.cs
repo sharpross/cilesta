@@ -9,5 +9,9 @@
         public string Message { get; set; }
 
         public string Exception { get; set; }
+
+        public int? Page { get; set; }
+
+        public int? Count { get; set; }
     }
 }

@@ -8,10 +8,13 @@
 
         public string Message { get; set; }
 
+        public string Login { get; set; }
+
         public AuthResult()
         {
             this.Success = false;
             this.Message = string.Empty;
+            this.Login = string.Empty;
         }
     }
 }

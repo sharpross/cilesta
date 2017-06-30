@@ -1,0 +1,22 @@
+﻿2017-06-29 16:26:09,310  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
+2017-06-29 16:26:09,354  DEBUG: INSERT INTO users (Id, Login, Password, Email) VALUES (nextval ('hibernate_sequence'), :p0, :p1, :p2) returning Id;:p0 = 'admin' [Type: String (0:0:0)], :p1 = '5583413443164B56500DEF9A533C7C70' [Type: String (0:0:0)], :p2 = 'rt.sharpross@gmail.com' [Type: String (0:0:0)], :nhIdOutParam = NULL [Type: Int32 (0:0:0)]
+2017-06-29 16:27:12,391  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
+2017-06-29 16:29:42,570  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
+2017-06-29 16:29:42,615  DEBUG: INSERT INTO users (Id, Login, Password, Email) VALUES (nextval ('hibernate_sequence'), :p0, :p1, :p2) returning Id;:p0 = 'admin' [Type: String (0:0:0)], :p1 = '5583413443164B56500DEF9A533C7C70' [Type: String (0:0:0)], :p2 = 'rt.sharpross@gmail.com' [Type: String (0:0:0)], :nhIdOutParam = NULL [Type: Int32 (0:0:0)]
+2017-06-29 16:30:01,592  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
+2017-06-29 16:30:57,409  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
+2017-06-29 16:31:38,108  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
+2017-06-29 17:25:05,674  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
+2017-06-29 17:25:11,913  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
+2017-06-29 17:31:14,548  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
+2017-06-29 17:31:14,596  DEBUG: INSERT INTO users (Id, Login, Password, Email) VALUES (nextval ('hibernate_sequence'), :p0, :p1, :p2) returning Id;:p0 = 'admin' [Type: String (0:0:0)], :p1 = '5583413443164B56500DEF9A533C7C70' [Type: String (0:0:0)], :p2 = 'rt.sharpross@gmail.com' [Type: String (0:0:0)], :nhIdOutParam = NULL [Type: Int32 (0:0:0)]
+2017-06-29 17:31:58,374  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
+2017-06-29 17:32:11,488  DEBUG: SELECT user0_.Id as Id1_0_0_, user0_.Login as Login2_0_0_, user0_.Password as Passwo3_0_0_, user0_.Email as Email4_0_0_ FROM users user0_ WHERE user0_.Id=:p0;:p0 = 1 [Type: Int32 (0:0:0)]
+2017-06-29 17:33:27,234  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
+2017-06-29 17:33:35,186  DEBUG: SELECT this_.Id as Id1_2_0_, this_.Login as Login2_2_0_, this_.Password as Passwo3_2_0_, this_.Email as Email4_2_0_ FROM users this_
+2017-06-29 17:34:01,897  DEBUG: SELECT this_.Id as Id1_4_0_, this_.Login as Login2_4_0_, this_.Password as Passwo3_4_0_, this_.Email as Email4_4_0_ FROM users this_
+2017-06-29 17:38:54,743  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
+2017-06-29 17:39:00,364  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
+2017-06-29 17:41:41,301  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
+2017-06-29 17:42:09,900  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
+2017-06-29 17:42:33,254  DEBUG: SELECT this_.Id as Id1_2_0_, this_.Login as Login2_2_0_, this_.Password as Passwo3_2_0_, this_.Email as Email4_2_0_ FROM users this_
