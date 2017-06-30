@@ -19,22 +19,6 @@
 
         }
 
-        public string JsonSuccess(object data)
-        {
-            this.Response.Status = "200";
-
-            var model = this.JsonResult(data, string.Empty, null);
-
-            var result = JsonHelper.Serialize(model);
-
-            return result;
-        }
-
-        public JsonResultModel JsonResult(object obj, string message, Exception ex)
-        {
-            var result = new JsonResultModel();
-            
-            return result;
-        }
+        
     }
 }
