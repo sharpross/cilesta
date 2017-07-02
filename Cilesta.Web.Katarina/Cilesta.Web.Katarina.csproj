@@ -74,7 +74,7 @@
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\ListController.cs" />
     <Compile Include="Filtres\CilestaHandleErrorAttribute.cs" />
-    <Compile Include="Implimentation\CilestaController.cs" />
+    <Compile Include="Controllers\CilestaController.cs" />
     <Compile Include="Implimentation\CilestaControllerFactory.cs" />
     <Compile Include="Implimentation\DataController.cs" />
     <Compile Include="Implimentation\FilterContainer.cs" />
@@ -119,6 +119,10 @@
     <ProjectReference Include="..\Cilesta.Security.Katarina\Cilesta.Security.Katarina.csproj">
       <Project>{B97085EB-D2C1-4A69-8C26-784BBB81AD29}</Project>
       <Name>Cilesta.Security.Katarina</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Security\Cilesta.Security.csproj">
+      <Project>{f0f2d004-edda-4666-b4cf-2747344d18f4}</Project>
+      <Name>Cilesta.Security</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cilesta.Utils\Cilesta.Utils.csproj">
       <Project>{d01ccc7a-2abe-451f-bba0-63bd1b1ae339}</Project>

@@ -7,5 +7,7 @@
         string Message { get; set; }
 
         string Login { get; set; }
+
+        string UserID { get; set; }
     }
 }

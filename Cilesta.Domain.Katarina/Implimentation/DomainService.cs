@@ -123,25 +123,7 @@
                 throw;
             }
         }
-
-        public IList<T> GetAll(Expression<Func<T>> alias)
-        {
-            try
-            {
-                if (this.OnBefore(OperationType.GetAll, null))
-                {
-                    return this.Bridge.GetAll(alias);
-                }
-
-                return null;
-            }
-            catch (Exception ex)
-            {
-                this.OnException(ex);
-                throw;
-            }
-        }
-
+        
         public void Save(T entity)
         {
             try
@@ -208,10 +190,9 @@
         {
             var result = Bridge.GetAll();
 
-            if (listParams.Page > 0)
-            {
-                result.Skip(listParams.Page * listParams.Count);
-            }
+            var criteria = this.Bridge.Session.CreateCriteria<T>();
+            criteria.SetFirstResult((listParams.Page - 1) * listParams.Count);
+            criteria.SetMaxResults(listParams.Count);
 
             return result.ToList();
         }

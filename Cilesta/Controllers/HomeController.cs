@@ -1,7 +1,7 @@
 ﻿namespace Cilesta.Controllers
 {
     using System.Web.Mvc;
-    using Cilesta.Web.Katarina.Implimentation;
+    using Cilesta.Web.Katarina.Controllers;
 
     public class HomeController : CilestaController
     {

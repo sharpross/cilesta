@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Cilesta.Security
+﻿namespace Cilesta.Security
 {
     public static class Constants
     {
         public const string Key = "security";
 
         public const string CookieName = "cilesta";
+
+        public const string CookieUserName = "User";
+
+        public const string CookieUserId = "Identity";
 
         public const string ExpiresDaysDefault = "expiresDefault";
 

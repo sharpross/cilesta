@@ -11,12 +11,16 @@
             Table("users");
             Id(x => x.Id);
             Map(x => x.Login)
+                .ReadOnly()
+                .Unique()
                 .Not
                 .Nullable();
             Map(x => x.Password)
                 .Not
                 .Nullable();
             Map(x => x.Email)
+                .Unique()
+                .ReadOnly()
                 .Not
                 .Nullable();
         }

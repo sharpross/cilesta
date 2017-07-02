@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Cilesta.Core
+﻿namespace Cilesta.Core
 {
     public static class Constants
     {
         public const string Key = "app";
 
         public const string Installed = "installed";
+
+        public const string UnauthorizedAccess = "Неизвестный пользователь";
     }
 }

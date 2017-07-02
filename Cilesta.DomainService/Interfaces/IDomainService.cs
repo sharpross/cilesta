@@ -14,9 +14,7 @@
         T Get(int id);
 
         IList<T> GetAll();
-
-        IList<T> GetAll(Expression<Func<T>> alias);
-
+        
         void Save(T entity);
 
         void Save(IList<T> entities);

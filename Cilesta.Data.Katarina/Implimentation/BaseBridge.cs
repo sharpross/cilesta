@@ -18,7 +18,7 @@
     {
         public IWindsorContainer Container { get; set; }
 
-        protected ISession _session;
+        protected ISession _session { get; set; }
 
         private object lockObj = new object();
 
@@ -37,7 +37,7 @@
             }
         }
 
-        protected ISession Session
+        public ISession Session
         {
             get
             {
@@ -187,19 +187,7 @@
                 throw ex;
             }
         }
-
-        public IList<T> GetAll(Expression<Func<T>> alias)
-        {
-            try
-            {
-                return this.Session.QueryOver<T>(alias).List().ToList<T>();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
+        
         public void Save(T entity)
         {
             using (var transaction = this.Session.BeginTransaction())

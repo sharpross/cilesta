@@ -1,10 +1,10 @@
 ﻿namespace Cilesta.Security.Katarina.Attributes
 {
     using System;
+    using System.Linq;
     using System.Security.Principal;
     using System.Web;
     using System.Web.Mvc;
-    using Castle.Windsor;
     using Cilesta.Core;
     using Cilesta.Security.Katarina.Interfaces;
     using Cilesta.Security.Katarina.Models;
@@ -17,26 +17,44 @@
 
         public void OnAuthorization(AuthorizationContext filterContext)
         {
-            var cookies = filterContext.HttpContext.Request.Cookies;
-
-            IUserIndentity identity = null;
-
-            var container = ((IWindsorController)filterContext.Controller).Container;
-
-            var authService = container.Resolve<IAuthService>();
-            var currentUser = authService.GetCurrentUser(filterContext.HttpContext.Request);
-
-            if (currentUser != null)
+            if (this.Skip(filterContext))
             {
-                identity = new IndentityUser(currentUser.Login);
-            }
-            else
-            {
-                identity = new AnonymousUser();
+                return;
             }
 
-            var userInfo = new GenericPrincipal(identity, null);
-            HttpContext.Current.User = userInfo;
+            var user = filterContext.HttpContext.User;
+
+            if (user != null && user.Identity.IsAuthenticated)
+            {
+                return;
+            }
+
+            throw new UnauthorizedAccessException(Constants.UnauthorizedAccess);
+        }
+
+        private bool Skip(AuthorizationContext filterContext)
+        {
+            var result = false;
+
+            var skipMethod = filterContext.ActionDescriptor
+                .GetCustomAttributes(false)
+                .Any(x => x is SkipAuthorizationAttribute);
+
+            if (skipMethod)
+            {
+                return true;
+            }
+
+            var skipController = filterContext.Controller.GetType()
+                .GetCustomAttributes(false)
+                .Any(x => x is SkipAuthorizationAttribute);
+
+            if (skipController)
+            {
+                result = true;
+            }
+
+            return result;
         }
     }
 }

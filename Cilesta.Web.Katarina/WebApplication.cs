@@ -29,6 +29,8 @@
             var activator = new ModuleActivator();
             activator.RegisterComponents(Container);
 
+            Logger = Container.Resolve<Logging.Interfaces.ILogger>();
+
             DependencyResolver.SetResolver(new CilestaDependencyResolver(Container));
 
             var filterContainers = Container.ResolveAll<IFilterContainer>();
