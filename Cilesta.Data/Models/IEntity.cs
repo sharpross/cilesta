@@ -1,5 +1,7 @@
 ﻿namespace Cilesta.Data.Models
 {
+    using System;
+
     /// <summary>
     /// Базовая сущность
     /// </summary>
@@ -9,5 +11,10 @@
         /// Идентификатор
         /// </summary>
         int Id { get; set; }
+
+        /// <summary>
+        /// Дата создания объекта
+        /// </summary>
+        DateTimeOffset DateCreated { get; set; }
     }
 }
