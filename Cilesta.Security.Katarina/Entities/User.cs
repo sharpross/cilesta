@@ -3,7 +3,7 @@
     using Cilesta.Security.Models;
     using Data.Katarina.Models;
 
-    public class User : Entity, IUserModel
+    public class User : Entity, IUser
     {
         public virtual string Login { get; set; }
 

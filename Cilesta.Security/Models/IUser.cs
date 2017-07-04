@@ -2,7 +2,7 @@
 {
     using Cilesta.Data.Models;
 
-    public interface IUserModel : IEntity
+    public interface IUser : IEntity
     {
         string Login { get; set; }
 

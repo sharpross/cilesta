@@ -45,8 +45,11 @@
     <Compile Include="Interfaces\IIdentityPrincipal.cs" />
     <Compile Include="Models\IAuthResult.cs" />
     <Compile Include="Models\ILoginModel.cs" />
+    <Compile Include="Models\IPermissionMap.cs" />
+    <Compile Include="Models\IRole.cs" />
     <Compile Include="Models\IUserIndentity.cs" />
-    <Compile Include="Models\IUserModel.cs" />
+    <Compile Include="Models\IUser.cs" />
+    <Compile Include="PermissionType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\CookiHelper.cs" />
   </ItemGroup>

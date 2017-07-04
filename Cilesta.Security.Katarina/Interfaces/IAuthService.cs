@@ -5,10 +5,10 @@
 
     public interface IAuthService
     {
-        IUserModel GetCurrentUser();
+        IUser GetCurrentUser();
 
         IAuthResult Login(ILoginModel model);
 
-        IUserModel GetUserFromCookie(HttpCookie cookie);
+        IUser GetUserFromCookie(HttpCookie cookie);
     }
 }

@@ -79,6 +79,8 @@
   <ItemGroup>
     <Compile Include="Attributes\AuthorizeAccesseAttribute.cs" />
     <Compile Include="Attributes\SkipAuthorizationAttribute.cs" />
+    <Compile Include="Entities\PermissionMap.cs" />
+    <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Implimentation\AuthService.cs" />
     <Compile Include="Implimentation\IdentityPrincipal.cs" />

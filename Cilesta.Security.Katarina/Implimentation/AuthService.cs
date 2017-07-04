@@ -14,7 +14,7 @@
 
         public IUserService UserService { get; set; }
         
-        public IUserModel GetCurrentUser()
+        public IUser GetCurrentUser()
         {
             User user = null;
 
@@ -37,9 +37,9 @@
             return user;
         }
 
-        public IUserModel GetUserFromCookie(HttpCookie cookie)
+        public IUser GetUserFromCookie(HttpCookie cookie)
         {
-            IUserModel user = null;
+            IUser user = null;
 
             var login = cookie[Constants.CookieUserName];
             var id = int.Parse(cookie[Constants.CookieUserId]);

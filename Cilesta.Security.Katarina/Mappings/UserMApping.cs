@@ -10,6 +10,7 @@
         {
             Table("users");
             Id(x => x.Id);
+            Map(x => x.DateCreated);
             Map(x => x.Login)
                 .ReadOnly()
                 .Unique()

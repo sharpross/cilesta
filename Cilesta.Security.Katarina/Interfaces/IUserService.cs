@@ -6,8 +6,8 @@
 
     public interface IUserService : IDomainService<User>
     {
-        IUserModel GetByLoginPassword(string login, string password);
+        IUser GetByLoginPassword(string login, string password);
 
-        IUserModel GetByLoginId(string login, int id);
+        IUser GetByLoginId(string login, int id);
     }
 }

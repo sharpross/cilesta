@@ -9,7 +9,7 @@
 
     public class UserService : DomainService<User>, IUserService
     {
-        public IUserModel GetByLoginId(string login, int id)
+        public IUser GetByLoginId(string login, int id)
         {
             var criteria = this.Bridge.Session.CreateCriteria<User>();
 
@@ -22,7 +22,7 @@
             return result;
         }
 
-        public IUserModel GetByLoginPassword(string login, string password)
+        public IUser GetByLoginPassword(string login, string password)
         {
             var criteria = this.Bridge.Session.CreateCriteria<User>();
 
