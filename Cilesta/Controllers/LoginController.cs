@@ -1,6 +1,7 @@
 ﻿namespace Cilesta.Controllers
 {
     using System.Web.Mvc;
+    using Cilesta.Security.Interfaces;
     using Cilesta.Security.Katarina.Attributes;
     using Cilesta.Security.Katarina.Interfaces;
     using Cilesta.Security.Katarina.Models;
@@ -11,24 +12,7 @@
     public class LoginController : CilestaController
     {
         public IAuthService AuthService { get; set; }
-
-        /*[HttpPost]
-        [SkipAuthorization]
-        public JsonNetResult Login(LoginModel model)
-        {
-            this.AuthService = this.Container.Resolve<IAuthService>();
-
-            var result = this.AuthService.Login(model);
-
-            if (result.Success)
-            {
-                CookiHelper.SetCookie(this.HttpContext.Response, result.Login, result.UserID);
-                return JsonNetResult.Success(result);
-            }
-
-            return JsonNetResult.Fail(result);
-        }*/
-
+        
         [HttpPost]
         [SkipAuthorization]
         public JsonNetResult Login(string login, string password)

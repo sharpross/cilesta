@@ -5,8 +5,8 @@
     using System.Web.Mvc.Filters;
     using Castle.Core.Logging;
     using Castle.Windsor;
+    using Cilesta.Security.Interfaces;
     using Cilesta.Security.Katarina.Implimentation;
-    using Cilesta.Security.Katarina.Interfaces;
     using Cilesta.Security.Katarina.Models;
     using Cilesta.Web.Interfaces;
 

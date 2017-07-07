@@ -5,6 +5,7 @@
     using Cilesta.Core;
     using Cilesta.Data.Interfaces;
     using Cilesta.Domain.Katarina;
+    using Cilesta.Security.Interfaces;
     using Cilesta.Security.Katarina.Entities;
     using Cilesta.Security.Katarina.Implimentation;
     using Cilesta.Security.Katarina.Interfaces;

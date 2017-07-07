@@ -3,6 +3,7 @@
     using System.Linq;
     using System.Web;
     using Castle.Windsor;
+    using Cilesta.Security.Interfaces;
     using Cilesta.Security.Katarina.Entities;
     using Cilesta.Security.Katarina.Interfaces;
     using Cilesta.Security.Katarina.Models;

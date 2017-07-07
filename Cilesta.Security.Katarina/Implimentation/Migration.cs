@@ -13,27 +13,58 @@
 
         public IUserService UserService { get; set; }
 
-        public string Code => "Миграция пользователей";
+        public IRoleService RoleService { get; set; }
+
+        public IRolePermissionMapService RolePermissionMapService { get; set; }
+
+        public IUserRoleMapService UserRoleMapService { get; set; }
+
+        public string Code => "Миграция пользователей и ролей";
 
         public void Migrate()
         {
-            var password = SecurityHelper.EncryptPassword("159753");
+            
+        }
+
+        public bool Need()
+        {
+            var hasAdmin = !this.UserService.GetAll().Any(x => x.Login == Security.Constants.AdminLogin);
+
+            return hasAdmin;
+        }
+
+        private void CreateUsers()
+        {
+            var password = SecurityHelper.EncryptPassword(Security.Constants.AdminPassword);
 
             var admin = new User()
             {
                 Email = "rt.sharpross@gmail.com",
-                Login = "admin",
+                Login = Security.Constants.AdminLogin,
                 Password = password
             };
 
             this.UserService.Save(admin);
         }
 
-        public bool Need()
+        private void CreateRoles()
         {
-            var hasAdmin = !this.UserService.GetAll().Any(x => x.Login == "admin");
+            var roleAdmin = new Role()
+            {
+                Name = "Администратор"
+            };
 
-            return hasAdmin;
+            var roleUser = new Role()
+            {
+                Name = "Пользователь"
+            };
+
+            var roleModerator = new Role()
+            {
+                Name = "Модератор"
+            };
+
+
         }
     }
 }

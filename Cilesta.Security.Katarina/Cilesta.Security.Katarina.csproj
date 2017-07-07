@@ -80,19 +80,24 @@
     <Compile Include="Attributes\AuthorizeAccesseAttribute.cs" />
     <Compile Include="Attributes\SkipAuthorizationAttribute.cs" />
     <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\RolePermissionMap.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\UserRoleMap.cs" />
     <Compile Include="Implimentation\AuthService.cs" />
     <Compile Include="Implimentation\IdentityPrincipal.cs" />
     <Compile Include="Implimentation\Migration.cs" />
     <Compile Include="Implimentation\UserService.cs" />
-    <Compile Include="Interfaces\IAuthService.cs" />
+    <Compile Include="Interfaces\IRolePermissionMapService.cs" />
+    <Compile Include="Interfaces\IRoleService.cs" />
+    <Compile Include="Interfaces\IUserRoleMapService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="Mappings\RoleMapping.cs" />
     <Compile Include="Mappings\UserMapping.cs" />
+    <Compile Include="Mappings\UserRoleMapMapping.cs" />
     <Compile Include="Models\AnonymousUser.cs" />
     <Compile Include="Models\AuthResult.cs" />
     <Compile Include="Models\IndentityUser.cs" />
     <Compile Include="Models\LoginModel.cs" />
-    <Compile Include="Models\RolePermissionMap.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

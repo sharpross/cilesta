@@ -1,4 +1,4 @@
-﻿namespace Cilesta.Security.Katarina.Interfaces
+﻿namespace Cilesta.Security.Interfaces
 {
     using System.Web;
     using Cilesta.Security.Models;

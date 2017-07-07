@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Interfaces\IAuthService.cs" />
     <Compile Include="Interfaces\IIdentityPrincipal.cs" />
+    <Compile Include="Interfaces\IUserProvider.cs" />
     <Compile Include="Models\IAuthResult.cs" />
     <Compile Include="Models\ILoginModel.cs" />
     <Compile Include="Models\IRole.cs" />
@@ -58,6 +60,10 @@
     <ProjectReference Include="..\Cilesta.Data\Cilesta.Data.csproj">
       <Project>{7f0f91ee-c9d7-41e9-9027-116044c6744f}</Project>
       <Name>Cilesta.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cilesta.DomainService\Cilesta.Domain.csproj">
+      <Project>{38E15EDA-8AEC-489A-A6E2-423486BBE126}</Project>
+      <Name>Cilesta.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
