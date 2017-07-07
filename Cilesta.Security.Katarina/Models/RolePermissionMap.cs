@@ -7,5 +7,7 @@
         public string AccesseKey { get; set; }
 
         public PermissionType Permission { get; set; }
+
+        public IRole Role { get; set; }
     }
 }

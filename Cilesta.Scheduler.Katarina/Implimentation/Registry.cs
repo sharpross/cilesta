@@ -1,14 +1,22 @@
 ﻿namespace Cilesta.Scheduler.Katarina.Implimentation
 {
-    using System;
+    using Cilesta.Scheduler.Interfaces;
     using Cilesta.Scheduler.Katarina.Interfaces;
     using FluentScheduler;
 
     public class CilestaRegistry : Registry, IRegistry
     {
-        private void Execute(BaseTask task)
+        public void Execute(ITask task)
         {
-            this.Schedule(task).ToRunNow();
+            if(task is SingleTask)
+            {
+                this.Schedule(task as IJob).ToRunNow();
+            }
+
+            if (task is RegularTask)
+            {
+                this.Schedule(task as IJob).ToRunNow();
+            }
         }
 
         public void Init()

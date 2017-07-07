@@ -57,6 +57,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Cilesta.Logging\Cilesta.Logging.csproj">
+      <Project>{9C5ED0EF-01B0-47BE-918F-A10660A2F8CE}</Project>
+      <Name>Cilesta.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

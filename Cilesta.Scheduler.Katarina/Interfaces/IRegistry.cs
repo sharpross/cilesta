@@ -4,6 +4,6 @@
 
     public interface IRegistry
     {
-        void Run(ITask task);
+        void Execute(ITask task);
     }
 }

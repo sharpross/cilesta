@@ -59,6 +59,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cilesta.Logging\Cilesta.Logging.csproj">
+      <Project>{9c5ed0ef-01b0-47be-918f-a10660a2f8ce}</Project>
+      <Name>Cilesta.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cilesta.Scheduler\Cilesta.Scheduler.csproj">
       <Project>{581F16DA-450C-4A47-A133-ADAD44E7BD07}</Project>
       <Name>Cilesta.Scheduler</Name>
