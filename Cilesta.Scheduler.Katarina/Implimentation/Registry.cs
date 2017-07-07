@@ -15,7 +15,7 @@
 
             if (task is RegularTask)
             {
-                this.Schedule(task as IJob).ToRunNow();
+                this.Schedule(task as IJob)..ToRunNow();
             }
         }
 

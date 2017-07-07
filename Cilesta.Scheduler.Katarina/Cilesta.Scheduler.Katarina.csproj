@@ -51,7 +51,9 @@
   <ItemGroup>
     <Compile Include="BaseTask.cs" />
     <Compile Include="Implimentation\Registry.cs" />
+    <Compile Include="Implimentation\RegularTask.cs" />
     <Compile Include="Implimentation\Scheduler.cs" />
+    <Compile Include="Implimentation\SingleTask.cs" />
     <Compile Include="Interfaces\IRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
