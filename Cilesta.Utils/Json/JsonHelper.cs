@@ -21,7 +21,7 @@
             return JsonConvert.SerializeObject(obj);
         }
 
-        public static string Serialize(object obj, Formatting formatting)
+        public static string Serialize(object obj, Newtonsoft.Json.Formatting formatting)
         {
             return JsonConvert.SerializeObject(obj, formatting);
         }

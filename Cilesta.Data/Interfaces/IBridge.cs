@@ -1,8 +1,6 @@
 ﻿namespace Cilesta.Data.Interfaces
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq.Expressions;
     using Cilesta.Data.Models;
     using NHibernate;
 
@@ -14,6 +12,8 @@
 
         IList<T> GetAll();
 
+        IList<T> GetAll(ICriteria criteria);
+        
         void Save(T entity);
 
         void Save(IList<T> entities);

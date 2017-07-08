@@ -56,9 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IBridge.cs" />
+    <Compile Include="Interfaces\IFilterParser.cs" />
     <Compile Include="Interfaces\IMapping.cs" />
     <Compile Include="Interfaces\IMigration.cs" />
     <Compile Include="Interfaces\IMigrator.cs" />
+    <Compile Include="LogicalType.cs" />
     <Compile Include="Models\IEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

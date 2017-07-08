@@ -57,6 +57,8 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Interfaces\IDomainInterceptor.cs" />
     <Compile Include="Interfaces\IDomainService.cs" />
+    <Compile Include="Interfaces\IFilterContext.cs" />
+    <Compile Include="LogicalType.cs" />
     <Compile Include="Models\ListParams.cs" />
     <Compile Include="OperationType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -123,7 +123,27 @@
                 throw;
             }
         }
-        
+
+        public IList<T> GetAll(IFilterContext filter)
+        {
+            try
+            {
+                if (this.OnBefore(OperationType.GetAll, null))
+                {
+                    var criteria = filter.Parse(this.Bridge.Session.CreateCriteria<T>()); ;
+
+                    return this.Bridge.GetAll(criteria);
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                this.OnException(ex);
+                throw;
+            }
+        }
+
         public void Save(T entity)
         {
             try

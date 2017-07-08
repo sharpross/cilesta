@@ -5,34 +5,31 @@
     using Cilesta.Security.Katarina.Entities;
     using Cilesta.Security.Katarina.Interfaces;
     using Cilesta.Security.Models;
-    using NHibernate.Criterion;
 
     public class UserService : DomainService<User>, IUserService
     {
         public IUser GetByLoginId(string login, int id)
         {
-            var criteria = this.Bridge.Session.CreateCriteria<User>();
+            var filter = new FilterContext();
+            filter.Add("Login", Domain.LogicalType.Equals, login);
+            filter.Add("Id", Domain.LogicalType.Equals, id);
+            filter.SetMax(1);
 
-            criteria.Add(Expression.Eq("Login", login));
-            criteria.Add(Expression.Eq("Id", id));
-            criteria.SetMaxResults(1);
-            criteria.SetReadOnly(true);
-            var result = criteria.List<User>().First();
+            var result = this.GetAll(filter);
 
-            return result;
+            return result.FirstOrDefault();
         }
 
         public IUser GetByLoginPassword(string login, string password)
         {
-            var criteria = this.Bridge.Session.CreateCriteria<User>();
+            var filter = new FilterContext();
+            filter.Add("Login", Domain.LogicalType.Equals, login);
+            filter.Add("Password", Domain.LogicalType.Equals, password);
+            filter.SetMax(1);
 
-            criteria.Add(Expression.Eq("Login", login));
-            criteria.Add(Expression.Eq("Password", password));
-            criteria.SetMaxResults(1);
-            criteria.SetReadOnly(true);
-            var result = criteria.List<User>().First();
+            var result = this.GetAll(filter);
 
-            return result;
+            return result.FirstOrDefault();
         }
     }
 }

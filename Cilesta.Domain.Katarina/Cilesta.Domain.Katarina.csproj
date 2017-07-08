@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implimentation\DomainService.cs" />
+    <Compile Include="Implimentation\FilterContext.cs" />
     <Compile Include="ModuleExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

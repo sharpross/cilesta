@@ -228,10 +228,17 @@
                 }
             }
         }
-
-        public void List<T1>(Expression<Func<T1>> alias)
+        
+        public IList<T> GetAll(ICriteria criteria)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return criteria.List<T>();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

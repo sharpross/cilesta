@@ -1,20 +1,17 @@
 ﻿namespace Cilesta.Domain.Interfaces
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq.Expressions;
     using Cilesta.Data.Models;
     using Cilesta.Domain.Models;
-    using Cilesta.Logging.Interfaces;
 
     public interface IDomainService<T> where T : class, IEntity
     {
-        ILogger Log { get; }
-
         T Get(int id);
 
         IList<T> GetAll();
-        
+
+        IList<T> GetAll(IFilterContext filter);
+
         void Save(T entity);
 
         void Save(IList<T> entities);
