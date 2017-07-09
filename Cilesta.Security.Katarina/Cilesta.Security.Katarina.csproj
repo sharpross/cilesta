@@ -86,12 +86,16 @@
     <Compile Include="Implimentation\AuthService.cs" />
     <Compile Include="Implimentation\IdentityPrincipal.cs" />
     <Compile Include="Implimentation\Migration.cs" />
+    <Compile Include="Implimentation\RolePermissionService.cs" />
+    <Compile Include="Implimentation\RoleService.cs" />
+    <Compile Include="Implimentation\UserRoleService.cs" />
     <Compile Include="Implimentation\UserService.cs" />
     <Compile Include="Interfaces\IRolePermissionMapService.cs" />
     <Compile Include="Interfaces\IRoleService.cs" />
     <Compile Include="Interfaces\IUserRoleMapService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Mappings\RoleMapping.cs" />
+    <Compile Include="Mappings\RolePermissionMapping.cs" />
     <Compile Include="Mappings\UserMapping.cs" />
     <Compile Include="Mappings\UserRoleMapMapping.cs" />
     <Compile Include="Models\AnonymousUser.cs" />

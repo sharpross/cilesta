@@ -21,5 +21,11 @@
         public const string AdminLogin = "admin";
 
         public const string AdminPassword = "12345";
+
+        public const string RoleNameAdmin = "Администратор";
+
+        public const string RoleNameModerator = "Модератор";
+
+        public const string RoleNameUser = "Пользователь";
     }
 }

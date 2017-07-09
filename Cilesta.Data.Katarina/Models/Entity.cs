@@ -7,6 +7,6 @@
     {
         public virtual int Id { get; set; }
 
-        public virtual DateTimeOffset DateCreated { get; set; }
+        public virtual DateTime DateCreated { get; set; }
     }
 }

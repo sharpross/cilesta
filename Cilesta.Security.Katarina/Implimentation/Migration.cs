@@ -4,6 +4,7 @@
     using System.Linq;
     using Castle.Windsor;
     using Cilesta.Data.Interfaces;
+    using Cilesta.Domain.Katarina.Implimentation;
     using Cilesta.Security.Katarina.Entities;
     using Cilesta.Security.Katarina.Interfaces;
     using Cilesta.Utils.Common;
@@ -28,23 +29,25 @@
         {
             this.RoleNames.AddRange(new string[]{ "Администратор", "Модератор", "Пользователь" });
 
-
+            this.CreateRoles();
+            this.CreateUsers();
         }
 
         public bool Need()
         {
-            var result = false;
-
             this.InitService();
-
-            result = this.ValidateRoles();
-
-            if (result)
+            
+            if (!this.ValidateRoles())
             {
                 return true;
             }
 
-            return result;
+            if (!this.ValidateUsers())
+            {
+                return true;
+            }
+
+            return true;
         }
 
         private void InitService()
@@ -55,21 +58,42 @@
             this.UserRoleMapService = this.Container.Resolve<IUserRoleMapService>();
         }
 
-        private bool ValidateRoles()
+        private bool ValidateUsers()
         {
-            var result = false;
-            
-            foreach (var role in this.RoleNames)
+            var filter = new FilterContext();
+            filter.Add("Login", Domain.LogicalType.Equals, Constants.AdminLogin);
+
+            var exist = this.UserService.GetAll(filter).Any();
+
+            if (!exist)
             {
-                
+                return false;
             }
 
-            return result;
+            return true;
+        }
+
+        private bool ValidateRoles()
+        {
+            foreach (var role in this.RoleNames)
+            {
+                var filter = new FilterContext();
+                filter.Add("Name", Domain.LogicalType.Equals, role);
+
+                var exist = this.RoleService.GetAll(filter).Any();
+
+                if (!exist)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         private void CreateUsers()
         {
-            var password = SecurityHelper.EncryptPassword(Security.Constants.AdminPassword);
+            var password = SecurityHelper.EncryptPassword(Constants.AdminPassword);
 
             var admin = new User()
             {
@@ -79,6 +103,35 @@
             };
 
             this.UserService.Save(admin);
+
+            this.BindRole(admin);
+        }
+
+        private void BindRole(User user)
+        {
+            Role role = null;
+
+            var filter = new FilterContext();
+
+            if (user.Login == Constants.RoleNameAdmin)
+            {
+                filter.Add("Name", Domain.LogicalType.Equals, Constants.RoleNameAdmin);
+            }
+            else
+            {
+                filter.Add("Name", Domain.LogicalType.Equals, Constants.RoleNameUser);
+            }
+
+            role = this.RoleService.GetAll(filter).First();
+
+            var userRole = new UserRoleMap()
+            {
+                User = user
+            };
+
+            userRole.Roles.Add(role);
+
+            this.UserRoleMapService.Save(userRole);
         }
 
         private void CreateRoles()

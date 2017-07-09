@@ -15,6 +15,6 @@
         /// <summary>
         /// Дата создания объекта
         /// </summary>
-        DateTimeOffset DateCreated { get; set; }
+        DateTime DateCreated { get; set; }
     }
 }
