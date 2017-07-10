@@ -11,7 +11,7 @@
             Table("rolepermission");
             Id(x => x.Id);
             HasOne(x => x.Role);
-            HasManyToMany<PEr>(x => x.Permission);
+            //HasManyToMany<PEr>(x => x.Permission);
         }
     }
 }

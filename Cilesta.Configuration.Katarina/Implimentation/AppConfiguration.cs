@@ -50,11 +50,9 @@
             this.Configuration = JsonHelper.Deserialize<ConfigurationSectionCollection>(configText);
         }
 
-        public void Update(IConfigurationSection cfg)
+        public void SetParameterValue(string key, string parameter, string newValue)
         {
-            var strCfg = JsonHelper.Serialize(cfg);
-
-            this.WriteToFile(strCfg);
+            
         }
 
         private async void WriteToFile(string cfg)

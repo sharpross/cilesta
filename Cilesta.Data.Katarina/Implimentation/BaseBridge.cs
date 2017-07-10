@@ -99,7 +99,17 @@
         {
             if (!this.IsInstalled)
             {
-                new SchemaExport(config).Create(false, true);
+                var validator = new SchemaValidator(config);
+
+                try
+                {
+                    validator.Validate();
+                }
+                catch(Exception ex)
+                {
+                    var updater = new SchemaUpdate(config);
+                    updater.Execute(false, true);
+                }
             }
         }
 

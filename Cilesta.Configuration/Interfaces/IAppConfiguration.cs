@@ -6,6 +6,6 @@
     {
         IConfigurationSection this[string key] { get; }
 
-        void Update(IConfigurationSection cfg);
+        void SetParameterValue(string key, string parameter, string newValue);
     }
 }
