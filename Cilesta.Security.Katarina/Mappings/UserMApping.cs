@@ -12,15 +12,12 @@
             Id(x => x.Id);
             Map(x => x.DateCreated);
             Map(x => x.Login)
-                .ReadOnly()
                 .Unique()
                 .Not.Nullable();
             Map(x => x.Password)
-                .Not
-                .Nullable();
+                .Not.Nullable();
             Map(x => x.Email)
                 .Unique()
-                .ReadOnly()
                 .Not.Nullable();
         }
     }

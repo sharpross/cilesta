@@ -1,0 +1,115 @@
+﻿2017-07-09 01:47:43,447  NOTICE: App started!
+2017-07-09 01:47:43,625  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-09 01:47:43,625  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-09 01:47:43,626  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-09 01:47:43,626  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-09 01:47:43,629  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-09 01:47:43,629  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-09 01:47:43,641  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-09 01:47:43,642  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-09 01:47:43,642  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-09 01:47:43,643  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-09 01:47:43,647  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-09 01:47:43,647  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-09 07:06:34,537  NOTICE: App started!
+2017-07-09 07:06:34,754  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-09 07:06:34,754  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-09 07:06:34,755  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-09 07:06:34,755  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-09 07:06:34,758  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-09 07:06:34,758  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-09 07:06:34,771  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-09 07:06:34,771  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-09 07:06:34,772  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-09 07:06:34,772  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-09 07:06:34,779  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-09 07:06:34,779  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-09 07:06:44,294  ERROR: An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.
+
+
+FluentNHibernate.Cfg.FluentConfigurationException: An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.
+
+ ---> FluentNHibernate.Cfg.FluentConfigurationException: An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.
+
+ ---> System.ArgumentException: Dialect does not support DbType.DateTimeOffset
+Имя параметра: typecode
+   в NHibernate.Dialect.TypeNames.Get(DbType typecode)
+   в NHibernate.Dialect.Dialect.GetTypeName(SqlType sqlType)
+   в NHibernate.Mapping.Column.GetDialectTypeName(Dialect dialect, IMapping mapping)
+   в NHibernate.Mapping.Table.SqlCreateString(Dialect dialect, IMapping p, String defaultCatalog, String defaultSchema)
+   в NHibernate.Cfg.Configuration.GenerateSchemaCreationScript(Dialect dialect)
+   в NHibernate.Tool.hbm2ddl.SchemaExport.Initialize()
+   в NHibernate.Tool.hbm2ddl.SchemaExport.Execute(Action`1 scriptAction, Boolean execute, Boolean justDrop, TextWriter exportOutput)
+   в NHibernate.Tool.hbm2ddl.SchemaExport.Execute(Boolean useStdOut, Boolean execute, Boolean justDrop)
+   в NHibernate.Tool.hbm2ddl.SchemaExport.Create(Boolean useStdOut, Boolean execute)
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.BuildSchema(Configuration config) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 102
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildConfiguration()
+   --- Конец трассировки внутреннего стека исключений ---
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildConfiguration()
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildSessionFactory()
+   --- Конец трассировки внутреннего стека исключений ---
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildSessionFactory()
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.GetSession() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 81
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.get_Session() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 46
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.GetAll(IFilterContext filter) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 133
+
+
+2017-07-09 07:07:18,191  ERROR: An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.
+
+
+FluentNHibernate.Cfg.FluentConfigurationException: An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.
+
+ ---> FluentNHibernate.Cfg.FluentConfigurationException: An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.
+
+ ---> System.ArgumentException: Dialect does not support DbType.DateTimeOffset
+Имя параметра: typecode
+   в NHibernate.Dialect.TypeNames.Get(DbType typecode)
+   в NHibernate.Dialect.Dialect.GetTypeName(SqlType sqlType)
+   в NHibernate.Mapping.Column.GetDialectTypeName(Dialect dialect, IMapping mapping)
+   в NHibernate.Mapping.Table.SqlCreateString(Dialect dialect, IMapping p, String defaultCatalog, String defaultSchema)
+   в NHibernate.Cfg.Configuration.GenerateSchemaCreationScript(Dialect dialect)
+   в NHibernate.Tool.hbm2ddl.SchemaExport.Initialize()
+   в NHibernate.Tool.hbm2ddl.SchemaExport.Execute(Action`1 scriptAction, Boolean execute, Boolean justDrop, TextWriter exportOutput)
+   в NHibernate.Tool.hbm2ddl.SchemaExport.Execute(Boolean useStdOut, Boolean execute, Boolean justDrop)
+   в NHibernate.Tool.hbm2ddl.SchemaExport.Create(Boolean useStdOut, Boolean execute)
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.BuildSchema(Configuration config) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 102
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildConfiguration()
+   --- Конец трассировки внутреннего стека исключений ---
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildConfiguration()
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildSessionFactory()
+   --- Конец трассировки внутреннего стека исключений ---
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildSessionFactory()
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.GetSession() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 81
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.get_Session() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 46
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.GetAll(IFilterContext filter) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 143
+   в Cilesta.Security.Katarina.Implimentation.Migration.ValidateUsers() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 66
+   в Cilesta.Security.Katarina.Implimentation.Migration.Need() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 45
+   в Cilesta.Data.Katarina.Implimentation.Migrator.InitMigrations() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\Migrator.cs:строка 20
+   в Cilesta.Web.Katarina.WebApplication.Application_Start() в D:\GitHub\cilesta\Cilesta.Web.Katarina\WebApplication.cs:строка 49
+
+
+2017-07-09 07:08:25,137  NOTICE: App started!
+2017-07-09 07:08:25,299  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-09 07:08:25,299  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-09 07:08:25,300  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-09 07:08:25,300  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-09 07:08:25,303  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-09 07:08:25,303  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-09 07:08:25,314  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-09 07:08:25,314  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-09 07:08:25,314  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-09 07:08:25,314  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-09 07:08:25,322  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-09 07:08:25,323  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-09 07:08:27,289  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-09 07:08:27,445  ERROR: No persister for: Cilesta.Security.Katarina.Entities.Role
+NHibernate.MappingException: No persister for: Cilesta.Security.Katarina.Entities.Role
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 205
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 153
+2017-07-09 07:08:27,459  ERROR: No persister for: Cilesta.Security.Katarina.Entities.Role
+NHibernate.MappingException: No persister for: Cilesta.Security.Katarina.Entities.Role
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 205
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 159
+   в Cilesta.Security.Katarina.Implimentation.Migration.CreateRoles() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 147
+   в Cilesta.Security.Katarina.Implimentation.Migration.Migrate() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 32
+   в Cilesta.Data.Katarina.Implimentation.Migrator.InitMigrations() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\Migrator.cs:строка 26

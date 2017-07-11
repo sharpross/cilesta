@@ -9,5 +9,10 @@
         public virtual User User { get; set; }
 
         public virtual IList<Role> Roles { get; set; }
+
+        public UserRole()
+        {
+            this.Roles = new List<Role>();
+        }
     }
 }

@@ -1,0 +1,837 @@
+﻿2017-07-11 20:20:24,802  NOTICE: App started!
+2017-07-11 20:20:25,030  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 20:20:25,030  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 20:20:25,030  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 20:20:25,031  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 20:20:25,034  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 20:20:25,034  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 20:20:25,046  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 20:20:25,046  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 20:20:25,047  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 20:20:25,047  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 20:20:25,058  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 20:20:25,058  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 20:20:43,766  ERROR: An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.
+
+
+FluentNHibernate.Cfg.FluentConfigurationException: An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.
+
+ ---> FluentNHibernate.Cfg.FluentConfigurationException: An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.
+
+ ---> NHibernate.HibernateException: Missing table: users
+   в NHibernate.Cfg.Configuration.ValidateSchema(Dialect dialect, DatabaseMetadata databaseMetadata)
+   в NHibernate.Tool.hbm2ddl.SchemaValidator.Validate()
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.BuildSchema(Configuration config) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 113
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildConfiguration()
+   --- Конец трассировки внутреннего стека исключений ---
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildConfiguration()
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildSessionFactory()
+   --- Конец трассировки внутреннего стека исключений ---
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildSessionFactory()
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.GetSession() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 81
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.get_Session() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 46
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.GetAll(IFilterContext filter) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 133
+
+
+2017-07-11 20:20:44,945  ERROR: An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.
+
+
+FluentNHibernate.Cfg.FluentConfigurationException: An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.
+
+ ---> FluentNHibernate.Cfg.FluentConfigurationException: An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.
+
+ ---> NHibernate.HibernateException: Missing table: users
+   в NHibernate.Cfg.Configuration.ValidateSchema(Dialect dialect, DatabaseMetadata databaseMetadata)
+   в NHibernate.Tool.hbm2ddl.SchemaValidator.Validate()
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.BuildSchema(Configuration config) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 113
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildConfiguration()
+   --- Конец трассировки внутреннего стека исключений ---
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildConfiguration()
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildSessionFactory()
+   --- Конец трассировки внутреннего стека исключений ---
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildSessionFactory()
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.GetSession() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 81
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.get_Session() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 46
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.GetAll(IFilterContext filter) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 143
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.ValidateUsers() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 66
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.Need() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 45
+   в Cilesta.Data.Katarina.Implimentation.Migrator.InitMigrations() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\Migrator.cs:строка 20
+   в Cilesta.Web.Katarina.WebApplication.Application_Start() в D:\GitHub\cilesta\Cilesta.Web.Katarina\WebApplication.cs:строка 49
+
+
+2017-07-11 20:22:43,412  NOTICE: App started!
+2017-07-11 20:22:43,597  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 20:22:43,598  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 20:22:43,599  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 20:22:43,599  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 20:22:43,603  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 20:22:43,604  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 20:22:43,614  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 20:22:43,615  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 20:22:43,616  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 20:22:43,616  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 20:22:43,625  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 20:22:43,626  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 20:22:45,655  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-11 20:22:46,051  ERROR: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Password) VALUES (nextval ('hibernate_sequence'), ?, ?) returning Id]
+NHibernate.Exceptions.GenericADOException: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Password) VALUES (nextval ('hibernate_sequence'), ?, ?) returning Id] ---> Npgsql.PostgresException: 23502: нулевое значение в колонке "login" нарушает ограничение NOT NULL
+   в Npgsql.NpgsqlConnector.<DoReadMessage>d__148.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlDataReader.<NextResult>d__32.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlDataReader.NextResult()
+   в Npgsql.NpgsqlCommand.<Execute>d__71.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__84.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   в NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   в NHibernate.Id.Insert.OutputParamReturningDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session)
+   в NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   --- Конец трассировки внутреннего стека исключений ---
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 153
+2017-07-11 20:22:46,067  ERROR: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Password) VALUES (nextval ('hibernate_sequence'), ?, ?) returning Id]
+NHibernate.Exceptions.GenericADOException: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Password) VALUES (nextval ('hibernate_sequence'), ?, ?) returning Id] ---> Npgsql.PostgresException: 23502: нулевое значение в колонке "login" нарушает ограничение NOT NULL
+   в Npgsql.NpgsqlConnector.<DoReadMessage>d__148.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlDataReader.<NextResult>d__32.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlDataReader.NextResult()
+   в Npgsql.NpgsqlCommand.<Execute>d__71.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__84.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   в NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   в NHibernate.Id.Insert.OutputParamReturningDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session)
+   в NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   --- Конец трассировки внутреннего стека исключений ---
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 159
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.CreateUsers() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 105
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.Migrate() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 33
+   в Cilesta.Data.Katarina.Implimentation.Migrator.InitMigrations() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\Migrator.cs:строка 26
+2017-07-11 20:28:44,237  NOTICE: App started!
+2017-07-11 20:28:44,975  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 20:28:44,975  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 20:28:44,976  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 20:28:44,976  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 20:28:44,979  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 20:28:44,979  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 20:28:44,990  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 20:28:44,991  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 20:28:44,991  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 20:28:44,991  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 20:28:45,000  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 20:28:45,000  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 20:28:46,830  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-11 20:28:53,002  ERROR: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Password) VALUES (nextval ('hibernate_sequence'), ?, ?) returning Id]
+NHibernate.Exceptions.GenericADOException: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Password) VALUES (nextval ('hibernate_sequence'), ?, ?) returning Id] ---> Npgsql.PostgresException: 23502: нулевое значение в колонке "login" нарушает ограничение NOT NULL
+   в Npgsql.NpgsqlConnector.<DoReadMessage>d__148.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlDataReader.<NextResult>d__32.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlDataReader.NextResult()
+   в Npgsql.NpgsqlCommand.<Execute>d__71.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__84.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   в NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   в NHibernate.Id.Insert.OutputParamReturningDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session)
+   в NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   --- Конец трассировки внутреннего стека исключений ---
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 153
+2017-07-11 20:29:00,057  ERROR: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Password) VALUES (nextval ('hibernate_sequence'), ?, ?) returning Id]
+NHibernate.Exceptions.GenericADOException: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Password) VALUES (nextval ('hibernate_sequence'), ?, ?) returning Id] ---> Npgsql.PostgresException: 23502: нулевое значение в колонке "login" нарушает ограничение NOT NULL
+   в Npgsql.NpgsqlConnector.<DoReadMessage>d__148.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlDataReader.<NextResult>d__32.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlDataReader.NextResult()
+   в Npgsql.NpgsqlCommand.<Execute>d__71.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__84.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   в NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   в NHibernate.Id.Insert.OutputParamReturningDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session)
+   в NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   --- Конец трассировки внутреннего стека исключений ---
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 159
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.CreateUsers() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 105
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.Migrate() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 33
+   в Cilesta.Data.Katarina.Implimentation.Migrator.InitMigrations() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\Migrator.cs:строка 26
+2017-07-11 20:29:14,416  NOTICE: App started!
+2017-07-11 20:29:15,137  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 20:29:15,138  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 20:29:15,138  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 20:29:15,139  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 20:29:15,142  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 20:29:15,142  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 20:29:15,153  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 20:29:15,153  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 20:29:15,154  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 20:29:15,154  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 20:29:15,165  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 20:29:15,165  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 20:29:17,015  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-11 20:31:57,474  NOTICE: App started!
+2017-07-11 20:31:57,725  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 20:31:57,726  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 20:31:57,726  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 20:31:57,727  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 20:31:57,730  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 20:31:57,730  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 20:31:57,744  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 20:31:57,744  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 20:31:57,745  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 20:31:57,745  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 20:31:57,758  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 20:31:57,759  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 20:31:59,731  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-11 20:32:06,250  ERROR: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Password) VALUES (nextval ('hibernate_sequence'), ?, ?) returning Id]
+NHibernate.Exceptions.GenericADOException: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Password) VALUES (nextval ('hibernate_sequence'), ?, ?) returning Id] ---> Npgsql.PostgresException: 23502: нулевое значение в колонке "login" нарушает ограничение NOT NULL
+   в Npgsql.NpgsqlConnector.<DoReadMessage>d__148.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlDataReader.<NextResult>d__32.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlDataReader.NextResult()
+   в Npgsql.NpgsqlCommand.<Execute>d__71.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__84.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   в NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   в NHibernate.Id.Insert.OutputParamReturningDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session)
+   в NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   --- Конец трассировки внутреннего стека исключений ---
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 153
+2017-07-11 20:32:06,264  ERROR: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Password) VALUES (nextval ('hibernate_sequence'), ?, ?) returning Id]
+NHibernate.Exceptions.GenericADOException: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Password) VALUES (nextval ('hibernate_sequence'), ?, ?) returning Id] ---> Npgsql.PostgresException: 23502: нулевое значение в колонке "login" нарушает ограничение NOT NULL
+   в Npgsql.NpgsqlConnector.<DoReadMessage>d__148.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlDataReader.<NextResult>d__32.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlDataReader.NextResult()
+   в Npgsql.NpgsqlCommand.<Execute>d__71.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__84.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   в NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   в NHibernate.Id.Insert.OutputParamReturningDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session)
+   в NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   --- Конец трассировки внутреннего стека исключений ---
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 159
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.CreateUsers() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 105
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.Migrate() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 33
+   в Cilesta.Data.Katarina.Implimentation.Migrator.InitMigrations() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\Migrator.cs:строка 26
+2017-07-11 20:34:06,934  NOTICE: App started!
+2017-07-11 20:34:07,105  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 20:34:07,105  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 20:34:07,106  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 20:34:07,106  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 20:34:07,109  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 20:34:07,109  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 20:34:07,125  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 20:34:07,125  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 20:34:07,126  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 20:34:07,126  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 20:34:07,136  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 20:34:07,137  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 20:34:08,991  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-11 20:34:12,461  ERROR: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Login, Password) VALUES (nextval ('hibernate_sequence'), ?, ?, ?) returning Id]
+NHibernate.Exceptions.GenericADOException: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Login, Password) VALUES (nextval ('hibernate_sequence'), ?, ?, ?) returning Id] ---> Npgsql.PostgresException: 23502: нулевое значение в колонке "email" нарушает ограничение NOT NULL
+   в Npgsql.NpgsqlConnector.<DoReadMessage>d__148.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlDataReader.<NextResult>d__32.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlDataReader.NextResult()
+   в Npgsql.NpgsqlCommand.<Execute>d__71.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__84.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   в NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   в NHibernate.Id.Insert.OutputParamReturningDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session)
+   в NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   --- Конец трассировки внутреннего стека исключений ---
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 153
+2017-07-11 20:34:12,476  ERROR: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Login, Password) VALUES (nextval ('hibernate_sequence'), ?, ?, ?) returning Id]
+NHibernate.Exceptions.GenericADOException: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Login, Password) VALUES (nextval ('hibernate_sequence'), ?, ?, ?) returning Id] ---> Npgsql.PostgresException: 23502: нулевое значение в колонке "email" нарушает ограничение NOT NULL
+   в Npgsql.NpgsqlConnector.<DoReadMessage>d__148.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlDataReader.<NextResult>d__32.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlDataReader.NextResult()
+   в Npgsql.NpgsqlCommand.<Execute>d__71.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__84.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   в NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   в NHibernate.Id.Insert.OutputParamReturningDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session)
+   в NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   --- Конец трассировки внутреннего стека исключений ---
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 159
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.CreateUsers() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 105
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.Migrate() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 33
+   в Cilesta.Data.Katarina.Implimentation.Migrator.InitMigrations() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\Migrator.cs:строка 26
+2017-07-11 20:36:09,800  NOTICE: App started!
+2017-07-11 20:36:09,990  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 20:36:09,991  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 20:36:09,991  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 20:36:09,992  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 20:36:09,997  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 20:36:09,997  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 20:36:10,016  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 20:36:10,017  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 20:36:10,017  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 20:36:10,018  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 20:36:10,028  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 20:36:10,028  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 20:36:12,303  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-11 20:36:12,706  ERROR: Ссылка на объект не указывает на экземпляр объекта.
+System.NullReferenceException: Ссылка на объект не указывает на экземпляр объекта.
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.BindRole(User user) в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 132
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.CreateUsers() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 107
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.Migrate() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 33
+   в Cilesta.Data.Katarina.Implimentation.Migrator.InitMigrations() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\Migrator.cs:строка 26
+2017-07-11 20:37:15,416  NOTICE: App started!
+2017-07-11 20:37:16,104  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 20:37:16,104  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 20:37:16,105  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 20:37:16,105  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 20:37:16,109  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 20:37:16,109  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 20:37:16,120  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 20:37:16,120  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 20:37:16,120  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 20:37:16,120  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 20:37:16,130  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 20:37:16,130  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 20:37:17,984  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-11 20:37:18,250  ERROR: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Login, Password, Email) VALUES (nextval ('hibernate_sequence'), ?, ?, ?, ?) returning Id]
+NHibernate.Exceptions.GenericADOException: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Login, Password, Email) VALUES (nextval ('hibernate_sequence'), ?, ?, ?, ?) returning Id] ---> Npgsql.PostgresException: 23505: повторяющееся значение ключа нарушает ограничение уникальности "users_login_key"
+   в Npgsql.NpgsqlConnector.<DoReadMessage>d__148.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlDataReader.<NextResult>d__32.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlDataReader.NextResult()
+   в Npgsql.NpgsqlCommand.<Execute>d__71.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__84.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   в NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   в NHibernate.Id.Insert.OutputParamReturningDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session)
+   в NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   --- Конец трассировки внутреннего стека исключений ---
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 153
+2017-07-11 20:37:18,266  ERROR: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Login, Password, Email) VALUES (nextval ('hibernate_sequence'), ?, ?, ?, ?) returning Id]
+NHibernate.Exceptions.GenericADOException: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Login, Password, Email) VALUES (nextval ('hibernate_sequence'), ?, ?, ?, ?) returning Id] ---> Npgsql.PostgresException: 23505: повторяющееся значение ключа нарушает ограничение уникальности "users_login_key"
+   в Npgsql.NpgsqlConnector.<DoReadMessage>d__148.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlDataReader.<NextResult>d__32.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlDataReader.NextResult()
+   в Npgsql.NpgsqlCommand.<Execute>d__71.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__84.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   в NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   в NHibernate.Id.Insert.OutputParamReturningDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session)
+   в NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   --- Конец трассировки внутреннего стека исключений ---
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 159
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.CreateUsers() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 105
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.Migrate() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 33
+   в Cilesta.Data.Katarina.Implimentation.Migrator.InitMigrations() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\Migrator.cs:строка 26
+2017-07-11 20:37:42,970  NOTICE: App started!
+2017-07-11 20:37:43,701  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 20:37:43,701  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 20:37:43,702  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 20:37:43,702  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 20:37:43,705  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 20:37:43,705  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 20:37:43,717  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 20:37:43,717  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 20:37:43,718  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 20:37:43,718  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 20:37:43,727  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 20:37:43,728  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 20:37:45,612  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-11 20:37:45,868  ERROR: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Login, Password, Email) VALUES (nextval ('hibernate_sequence'), ?, ?, ?, ?) returning Id]
+NHibernate.Exceptions.GenericADOException: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Login, Password, Email) VALUES (nextval ('hibernate_sequence'), ?, ?, ?, ?) returning Id] ---> Npgsql.PostgresException: 23505: повторяющееся значение ключа нарушает ограничение уникальности "users_login_key"
+   в Npgsql.NpgsqlConnector.<DoReadMessage>d__148.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlDataReader.<NextResult>d__32.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlDataReader.NextResult()
+   в Npgsql.NpgsqlCommand.<Execute>d__71.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__84.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   в NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   в NHibernate.Id.Insert.OutputParamReturningDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session)
+   в NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   --- Конец трассировки внутреннего стека исключений ---
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 153
+2017-07-11 20:37:45,882  ERROR: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Login, Password, Email) VALUES (nextval ('hibernate_sequence'), ?, ?, ?, ?) returning Id]
+NHibernate.Exceptions.GenericADOException: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Login, Password, Email) VALUES (nextval ('hibernate_sequence'), ?, ?, ?, ?) returning Id] ---> Npgsql.PostgresException: 23505: повторяющееся значение ключа нарушает ограничение уникальности "users_login_key"
+   в Npgsql.NpgsqlConnector.<DoReadMessage>d__148.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlDataReader.<NextResult>d__32.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlDataReader.NextResult()
+   в Npgsql.NpgsqlCommand.<Execute>d__71.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__84.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   в NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   в NHibernate.Id.Insert.OutputParamReturningDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session)
+   в NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   --- Конец трассировки внутреннего стека исключений ---
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 159
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.CreateUsers() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 105
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.Migrate() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 33
+   в Cilesta.Data.Katarina.Implimentation.Migrator.InitMigrations() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\Migrator.cs:строка 26
+2017-07-11 21:11:01,663  NOTICE: App started!
+2017-07-11 21:11:01,798  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 21:11:01,799  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 21:11:01,799  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 21:11:01,799  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 21:11:01,803  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 21:11:01,803  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 21:11:01,814  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 21:11:01,814  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 21:11:01,815  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 21:11:01,815  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 21:11:01,826  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 21:11:01,827  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 21:11:03,661  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-11 21:14:38,564  NOTICE: App started!
+2017-07-11 21:14:38,699  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 21:14:38,700  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 21:14:38,700  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 21:14:38,700  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 21:14:38,703  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 21:14:38,704  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 21:14:38,714  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 21:14:38,715  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 21:14:38,715  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 21:14:38,715  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 21:14:38,725  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 21:14:38,726  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 21:14:40,456  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-11 21:17:09,128  NOTICE: App started!
+2017-07-11 21:17:09,274  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 21:17:09,274  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 21:17:09,275  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 21:17:09,275  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 21:17:09,278  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 21:17:09,279  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 21:17:09,292  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 21:17:09,293  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 21:17:09,293  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 21:17:09,293  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 21:17:09,304  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 21:17:09,304  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 21:17:11,007  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-11 21:27:11,081  NOTICE: App started!
+2017-07-11 21:27:11,330  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 21:27:11,331  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 21:27:11,331  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 21:27:11,331  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 21:27:11,335  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 21:27:11,335  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 21:27:11,351  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 21:27:11,351  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 21:27:11,352  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 21:27:11,352  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 21:27:11,364  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 21:27:11,364  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 21:27:13,831  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-11 21:44:07,898  NOTICE: App started!
+2017-07-11 21:44:08,096  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 21:44:08,097  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 21:44:08,097  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 21:44:08,097  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 21:44:08,100  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 21:44:08,101  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 21:44:08,114  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 21:44:08,114  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 21:44:08,114  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 21:44:08,115  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 21:44:08,124  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 21:44:08,124  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 21:44:10,101  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-11 22:08:37,438  NOTICE: App started!
+2017-07-11 22:08:37,665  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 22:08:37,666  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 22:08:37,666  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 22:08:37,667  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 22:08:37,669  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 22:08:37,670  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 22:08:37,682  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 22:08:37,682  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 22:08:37,683  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 22:08:37,683  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 22:08:37,693  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 22:08:37,694  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 22:08:39,812  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-11 22:08:40,819  ERROR: Не удалось привести тип объекта "Cilesta.Security.Katarina.Entities.User" к типу "Cilesta.Security.Katarina.Entities.Role".
+System.InvalidCastException: Не удалось привести тип объекта "Cilesta.Security.Katarina.Entities.User" к типу "Cilesta.Security.Katarina.Entities.Role".
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 153
+2017-07-11 22:08:40,843  ERROR: Не удалось привести тип объекта "Cilesta.Security.Katarina.Entities.User" к типу "Cilesta.Security.Katarina.Entities.Role".
+System.InvalidCastException: Не удалось привести тип объекта "Cilesta.Security.Katarina.Entities.User" к типу "Cilesta.Security.Katarina.Entities.Role".
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 159
+   в Cilesta.Security.Katarina.Implimentation.UserManager.AddUser(User user, String roleName) в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\UserManager.cs:строка 46
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.CreateUsers() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 108
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.Migrate() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 35
+   в Cilesta.Data.Katarina.Implimentation.Migrator.InitMigrations() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\Migrator.cs:строка 26
+2017-07-11 22:13:01,464  NOTICE: App started!
+2017-07-11 22:13:02,179  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 22:13:02,180  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 22:13:02,181  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 22:13:02,181  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 22:13:02,184  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 22:13:02,184  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 22:13:02,194  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 22:13:02,195  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 22:13:02,195  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 22:13:02,196  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 22:13:02,205  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 22:13:02,205  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 22:13:04,119  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-11 22:13:19,061  ERROR: Не удалось привести тип объекта "Cilesta.Security.Katarina.Entities.User" к типу "Cilesta.Security.Katarina.Entities.Role".
+System.InvalidCastException: Не удалось привести тип объекта "Cilesta.Security.Katarina.Entities.User" к типу "Cilesta.Security.Katarina.Entities.Role".
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 153
+2017-07-11 22:14:46,322  NOTICE: App started!
+2017-07-11 22:14:46,508  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 22:14:46,509  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 22:14:46,509  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 22:14:46,509  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 22:14:46,512  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 22:14:46,513  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 22:14:46,525  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 22:14:46,525  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 22:14:46,525  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 22:14:46,526  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 22:14:46,536  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 22:14:46,536  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 22:14:48,632  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-11 22:14:59,158  ERROR: Не удалось привести тип объекта "Cilesta.Security.Katarina.Entities.User" к типу "Cilesta.Security.Katarina.Entities.Role".
+System.InvalidCastException: Не удалось привести тип объекта "Cilesta.Security.Katarina.Entities.User" к типу "Cilesta.Security.Katarina.Entities.Role".
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 153
+2017-07-11 22:17:01,007  NOTICE: App started!
+2017-07-11 22:17:01,269  NOTICE: Init module: Cilesta.Configuration.Katarina(Validate)
+2017-07-11 22:17:01,269  NOTICE: Init module: Cilesta.Configuration.Katarina(InitComponents)
+2017-07-11 22:17:01,270  NOTICE: Init module: Cilesta.Data.Katarina(Validate)
+2017-07-11 22:17:01,270  NOTICE: Init module: Cilesta.Data.Katarina(InitComponents)
+2017-07-11 22:17:01,273  NOTICE: Init module: Cilesta.App_Start(Validate)
+2017-07-11 22:17:01,273  NOTICE: Init module: Cilesta.App_Start(InitComponents)
+2017-07-11 22:17:01,288  NOTICE: Init module: Cilesta.Logging.Katarina(Validate)
+2017-07-11 22:17:01,289  NOTICE: Init module: Cilesta.Logging.Katarina(InitComponents)
+2017-07-11 22:17:01,290  NOTICE: Init module: Cilesta.Security.Katarina(Validate)
+2017-07-11 22:17:01,290  NOTICE: Init module: Cilesta.Security.Katarina(InitComponents)
+2017-07-11 22:17:01,300  NOTICE: Init module: Cilesta.Web.Katarina(Validate)
+2017-07-11 22:17:01,300  NOTICE: Init module: Cilesta.Web.Katarina(InitComponents)
+2017-07-11 22:17:03,480  NOTICE: Start migration: Миграция пользователей и ролей
+2017-07-11 22:17:04,224  ERROR: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Login, Password, Email) VALUES (nextval ('hibernate_sequence'), ?, ?, ?, ?) returning Id]
+NHibernate.Exceptions.GenericADOException: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Login, Password, Email) VALUES (nextval ('hibernate_sequence'), ?, ?, ?, ?) returning Id] ---> Npgsql.PostgresException: 23505: повторяющееся значение ключа нарушает ограничение уникальности "users_login_key"
+   в Npgsql.NpgsqlConnector.<DoReadMessage>d__148.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlDataReader.<NextResult>d__32.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlDataReader.NextResult()
+   в Npgsql.NpgsqlCommand.<Execute>d__71.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__84.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   в NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   в NHibernate.Id.Insert.OutputParamReturningDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session)
+   в NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   --- Конец трассировки внутреннего стека исключений ---
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 153
+2017-07-11 22:17:04,246  ERROR: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Login, Password, Email) VALUES (nextval ('hibernate_sequence'), ?, ?, ?, ?) returning Id]
+NHibernate.Exceptions.GenericADOException: could not insert: [Cilesta.Security.Katarina.Entities.User][SQL: INSERT INTO users (Id, DateCreated, Login, Password, Email) VALUES (nextval ('hibernate_sequence'), ?, ?, ?, ?) returning Id] ---> Npgsql.PostgresException: 23505: повторяющееся значение ключа нарушает ограничение уникальности "users_login_key"
+   в Npgsql.NpgsqlConnector.<DoReadMessage>d__148.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в Npgsql.NpgsqlConnector.<ReadMessage>d__147.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlDataReader.<NextResult>d__32.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlDataReader.NextResult()
+   в Npgsql.NpgsqlCommand.<Execute>d__71.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в System.Runtime.CompilerServices.ValueTaskAwaiter`1.GetResult()
+   в Npgsql.NpgsqlCommand.<ExecuteNonQuery>d__84.MoveNext()
+--- Конец трассировка стека из предыдущего расположения, где возникло исключение ---
+   в System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   в System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   в Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   в NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   в NHibernate.Id.Insert.OutputParamReturningDelegate.ExecuteAndExtract(IDbCommand insert, ISessionImplementor session)
+   в NHibernate.Id.Insert.AbstractReturningDelegate.PerformInsert(SqlCommandInfo insertSQL, ISessionImplementor session, IBinder binder)
+   --- Конец трассировки внутреннего стека исключений ---
+   в Cilesta.Data.Katarina.Implimentation.BaseBridge`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\BaseBridge.cs:строка 222
+   в Cilesta.Domain.Katarina.Implimentation.DomainService`1.Save(T entity) в D:\GitHub\cilesta\Cilesta.Domain.Katarina\Implimentation\DomainService.cs:строка 159
+   в Cilesta.Security.Katarina.Implimentation.UserManager.AddUser(User user, String roleName) в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\UserManager.cs:строка 42
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.CreateUsers() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 108
+   в Cilesta.Security.Katarina.Implimentation.UserMigration.Migrate() в D:\GitHub\cilesta\Cilesta.Security.Katarina\Implimentation\Migration.cs:строка 35
+   в Cilesta.Data.Katarina.Implimentation.Migrator.InitMigrations() в D:\GitHub\cilesta\Cilesta.Data.Katarina\Implimentation\Migrator.cs:строка 26

@@ -25,6 +25,8 @@
             container.RegisterDomainService<RolePermission>();
             container.RegisterDomainService<PermissionKey>();
 
+            container.Register(Component.For<IUserManager>().ImplementedBy<UserManager>().LifeStyle.Transient);
+
             container.Register(Component.For<IAuthService>().ImplementedBy<AuthService>().LifeStyle.Transient);
 
             container.Register(Component.For<IUserService>().ImplementedBy<UserService>().LifeStyle.Transient);
@@ -39,7 +41,7 @@
             container.Register(Component.For<IMapping>().ImplementedBy<RolePermissionMapping>().LifeStyle.Transient);
             container.Register(Component.For<IMapping>().ImplementedBy<PermissionKeyMapping>().LifeStyle.Transient);
 
-            container.Register(Component.For<IMigration>().ImplementedBy<Migration>().LifeStyle.Transient);
+            container.Register(Component.For<IMigration>().ImplementedBy<UserMigration>().LifeStyle.Transient);
         }
 
         public void Validate()

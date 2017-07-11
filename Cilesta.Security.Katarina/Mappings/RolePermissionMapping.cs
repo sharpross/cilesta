@@ -11,8 +11,8 @@
             Table("rolepermission");
             Id(x => x.Id);
             Map(x => x.DateCreated);
-            HasOne(x => x.Role);
-            HasOne(x => x.Permission);
+            References<Role>(x => x.Role);
+            References<PermissionKey>(x => x.Permission);
             Map(x => x.Access);
         }
     }

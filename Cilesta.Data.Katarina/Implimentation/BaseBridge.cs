@@ -105,10 +105,17 @@
                 {
                     validator.Validate();
                 }
-                catch(Exception ex)
+                catch
                 {
-                    var updater = new SchemaUpdate(config);
-                    updater.Execute(false, true);
+                    try
+                    {
+                        var updater = new SchemaUpdate(config);
+                        updater.Execute(false, true);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
                 }
             }
         }

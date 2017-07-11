@@ -8,5 +8,10 @@
         public virtual int Id { get; set; }
 
         public virtual DateTime DateCreated { get; set; }
+
+        public Entity()
+        {
+            DateCreated = DateTime.Now;
+        }
     }
 }

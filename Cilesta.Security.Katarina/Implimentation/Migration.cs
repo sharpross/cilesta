@@ -9,7 +9,7 @@
     using Cilesta.Security.Katarina.Interfaces;
     using Cilesta.Utils.Common;
 
-    public class Migration : IMigration
+    public class UserMigration : IMigration
     {
         public IWindsorContainer Container { get; set; }
 
@@ -20,6 +20,8 @@
         public IRolePermissionService RolePermissionMapService { get; set; }
 
         public IUserRoleService UserRoleMapService { get; set; }
+
+        private IUserManager UserManager { get; set; }
 
         public string Code => "Миграция пользователей и ролей";
 
@@ -56,6 +58,7 @@
             this.UserService = this.Container.Resolve<IUserService>();
             this.RolePermissionMapService = this.Container.Resolve<IRolePermissionService>();
             this.UserRoleMapService = this.Container.Resolve<IUserRoleService>();
+            this.UserManager = this.Container.Resolve<IUserManager>();
         }
 
         private bool ValidateUsers()
@@ -102,38 +105,9 @@
                 Password = password
             };
 
-            this.UserService.Save(admin);
-
-            this.BindRole(admin);
+            this.UserManager.AddUser(admin, Constants.RoleNameAdmin);
         }
-
-        private void BindRole(User user)
-        {
-            Role role = null;
-
-            var filter = new FilterContext();
-
-            if (user.Login == Constants.RoleNameAdmin)
-            {
-                filter.Add("Name", Domain.LogicalType.Equals, Constants.RoleNameAdmin);
-            }
-            else
-            {
-                filter.Add("Name", Domain.LogicalType.Equals, Constants.RoleNameUser);
-            }
-
-            role = this.RoleService.GetAll(filter).First();
-
-            var userRole = new UserRole()
-            {
-                User = user
-            };
-
-            userRole.Roles.Add(role);
-
-            this.UserRoleMapService.Save(userRole);
-        }
-
+        
         private void CreateRoles()
         {
             var existRoles = this.RoleService.GetAll();
