@@ -4,7 +4,7 @@
     using Cilesta.Security.Katarina.Entities;
     using Cilesta.Security.Katarina.Interfaces;
 
-    public class PermissionService : DomainService<PermissionKey>, IPermissionService
+    public class UserRoleService : DomainService<UserRole>, IUserRoleService
     {
     }
 }

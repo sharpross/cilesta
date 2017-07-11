@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cilesta", "Cilesta\Cilesta.csproj", "{B04773F0-B9E3-4777-B047-2D72ECCD9498}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{E126E539-F7AC-41D4-AE25-1429B6FB86FE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{2089CEA8-57F9-4856-B2D3-CE26BCA1FAD9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Katarina", "Katarina", "{2089CEA8-57F9-4856-B2D3-CE26BCA1FAD9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cilesta.Data", "Cilesta.Data\Cilesta.Data.csproj", "{7F0F91EE-C9D7-41E9-9027-116044C6744F}"
 EndProject
