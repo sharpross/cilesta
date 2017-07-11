@@ -1,6 +1,6 @@
 ﻿namespace Cilesta.Security
 {
-    public enum PermissionType
+    public enum AccessType
     {
         /// <summary>
         /// Доступ запрещён

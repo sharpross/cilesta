@@ -2,13 +2,8 @@
 {
     using System;
     using System.Linq;
-    using System.Security.Principal;
-    using System.Web;
     using System.Web.Mvc;
     using Cilesta.Core;
-    using Cilesta.Security.Katarina.Interfaces;
-    using Cilesta.Security.Katarina.Models;
-    using Cilesta.Security.Models;
 
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
     public class AuthorizeAccesseAttribute : FilterAttribute, IAuthorizationFilter

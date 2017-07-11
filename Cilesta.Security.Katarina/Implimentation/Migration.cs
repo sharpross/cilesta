@@ -17,9 +17,9 @@
 
         public IRoleService RoleService { get; set; }
 
-        public IRolePermissionMapService RolePermissionMapService { get; set; }
+        public IRolePermissionService RolePermissionMapService { get; set; }
 
-        public IUserRoleMapService UserRoleMapService { get; set; }
+        public IUserRoleService UserRoleMapService { get; set; }
 
         public string Code => "Миграция пользователей и ролей";
 
@@ -54,8 +54,8 @@
         {
             this.RoleService = this.Container.Resolve<IRoleService>();
             this.UserService = this.Container.Resolve<IUserService>();
-            this.RolePermissionMapService = this.Container.Resolve<IRolePermissionMapService>();
-            this.UserRoleMapService = this.Container.Resolve<IUserRoleMapService>();
+            this.RolePermissionMapService = this.Container.Resolve<IRolePermissionService>();
+            this.UserRoleMapService = this.Container.Resolve<IUserRoleService>();
         }
 
         private bool ValidateUsers()
@@ -124,7 +124,7 @@
 
             role = this.RoleService.GetAll(filter).First();
 
-            var userRole = new UserRoleMap()
+            var userRole = new UserRole()
             {
                 User = user
             };

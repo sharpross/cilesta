@@ -21,18 +21,13 @@
         {
             container.RegisterDomainService<User>();
             container.RegisterDomainService<Role>();
-            container.RegisterDomainService<RolePermissionMap>();
-            container.RegisterDomainService<UserRoleMap>();
 
             container.Register(Component.For<IAuthService>().ImplementedBy<AuthService>().LifeStyle.Transient);
             container.Register(Component.For<IUserService>().ImplementedBy<UserService>().LifeStyle.Transient);
             container.Register(Component.For<IRoleService>().ImplementedBy<RoleService>().LifeStyle.Transient);
-            container.Register(Component.For<IUserRoleMapService>().ImplementedBy<UserRoleService>().LifeStyle.Transient);
-            container.Register(Component.For<IRolePermissionMapService>().ImplementedBy<RolePermissionService>().LifeStyle.Transient);
 
             container.Register(Component.For<IMapping>().ImplementedBy<UserMapping>().LifeStyle.Transient);
             container.Register(Component.For<IMapping>().ImplementedBy<RoleMapping>().LifeStyle.Transient);
-            container.Register(Component.For<IMapping>().ImplementedBy<UserRoleMapMapping>().LifeStyle.Transient);
 
             container.Register(Component.For<IMigration>().ImplementedBy<Migration>().LifeStyle.Transient);
         }

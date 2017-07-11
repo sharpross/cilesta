@@ -3,8 +3,7 @@
     using Cilesta.Domain.Interfaces;
     using Cilesta.Security.Katarina.Entities;
 
-    public interface IRolePermissionMapService : IDomainService<RolePermissionMap>
+    public interface IPermissionService : IDomainService<PermissionKey>
     {
-        
     }
 }
