@@ -1,7 +1,0 @@
-﻿2017-07-02 18:34:28,779  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
-2017-07-02 18:38:13,679  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
-2017-07-02 18:38:29,172  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_
-2017-07-02 18:38:32,867  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_ WHERE this_.Login = :p0 and this_.Id = :p1 limit :p2;:p0 = 'admin' [Type: String (0:0:0)], :p1 = 1 [Type: Int32 (0:0:0)], :p2 = 1 [Type: Int32 (0:0:0)]
-2017-07-02 18:38:32,928  DEBUG: SELECT this_.Id as Id1_2_0_, this_.Login as Login2_2_0_, this_.Password as Passwo3_2_0_, this_.Email as Email4_2_0_ FROM users this_
-2017-07-02 18:46:08,232  DEBUG: SELECT this_.Id as Id1_0_0_, this_.Login as Login2_0_0_, this_.Password as Passwo3_0_0_, this_.Email as Email4_0_0_ FROM users this_ WHERE this_.Login = :p0 and this_.Id = :p1 limit :p2;:p0 = 'admin' [Type: String (0:0:0)], :p1 = 1 [Type: Int32 (0:0:0)], :p2 = 1 [Type: Int32 (0:0:0)]
-2017-07-02 18:46:08,240  DEBUG: SELECT this_.Id as Id1_2_0_, this_.Login as Login2_2_0_, this_.Password as Passwo3_2_0_, this_.Email as Email4_2_0_ FROM users this_

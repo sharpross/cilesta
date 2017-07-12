@@ -16,7 +16,7 @@
 
         private IWindsorContainer Container { get; set; }
 
-        private Logging.Interfaces.ILogger Log { get; set; }
+        private ILogger Log { get; set; }
 
         public void RegisterComponents(IWindsorContainer container)
         {

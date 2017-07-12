@@ -1,5 +1,6 @@
 ﻿namespace Cilesta.Data.Interfaces
 {
+    using System.Collections.Generic;
     using Castle.Windsor;
     using Cilesta.Logging.Interfaces;
 
@@ -9,6 +10,8 @@
 
         ILogger Log { get; set; }
 
-        void InitMigrations();
+        List<string> GetMigrations();
+
+        void Migrate();
     }
 }

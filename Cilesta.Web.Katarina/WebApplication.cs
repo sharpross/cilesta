@@ -1,6 +1,7 @@
 ﻿namespace Cilesta.Web.Katarina
 {
     using System;
+    using System.Linq;
     using System.Web.Mvc;
     using System.Web.Routing;
     using Castle.MicroKernel.Registration;
@@ -21,6 +22,7 @@
         {
             Container = new WindsorContainer();
             Container.Register(Component.For<IWindsorContainer>().Instance(Container));
+
             AreaRegistration.RegisterAllAreas();
 
             var preActiation = new PreActivation(Container);
@@ -44,9 +46,19 @@
             {
                 routeContainer.Init(RouteTable.Routes);
             }
-
+            
             var migrator = Container.Resolve<IMigrator>();
-            migrator.InitMigrations();
+            var needMigrations = migrator.GetMigrations();
+
+            ///TODO: добавить режим обслуживания
+            if (needMigrations.Any())
+            {
+                migrator.Migrate();
+            }
+            else
+            {
+                
+            }
         }
 
         protected void Application_Error(object sender, EventArgs e)
