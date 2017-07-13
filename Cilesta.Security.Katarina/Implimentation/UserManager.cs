@@ -50,8 +50,8 @@
         {
             Role role = null;
 
-            var filter = new FilterContext();
-            filter.Add("Name", Domain.LogicalType.Equals, name);
+            var filter = new Filter();
+            filter.Add("Name", Domain.LogicalType.Eq, name);
 
             role = this.RoleService.GetAll(filter).FirstOrDefault();
 

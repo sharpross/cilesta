@@ -30,11 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.0.0\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.Windsor, Version=3.4.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castle.Windsor.3.4.0\lib\net45\Castle.Windsor.dll</HintPath>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.0.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -71,10 +71,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\DataController.cs" />
+    <Compile Include="Controllers\DomainController.cs" />
     <Compile Include="Controllers\ListController.cs" />
     <Compile Include="Filtres\CilestaHandleErrorAttribute.cs" />
-    <Compile Include="Controllers\CilestaController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Implimentation\CilestaControllerFactory.cs" />
     <Compile Include="Implimentation\DataController.cs" />
     <Compile Include="Implimentation\FilterContainer.cs" />
@@ -103,6 +103,10 @@
     <ProjectReference Include="..\Cilesta.Data\Cilesta.Data.csproj">
       <Project>{7F0F91EE-C9D7-41E9-9027-116044C6744F}</Project>
       <Name>Cilesta.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Domain.Katarina\Cilesta.Domain.Katarina.csproj">
+      <Project>{6C546924-9DF8-4332-8007-7DA2DAB69488}</Project>
+      <Name>Cilesta.Domain.Katarina</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cilesta.DomainService\Cilesta.Domain.csproj">
       <Project>{38E15EDA-8AEC-489A-A6E2-423486BBE126}</Project>

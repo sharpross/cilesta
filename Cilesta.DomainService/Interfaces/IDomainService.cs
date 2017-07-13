@@ -10,13 +10,15 @@
 
         IList<T> GetAll();
 
-        IList<T> GetAll(IFilterContext filter);
+        IList<T> GetAll(IFilter filter);
 
         void Save(T entity);
 
         void Save(IList<T> entities);
 
         void Delete(T entity);
+
+        void Delete(int id);
 
         void Delete(IList<T> entities);
 

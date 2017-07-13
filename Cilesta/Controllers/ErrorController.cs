@@ -1,9 +1,11 @@
 ﻿namespace Cilesta.Controllers
 {
     using System.Web.Mvc;
+    using Cilesta.Security.Katarina.Attributes;
     using Cilesta.Web.Katarina.Controllers;
 
-    public class ErrorController : CilestaController
+    [SkipAuthorization]
+    public class ErrorController : BaseController
     {
         public ActionResult Index()
         {

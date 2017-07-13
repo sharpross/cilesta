@@ -72,6 +72,22 @@
             }
         }
 
+        public void Delete(int id)
+        {
+            try
+            {
+                if (this.OnBefore(OperationType.Delete, id))
+                {
+                    this.Bridge.Delete(id);
+                }
+            }
+            catch (Exception ex)
+            {
+                this.OnException(ex);
+                throw;
+            }
+        }
+        
         public void Delete(IList<T> entities)
         {
             try
@@ -124,7 +140,7 @@
             }
         }
 
-        public IList<T> GetAll(IFilterContext filter)
+        public IList<T> GetAll(IFilter filter)
         {
             try
             {

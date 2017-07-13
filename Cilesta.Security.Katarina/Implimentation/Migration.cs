@@ -63,8 +63,8 @@
 
         private bool ValidateUsers()
         {
-            var filter = new FilterContext();
-            filter.Add("Login", Domain.LogicalType.Equals, Constants.AdminLogin);
+            var filter = new Filter();
+            filter.Add("Login", Domain.LogicalType.Eq, Constants.AdminLogin);
 
             var exist = this.UserService.GetAll(filter).Any();
 
@@ -80,8 +80,8 @@
         {
             foreach (var role in this.RoleNames)
             {
-                var filter = new FilterContext();
-                filter.Add("Name", Domain.LogicalType.Equals, role);
+                var filter = new Filter();
+                filter.Add("Name", Domain.LogicalType.Eq, role);
 
                 var exist = this.RoleService.GetAll(filter).Any();
 

@@ -149,6 +149,25 @@
             }
         }
 
+        public void Delete(int id)
+        {
+            using (var transaction = this.Session.BeginTransaction())
+            {
+                try
+                {
+                    this.Session.Delete(this.Session.Load<T>(id));
+
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+
+                    throw ex;
+                }
+            }
+        }
+
         public void Delete(IList<T> entities)
         {
             using (var transaction = this.Session.BeginTransaction())

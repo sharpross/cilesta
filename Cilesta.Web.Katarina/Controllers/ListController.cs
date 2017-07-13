@@ -1,37 +1,35 @@
 ﻿namespace Cilesta.Web.Katarina.Controllers
 {
+    using System;
     using Cilesta.Data.Models;
-    using Cilesta.Domain.Interfaces;
-    using Cilesta.Domain.Models;
     using Cilesta.Web.Katarina.Implimentation;
+    using Cilesta.Web.Katarina.Models;
+    using Filter = Domain.Katarina.Implimentation.Filter;
 
-    public class ListController<T> : CilestaController where T : class, IEntity
+    public class ListController<T> : DomainController<T> where T : class, IEntity
     {
-        private IDomainService<T> service { get; set; }
-        public IDomainService<T> Service
+        public JsonNetResult List(ListParams? listParams)
         {
-            get 
-            {
-                if (service == null)
-                {
-                    service = Container.Resolve<IDomainService<T>>();
-                }
+            var filter = new Filter();
+            var page = 1;
+            var count = 50;
 
-                return service;
+            if (listParams.HasValue)
+            {
+                page = listParams.Value.Page ?? 0;
+                count = listParams.Value.Count ?? 0;
             }
-        }
 
-        public JsonNetResult List(int? page, int? count)
-        {
-            var listParam = new ListParams()
+            try
             {
-                Page = page.HasValue ? page.Value : 1,
-                Count = count.HasValue ? count.Value : 50
-            };
+                var data = this.Service.GetAll(filter);
 
-            var data = this.Service.List(listParam);
-
-            return JsonNetResult.List(data, page, count);
+                return JsonNetResult.List(data, page, count);
+            }
+            catch (Exception ex)
+            {
+                return JsonNetResult.Error(ex);
+            }
         }
     }
 }

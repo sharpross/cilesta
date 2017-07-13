@@ -20,6 +20,8 @@
 
         void Delete(T entity);
 
+        void Delete(int id);
+
         void Delete(IList<T> entities);
     }
 }

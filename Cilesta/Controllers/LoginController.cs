@@ -3,13 +3,12 @@
     using System.Web.Mvc;
     using Cilesta.Security.Interfaces;
     using Cilesta.Security.Katarina.Attributes;
-    using Cilesta.Security.Katarina.Interfaces;
     using Cilesta.Security.Katarina.Models;
     using Cilesta.Security.Utils;
     using Cilesta.Web.Katarina.Controllers;
     using Cilesta.Web.Katarina.Implimentation;
 
-    public class LoginController : CilestaController
+    public class LoginController : BaseController
     {
         public IAuthService AuthService { get; set; }
         

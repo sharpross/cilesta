@@ -3,28 +3,58 @@
     public enum LogicalType
     {
         /// <summary>
-        /// Ровняется
+        /// Равенство ( = )
         /// </summary>
-        Equals,
+        Eq,
+        
+        /// <summary>
+        /// Не ровняется ( != )
+        /// </summary>
+        NotEq,
 
         /// <summary>
-        /// Не ровняется
+        /// Больше ( > )
         /// </summary>
-        NotEquals,
+        Gt,
 
         /// <summary>
-        /// Больше
+        /// Больше или равно ( >= )
         /// </summary>
-        Greate,
+        Ge,
 
         /// <summary>
-        /// Меньше
+        /// Меньше ( < )
         /// </summary>
-        Less,
+        Lt,
+
+        /// <summary>
+        /// Меньше или равно ( <= )
+        /// </summary>
+        Le,
 
         /// <summary>
         /// Похоже
         /// </summary>
-        Like
+        Like,
+
+        /// <summary>
+        /// Не похоже
+        /// </summary>
+        NotLike,
+
+        /// <summary>
+        /// Присутствует в перечислении
+        /// </summary>
+        In,
+
+        /// <summary>
+        /// Null
+        /// </summary>
+        Null,
+
+        /// <summary>
+        /// Не Null
+        /// </summary>
+        NotNull
     }
 }

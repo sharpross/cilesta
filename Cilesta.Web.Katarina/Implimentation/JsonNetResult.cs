@@ -74,6 +74,16 @@
             };
         }
 
+        public static JsonNetResult Error(Exception ex)
+        {
+            return new JsonNetResult()
+            {
+                StatusCode = 500,
+                Exception = ex.Message,
+                IsSuccess = false
+            };
+        }
+
         public static JsonNetResult Fail(object data)
         {
             return new JsonNetResult()

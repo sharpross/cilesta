@@ -10,7 +10,7 @@
     using Cilesta.Security.Katarina.Models;
     using Cilesta.Web.Interfaces;
 
-    public class CilestaController : Controller, ICilestaController
+    public class BaseController : Controller, ICilestaController
     {
         public IWindsorContainer Container { get; set; }
 
