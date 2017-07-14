@@ -13,7 +13,7 @@
             var filter = new Filter();
             filter.Add("Login", Domain.LogicalType.Eq, login);
             filter.Add("Id", Domain.LogicalType.Eq, id);
-            filter.SetMax(1);
+            filter.Take(1);
 
             var result = this.GetAll(filter);
 
@@ -25,7 +25,7 @@
             var filter = new Filter();
             filter.Add("Login", Domain.LogicalType.Eq, login);
             filter.Add("Password", Domain.LogicalType.Eq, password);
-            filter.SetMax(1);
+            filter.Take(1);
 
             var result = this.GetAll(filter);
 

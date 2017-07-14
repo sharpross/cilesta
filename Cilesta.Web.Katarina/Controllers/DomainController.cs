@@ -59,6 +59,7 @@
             }
         }
 
+        [HttpPost]
         public JsonNetResult Delete(int id)
         {
             try
@@ -73,6 +74,7 @@
             }
         }
 
+        [HttpPost]
         public JsonNetResult Delete(T entity)
         {
             try
@@ -87,6 +89,7 @@
             }
         }
 
+        [HttpPost]
         public JsonNetResult Save(T entity)
         {
             try

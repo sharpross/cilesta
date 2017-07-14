@@ -10,8 +10,8 @@
 
         void Add(string field, LogicalType logical, object value);
 
-        void SetLimit(int limit);
+        void Skip(int count);
 
-        void SetMax(int max);
+        void Take(int count);
     }
 }

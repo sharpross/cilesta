@@ -21,9 +21,7 @@
         void Delete(int id);
 
         void Delete(IList<T> entities);
-
-        IList<T> List(ListParams listParams);
-
+        
         bool OnBefore(OperationType operation, object obj);
 
         void OnAfter(OperationType operation, object obj);

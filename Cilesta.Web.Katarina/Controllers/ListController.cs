@@ -12,13 +12,16 @@
         {
             var filter = new Filter();
             var page = 1;
-            var count = 50;
+            var count = Domain.Constants.DefaultPageSize;
 
             if (listParams.HasValue)
             {
                 page = listParams.Value.Page ?? 0;
                 count = listParams.Value.Count ?? 0;
             }
+
+            filter.Skip((page - 1)* count);
+            filter.Take(count);
 
             try
             {

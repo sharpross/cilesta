@@ -9,5 +9,7 @@
         string Password { get; set; }
 
         string Email { get; set; }
+
+        bool Blocked { get; set; }
     }
 }

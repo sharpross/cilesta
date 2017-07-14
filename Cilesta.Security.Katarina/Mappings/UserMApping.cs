@@ -19,6 +19,7 @@
             Map(x => x.Email)
                 .Unique()
                 .Not.Nullable();
+            Map(x => x.Blocked).Default("false");
         }
     }
 }

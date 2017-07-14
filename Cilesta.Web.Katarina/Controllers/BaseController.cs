@@ -49,5 +49,12 @@
 
             base.OnAuthentication(filterContext);
         }
+
+        protected override void OnActionExecuted(ActionExecutedContext filterContext)
+        {
+            ViewBag.IsAuth = !(this.HttpContext.User.Identity is AnonymousUser);
+
+            base.OnActionExecuted(filterContext);
+        }
     }
 }

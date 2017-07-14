@@ -9,9 +9,9 @@
     {
         public IList<FilterItem> Items { get; set; }
 
-        private int limit = 0;
+        private int skip = 0;
 
-        private int max = 0;
+        private int take = 0;
 
         public Filter()
         {
@@ -28,14 +28,14 @@
             });
         }
 
-        public void SetLimit(int limit)
+        public void Skip(int count)
         {
-            this.limit = limit;
+            skip = count;
         }
 
-        public void SetMax(int max)
+        public void Take(int count)
         {
-            this.max = max;
+            take = count;
         }
 
         public ICriteria Parse(ICriteria criteria)
@@ -80,14 +80,14 @@
                 }
             }
             
-            if (max > 0)
+            if (take > 0)
             {
-                criteria.SetMaxResults(this.limit);
+                criteria.SetMaxResults(this.take);
             }
 
-            if (limit > 0)
+            if (skip > 0)
             {
-                criteria.SetFirstResult(this.limit);
+                criteria.SetFirstResult(this.skip);
             }
 
             return criteria;

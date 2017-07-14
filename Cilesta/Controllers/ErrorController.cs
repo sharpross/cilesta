@@ -17,6 +17,11 @@
             return View();
         }
 
+        public ActionResult NoPermission()
+        {
+            return View();
+        }
+
         public ActionResult Maintenance()
         {
             return View();
