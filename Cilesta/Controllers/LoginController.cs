@@ -11,7 +11,13 @@
     public class LoginController : BaseController
     {
         public IAuthService AuthService { get; set; }
-        
+
+        [SkipAuthorization]
+        public ViewResult Index()
+        {
+            return View();
+        }
+
         [HttpPost]
         [SkipAuthorization]
         public JsonNetResult Login(string login, string password)

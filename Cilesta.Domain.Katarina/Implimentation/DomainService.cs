@@ -13,7 +13,7 @@
         public IWindsorContainer Container { get; set; }
 
         private ILogger log;
-        public ILogger Log
+        private ILogger Log
         {
             get
             {

@@ -1,5 +1,6 @@
 ﻿namespace Cilesta.Web.Katarina.Filtres
 {
+    using System;
     using System.Web;
     using System.Web.Mvc;
     using Castle.Windsor;
@@ -25,6 +26,13 @@
             if (this.IsAjaxRequest(filterContext.HttpContext.Request))
             {
                 filterContext.Result = JsonNetResult.Fail(filterContext.Exception);
+            }
+            else
+            {
+                if (filterContext.Exception is UnauthorizedAccessException)
+                {
+                    filterContext.HttpContext.Response.Redirect("/Login/index", false);// Result = new RedirectResult("/Login/index");
+                }
             }
         }
 
