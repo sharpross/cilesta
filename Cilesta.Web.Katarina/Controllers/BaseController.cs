@@ -1,5 +1,6 @@
 ﻿namespace Cilesta.Web.Katarina.Controllers
 {
+    using System;
     using System.Security.Principal;
     using System.Web.Mvc;
     using System.Web.Mvc.Filters;
@@ -49,12 +50,29 @@
 
             base.OnAuthentication(filterContext);
         }
-
+        
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
             ViewBag.IsAuth = !(this.HttpContext.User.Identity is AnonymousUser);
 
             base.OnActionExecuted(filterContext);
+        }
+
+        protected override void OnException(ExceptionContext filterContext)
+        {
+            if (filterContext.Exception is UnauthorizedAccessException)
+            {
+                filterContext.Result = new RedirectResult("~/Login/Index");
+            }
+
+            if (filterContext.Exception is HttpNotFoundResult)
+            {
+                filterContext.Result = new RedirectResult("~/Error/NotFound");
+            }
+
+            filterContext.Result = new RedirectResult("~/Error/index");
+
+            base.OnException(filterContext);
         }
     }
 }

@@ -24,6 +24,8 @@
                 return;
             }
 
+            filterContext.HttpContext.Response.StatusCode = 401;
+
             throw new UnauthorizedAccessException(Constants.UnauthorizedAccess);
         }
 

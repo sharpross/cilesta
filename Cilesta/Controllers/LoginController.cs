@@ -12,6 +12,11 @@
     {
         public IAuthService AuthService { get; set; }
         
+        public ViewResult Index()
+        {
+            return View();
+        }
+
         [HttpPost]
         [SkipAuthorization]
         public JsonNetResult Login(string login, string password)
@@ -29,6 +34,7 @@
             if (result.Success)
             {
                 CookiHelper.SetCookie(this.HttpContext.Response, result.Login, result.UserID);
+
                 return JsonNetResult.Success(result);
             }
 
