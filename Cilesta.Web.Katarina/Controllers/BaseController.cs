@@ -49,7 +49,7 @@
             filterContext.Principal = principal;
             filterContext.HttpContext.User = principal;
 
-            base.OnAuthentication(filterContext);
+            //base.OnAuthentication(filterContext);
         }
         
         protected override void OnActionExecuted(ActionExecutedContext filterContext)

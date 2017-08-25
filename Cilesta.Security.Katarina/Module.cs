@@ -10,6 +10,7 @@
     using Cilesta.Security.Katarina.Implimentation;
     using Cilesta.Security.Katarina.Interfaces;
     using Cilesta.Security.Katarina.Mappings;
+    using Cilesta.Web.Interfaces;
 
     public class Module : IModule
     {
@@ -24,6 +25,8 @@
             container.RegisterDomainService<UserRole>();
             container.RegisterDomainService<RolePermission>();
             container.RegisterDomainService<PermissionKey>();
+            
+            container.Register(Component.For<IFilterContainer>().ImplementedBy<FilterContainer>().LifeStyle.Transient);
 
             container.Register(Component.For<IUserManager>().ImplementedBy<UserManager>().LifeStyle.Transient);
 

@@ -85,6 +85,7 @@
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\UserRole.cs" />
     <Compile Include="Implimentation\AuthService.cs" />
+    <Compile Include="Implimentation\FilterContainer.cs" />
     <Compile Include="Implimentation\IdentityPrincipal.cs" />
     <Compile Include="Implimentation\Migration.cs" />
     <Compile Include="Implimentation\PermissionService.cs" />
@@ -147,6 +148,10 @@
     <ProjectReference Include="..\Cilesta.Utils\Cilesta.Utils.csproj">
       <Project>{D01CCC7A-2ABE-451F-BBA0-63BD1B1AE339}</Project>
       <Name>Cilesta.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Web\Cilesta.Web.csproj">
+      <Project>{1B8ABC83-C59B-42F4-8D27-01ECD7128CDD}</Project>
+      <Name>Cilesta.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
