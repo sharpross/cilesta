@@ -46,6 +46,7 @@
                 principal = new IdentityPrincipal(user);
             }
 
+            filterContext.Principal = principal;
             filterContext.HttpContext.User = principal;
 
             base.OnAuthentication(filterContext);
@@ -56,23 +57,6 @@
             ViewBag.IsAuth = !(this.HttpContext.User.Identity is AnonymousUser);
 
             base.OnActionExecuted(filterContext);
-        }
-
-        protected override void OnException(ExceptionContext filterContext)
-        {
-            if (filterContext.Exception is UnauthorizedAccessException)
-            {
-                filterContext.Result = new RedirectResult("~/Login/Index");
-            }
-
-            if (filterContext.Exception is HttpNotFoundResult)
-            {
-                filterContext.Result = new RedirectResult("~/Error/NotFound");
-            }
-
-            filterContext.Result = new RedirectResult("~/Error/index");
-
-            base.OnException(filterContext);
         }
     }
 }

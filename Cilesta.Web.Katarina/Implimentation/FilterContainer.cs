@@ -1,6 +1,5 @@
 ﻿namespace Cilesta.Web.Katarina.Implimentation
 {
-    using System;
     using System.Web.Mvc;
     using Castle.Windsor;
     using Cilesta.Web.Katarina.Filtres;
@@ -12,7 +11,9 @@
 
         public void Init(GlobalFilterCollection filterCollection)
         {
-            filterCollection.Add(new CilestaHandleErrorAttribute(this.Container));
+            filterCollection.Add(new CommonExceptionFilter(this.Container));
+            filterCollection.Add(new NotFoundExceptionFilter(this.Container));
+            filterCollection.Add(new UnauthorizedAccessExceptionFilter(this.Container));
         }
     }
 }

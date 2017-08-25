@@ -5,6 +5,7 @@
     using Cilesta.Security.Katarina.Entities;
     using Cilesta.Security.Katarina.Interfaces;
     using Cilesta.Security.Models;
+    using Cilesta.Utils.Common;
 
     public class UserService : DomainService<User>, IUserService
     {
@@ -22,9 +23,11 @@
 
         public IUser GetByLoginPassword(string login, string password)
         {
+            var mdmPassword = SecurityHelper.EncryptPassword(password);
+
             var filter = new Filter();
             filter.Add("Login", Domain.LogicalType.Eq, login);
-            filter.Add("Password", Domain.LogicalType.Eq, password);
+            filter.Add("Password", Domain.LogicalType.Eq, mdmPassword);
             filter.Take(1);
 
             var result = this.GetAll(filter);

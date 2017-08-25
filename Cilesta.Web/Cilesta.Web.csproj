@@ -73,6 +73,7 @@
     <Compile Include="Interfaces\ICilestaValueProvider.cs" />
     <Compile Include="Interfaces\IFilterContainer.cs" />
     <Compile Include="Interfaces\IRouteContainer.cs" />
+    <Compile Include="NotFoundException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
