@@ -2,6 +2,7 @@
 {
     using System;
     using System.Security.Principal;
+    using System.Threading;
     using System.Web.Mvc;
     using System.Web.Mvc.Filters;
     using Castle.Core.Logging;
@@ -19,6 +20,8 @@
         
         protected override void OnAuthentication(AuthenticationContext filterContext)
         {
+            base.OnAuthentication(filterContext);
+
             var cookies = filterContext.HttpContext.Request.Cookies;
             
             IPrincipal principal = null;
@@ -48,13 +51,19 @@
 
             filterContext.Principal = principal;
             filterContext.HttpContext.User = principal;
-
-            //base.OnAuthentication(filterContext);
+            Thread.CurrentPrincipal = principal;
         }
         
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            ViewBag.IsAuth = !(this.HttpContext.User.Identity is AnonymousUser);
+            var isAuth = !(this.HttpContext.User.Identity is AnonymousUser);
+
+            ViewBag.IsAuth = isAuth;
+
+            if (isAuth)
+            {
+                ViewBag.User = this.HttpContext.User.Identity.Name;
+            }
 
             base.OnActionExecuted(filterContext);
         }

@@ -55,10 +55,11 @@
             return JsonNetResult.Fail(result);
         }
         
-        [HttpPost]
-        public JsonNetResult Logout()
+        public ActionResult Logout()
         {
-            return JsonNetResult.Success();
+            CookiHelper.RemoveCookie(this.HttpContext.Response);
+
+            return this.Redirect("~/Home/Index");
         }
 
         private IAuthResult DoLogin(LoginModel loginModel)

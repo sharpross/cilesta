@@ -10,8 +10,8 @@
             HttpCookie cookie = new HttpCookie(Constants.CookieName);
             cookie["module"] = "cilesta";
 
-            cookie[Constants.CookieUserName] = login;
-            cookie[Constants.CookieUserId] = userId;
+            cookie.Values[Constants.CookieUserName] = login;
+            cookie.Values[Constants.CookieUserId] = userId;
 
             cookie.Expires = DateTime.Now.AddDays(1);
 
@@ -20,7 +20,13 @@
 
         public static void RemoveCookie(HttpResponseBase response)
         {
-            response.Cookies.Remove(Constants.CookieName);
+            var cookie = response.Cookies.Get(Constants.CookieName);
+
+            if (cookie != null)
+            {
+                cookie.Expires = DateTime.Now.AddDays(-1);
+                response.Cookies.Add(cookie);
+            }
         }
     }
 }
