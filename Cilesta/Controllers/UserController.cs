@@ -6,9 +6,9 @@
     using Cilesta.Security.Katarina.Entities;
     using Cilesta.Web.Katarina.Controllers;
 
-    public class UserController : DomainController<User>
+    public class UserController : Controller // ListController<User>
     {
-        public ViewResult Index()
+        public ActionResult Index()
         {
             
             return View();

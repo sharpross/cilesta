@@ -11,7 +11,7 @@
 
         public void Init(GlobalFilterCollection filterCollection)
         {
-            filterCollection.Add(new AuthorizeAccesseAttribute());
+            filterCollection.Add(new AuthorizeControlAttribute());
         }
     }
 }

@@ -77,6 +77,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\AuthenticationFilter.cs" />
     <Compile Include="Attributes\AuthorizeAccesseAttribute.cs" />
     <Compile Include="Attributes\SkipAuthorizationAttribute.cs" />
     <Compile Include="Entities\PermissionKey.cs" />

@@ -6,11 +6,11 @@
     using Cilesta.Core;
 
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
-    public class AuthorizeAccesseAttribute : FilterAttribute, IAuthorizationFilter
+    public class AuthorizeControlAttribute : AuthorizeAttribute
     {
         public string AccessKey { get; set; }
 
-        public void OnAuthorization(AuthorizationContext filterContext)
+        public override void OnAuthorization(AuthorizationContext filterContext)
         {
             if (this.Skip(filterContext))
             {

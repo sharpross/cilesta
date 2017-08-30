@@ -1,37 +1,31 @@
-﻿namespace Cilesta.Web.Katarina.Controllers
+﻿namespace Cilesta.Security.Katarina.Attributes
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Security.Principal;
+    using System.Text;
     using System.Threading;
+    using System.Threading.Tasks;
     using System.Web.Mvc;
     using System.Web.Mvc.Filters;
-    using Castle.Core.Logging;
     using Castle.Windsor;
     using Cilesta.Security.Interfaces;
     using Cilesta.Security.Katarina.Implimentation;
     using Cilesta.Security.Katarina.Models;
-    using Cilesta.Web.Interfaces;
 
-    public class BaseController : Controller, ICilestaController
+    public class AuthenticationFilter : FilterAttribute, IAuthenticationFilter
     {
         public IWindsorContainer Container { get; set; }
 
-        public ILogger Log { get; set; }
-        
-        /*protected override void OnAuthentication(AuthenticationContext filterContext)
+        public void OnAuthentication(AuthenticationContext filterContext)
         {
-            //base.OnAuthentication(filterContext);
-
             var cookies = filterContext.HttpContext.Request.Cookies;
-            
+
             IPrincipal principal = null;
 
-            if (cookies == null || cookies[Security.Constants.CookieName] == null)
-            {
-                base.OnAuthentication(filterContext);
-            }
-
             var cookieContext = cookies[Security.Constants.CookieName];
-            
+
             if (cookieContext != null)
             {
                 var authService = this.Container.Resolve<IAuthService>();
@@ -51,20 +45,16 @@
             filterContext.Principal = principal;
             filterContext.HttpContext.User = principal;
             Thread.CurrentPrincipal = principal;
-        }*/
-        
-        protected override void OnActionExecuted(ActionExecutedContext filterContext)
+        }
+
+        public void OnAuthenticationChallenge(AuthenticationChallengeContext filterContext)
         {
-            var isAuth = !(this.HttpContext.User.Identity is AnonymousUser);
-
-            ViewBag.IsAuth = isAuth;
-
-            if (isAuth)
+            if (filterContext.HttpContext.User == null)
             {
-                ViewBag.User = this.HttpContext.User.Identity.Name;
+                throw new UnauthorizedAccessException();
             }
 
-            base.OnActionExecuted(filterContext);
+            //throw new NotImplementedException();
         }
     }
 }

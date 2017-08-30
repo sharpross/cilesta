@@ -14,6 +14,7 @@
         public IAuthService AuthService { get; set; }
 
         [SkipAuthorization]
+        [OutputCache(Duration = 0)]
         public ViewResult Index()
         {
             return View();
@@ -21,6 +22,7 @@
 
         [HttpPost]
         [SkipAuthorization]
+        [OutputCache(Duration = 0)]
         public ActionResult Index(string login, string password)
         {
             var loginModel = new LoginModel()
@@ -43,6 +45,7 @@
 
         [HttpPost]
         [SkipAuthorization]
+        [OutputCache(Duration = 0)]
         public ActionResult Login(LoginModel loginModel)
         {
             var result = this.DoLogin(loginModel);
@@ -54,7 +57,8 @@
 
             return JsonNetResult.Fail(result);
         }
-        
+
+        [OutputCache(Duration = 0)]
         public ActionResult Logout()
         {
             CookiHelper.RemoveCookie(this.HttpContext.Response);

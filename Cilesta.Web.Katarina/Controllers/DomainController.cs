@@ -8,7 +8,7 @@
     using Cilesta.Web.Katarina.Implimentation;
     using Filter = Domain.Katarina.Implimentation.Filter;
 
-    [AuthorizeAccesse]
+    //[AuthorizeControl]
     public class DomainController<T> : BaseController where T : class, IEntity
     {
         private IDomainService<T> service { get; set; }
