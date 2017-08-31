@@ -9,7 +9,7 @@
         @if (ViewBag.IsAuth != null && ViewBag.IsAuth == true)
         {
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="~/Login/Logout">
                         <div class="btn btn-info">Выход</div>
                     </a>
@@ -19,13 +19,13 @@
         else
         {
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="~/User/Registration">
                         <div class="btn btn-info">Регистрация</div>
                     </a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="~/Login/Index">
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Login">
                         <div class="btn btn-info">Вход</div>
                     </a>
                 </li>
@@ -36,7 +36,7 @@
 
 <div class="container">
     <nav class="nav">
-        <a class="nav-link active" href="~/Home/Index">Главная</a>
-        <a class="nav-link" href="~/User/Index">Пользователи</a>
+        <a class="nav-link" href="~/Home">Главная</a>
+        <a class="nav-link" href="~/User">Пользователи</a>
     </nav>
 </div>

@@ -6,7 +6,7 @@
     using Cilesta.Security.Katarina.Entities;
     using Cilesta.Web.Katarina.Controllers;
 
-    public class UserController : Controller // ListController<User>
+    public class UserController : ListController<User>
     {
         public ActionResult Index()
         {
@@ -28,8 +28,8 @@
         public ActionResult Registration(RegistrationModel model)
         {
             if (model.IsValid())
-            { 
-                
+            {
+
             }
 
             return View(model);

@@ -1,12 +1,8 @@
-﻿namespace Cilesta.Security.Katarina.Attributes
+﻿namespace Cilesta.Security.Katarina.Filtes
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Security.Principal;
-    using System.Text;
     using System.Threading;
-    using System.Threading.Tasks;
     using System.Web.Mvc;
     using System.Web.Mvc.Filters;
     using Castle.Windsor;
@@ -14,9 +10,15 @@
     using Cilesta.Security.Katarina.Implimentation;
     using Cilesta.Security.Katarina.Models;
 
-    public class AuthenticationFilter : FilterAttribute, IAuthenticationFilter
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
+    public class AuthenticationFilterAttribute : FilterAttribute, IAuthenticationFilter
     {
         public IWindsorContainer Container { get; set; }
+
+        public AuthenticationFilterAttribute(IWindsorContainer container)
+        {
+            this.Container = container;
+        }
 
         public void OnAuthentication(AuthenticationContext filterContext)
         {
@@ -32,8 +34,11 @@
 
                 var user = authService.GetUserFromCookie(cookieContext);
 
-                IIdentity identity = new IndentityUser(user.Login);
-                principal = new IdentityPrincipal(identity);
+                if(user != null)
+                {
+                    IIdentity identity = new IndentityUser(user.Login);
+                    principal = new IdentityPrincipal(identity);
+                }
             }
 
             if (principal == null)
@@ -49,12 +54,7 @@
 
         public void OnAuthenticationChallenge(AuthenticationChallengeContext filterContext)
         {
-            if (filterContext.HttpContext.User == null)
-            {
-                throw new UnauthorizedAccessException();
-            }
-
-            //throw new NotImplementedException();
+            
         }
     }
 }

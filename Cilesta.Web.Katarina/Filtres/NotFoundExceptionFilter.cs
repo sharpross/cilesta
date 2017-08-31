@@ -14,23 +14,27 @@
         public override void OnException(ExceptionContext filterContext)
         {
             base.OnException(filterContext);
+        }
 
+        public override bool IsThisException(ExceptionContext filterContext)
+        {
             if (filterContext.Exception is NotFoundException)
             {
-                filterContext.ExceptionHandled = true;
-                filterContext.HttpContext.Response.Clear();
-                filterContext.HttpContext.Response.TrySkipIisCustomErrors = true;
-
-                if (this.IsAjaxRequest(filterContext.HttpContext.Request))
-                {
-                    filterContext.HttpContext.Response.StatusCode = 404;
-                    filterContext.Result = JsonNetResult.Fail(filterContext.Exception);
-                }
-                else
-                {
-                    filterContext.Result = new RedirectResult("~/Error/NotFound", false);
-                }
+                return true;
             }
+
+            return false;
+        }
+
+        public override void ProcessRequest(ExceptionContext filterContext)
+        {
+            filterContext.Result = new RedirectResult("~/Error/NotFound", false);
+        }
+
+        public override void ProcessAjaxRequest(ExceptionContext filterContext)
+        {
+            filterContext.HttpContext.Response.StatusCode = 404;
+            filterContext.Result = JsonNetResult.Fail(filterContext.Exception);
         }
     }
 }

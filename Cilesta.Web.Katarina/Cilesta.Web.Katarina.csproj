@@ -73,6 +73,8 @@
   <ItemGroup>
     <Compile Include="Controllers\DomainController.cs" />
     <Compile Include="Controllers\ListController.cs" />
+    <Compile Include="Filtres\AuthenticationFilterAttribute.cs" />
+    <Compile Include="Filtres\AuthorizeFilterAttribute.cs" />
     <Compile Include="Filtres\BaseExceptionFilter.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Filtres\CommonExceptionFilter.cs" />

@@ -4,11 +4,9 @@
     using System.Web.Mvc;
     using Cilesta.Data.Models;
     using Cilesta.Domain.Interfaces;
-    using Cilesta.Security.Katarina.Attributes;
     using Cilesta.Web.Katarina.Implimentation;
     using Filter = Domain.Katarina.Implimentation.Filter;
 
-    //[AuthorizeControl]
     public class DomainController<T> : BaseController where T : class, IEntity
     {
         private IDomainService<T> service { get; set; }
@@ -26,6 +24,7 @@
         }
 
         [HttpGet]
+        [OutputCache(Duration = 10)]
         public JsonNetResult Get(int id)
         {
             try
@@ -39,12 +38,14 @@
         }
 
         [HttpGet]
+        [OutputCache(Duration = 10)]
         public JsonNetResult GetAll()
         {
             return this.GetAll(new Filter());
         }
 
         [HttpGet]
+        [OutputCache(Duration = 10)]
         public JsonNetResult GetAll(Filter filter)
         {
             try
@@ -60,6 +61,7 @@
         }
 
         [HttpPost]
+        [OutputCache(Duration = 0)]
         public JsonNetResult Delete(int id)
         {
             try
@@ -75,6 +77,7 @@
         }
 
         [HttpPost]
+        [OutputCache(Duration = 0)]
         public JsonNetResult Delete(T entity)
         {
             try
@@ -90,6 +93,7 @@
         }
 
         [HttpPost]
+        [OutputCache(Duration = 0)]
         public JsonNetResult Save(T entity)
         {
             try

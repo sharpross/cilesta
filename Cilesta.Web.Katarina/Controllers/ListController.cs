@@ -1,6 +1,7 @@
 ﻿namespace Cilesta.Web.Katarina.Controllers
 {
     using System;
+    using System.Web.Mvc;
     using Cilesta.Data.Models;
     using Cilesta.Web.Katarina.Implimentation;
     using Cilesta.Web.Katarina.Models;
@@ -8,6 +9,7 @@
 
     public class ListController<T> : DomainController<T> where T : class, IEntity
     {
+        [OutputCache(Duration = 10)]
         public JsonNetResult List(ListParams? listParams)
         {
             var filter = new Filter();

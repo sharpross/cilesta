@@ -1,16 +1,21 @@
-﻿namespace Cilesta.Security.Katarina.Attributes
+﻿namespace Cilesta.Security.Katarina.Filtes
 {
     using System;
     using System.Linq;
     using System.Web.Mvc;
-    using Cilesta.Core;
+    using Castle.Windsor;
+    using Cilesta.Security.Katarina.Attributes;
 
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
-    public class AuthorizeControlAttribute : AuthorizeAttribute
+    public class AuthorizeFilterAttribute : FilterAttribute, IAuthorizationFilter
     {
-        public string AccessKey { get; set; }
+        public IWindsorContainer Container { get; set; }
 
-        public override void OnAuthorization(AuthorizationContext filterContext)
+        public AuthorizeFilterAttribute(IWindsorContainer container)
+        {
+            this.Container = container;
+        }
+
+        public void OnAuthorization(AuthorizationContext filterContext)
         {
             if (this.Skip(filterContext))
             {
@@ -23,7 +28,7 @@
             {
                 return;
             }
-            
+
             throw new UnauthorizedAccessException(Constants.UnauthorizedAccess);
         }
 

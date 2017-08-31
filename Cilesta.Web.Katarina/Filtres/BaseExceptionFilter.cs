@@ -5,7 +5,7 @@
     using Castle.Core.Logging;
     using Castle.Windsor;
 
-    public class BaseExceptionFilter
+    public abstract class BaseExceptionFilter
     {
         protected IWindsorContainer Container { get; set; }
 
@@ -17,6 +17,12 @@
             this.Logger = this.Container.Resolve<Logging.Interfaces.ILogger>();
         }
 
+        public abstract void ProcessRequest(ExceptionContext filterContext);
+
+        public abstract void ProcessAjaxRequest(ExceptionContext filterContext);
+
+        public abstract bool IsThisException(ExceptionContext filterContext);
+
         public virtual void OnException(ExceptionContext filterContext)
         {
             this.WriteToLog(filterContext);
@@ -24,6 +30,22 @@
             if (filterContext.ExceptionHandled)
             {
                 return;
+            }
+
+            if (this.IsThisException(filterContext))
+            {
+                filterContext.ExceptionHandled = true;
+                filterContext.HttpContext.Response.Clear();
+                filterContext.HttpContext.Response.TrySkipIisCustomErrors = true;
+
+                if (this.IsAjaxRequest(filterContext.HttpContext.Request))
+                {
+                    this.ProcessAjaxRequest(filterContext);
+                }
+                else
+                {
+                    this.ProcessRequest(filterContext);
+                }
             }
         }
 

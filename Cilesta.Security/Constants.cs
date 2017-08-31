@@ -18,6 +18,8 @@
 
         public const string MessageLoginFailUnknow = "Пользователь с указанным логином/паролем не найдены.";
 
+        public const string UnauthorizedAccess = "Неизвестный пользователь";
+
         public const string AdminLogin = "admin";
 
         public const string AdminPassword = "12345";

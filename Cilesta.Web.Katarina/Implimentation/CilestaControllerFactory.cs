@@ -24,7 +24,8 @@
         {
             if (controllerType == null)
             {
-                throw new HttpException(404, string.Format("The controller for path '{0}' could not be found.", requestContext.HttpContext.Request.Path));
+                throw new NotFoundException();
+                //throw new HttpException(404, string.Format("The controller for path '{0}' could not be found.", requestContext.HttpContext.Request.Path));
             }
 
             var controller = (Controller)_kernel.Resolve(controllerType);

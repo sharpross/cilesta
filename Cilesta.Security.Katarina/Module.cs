@@ -26,8 +26,6 @@
             container.RegisterDomainService<RolePermission>();
             container.RegisterDomainService<PermissionKey>();
             
-            container.Register(Component.For<IFilterContainer>().ImplementedBy<FilterContainer>().LifeStyle.Transient);
-
             container.Register(Component.For<IUserManager>().ImplementedBy<UserManager>().LifeStyle.Transient);
 
             container.Register(Component.For<IAuthService>().ImplementedBy<AuthService>().LifeStyle.Transient);

@@ -14,7 +14,7 @@
         public IAuthService AuthService { get; set; }
 
         [SkipAuthorization]
-        [OutputCache(Duration = 0)]
+        [OutputCache(Duration = 10)]
         public ViewResult Index()
         {
             return View();
