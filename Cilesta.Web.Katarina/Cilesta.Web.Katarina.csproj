@@ -80,7 +80,7 @@
     <Compile Include="Filtres\CommonExceptionFilter.cs" />
     <Compile Include="Filtres\NotFoundExceptionFilter.cs" />
     <Compile Include="Filtres\UnauthorizedAccessExceptionFilter.cs" />
-    <Compile Include="Implimentation\CilestaControllerFactory.cs" />
+    <Compile Include="Implimentation\WindsorControllerFactory.cs" />
     <Compile Include="Implimentation\FilterContainer.cs" />
     <Compile Include="Implimentation\JsonNetResult.cs" />
     <Compile Include="Implimentation\PreActivation.cs" />

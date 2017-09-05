@@ -1,19 +1,19 @@
-﻿namespace Cilesta.Core
+﻿namespace Cilesta.Web
 {
     using System;
-    using System.Web.Mvc;
     using Castle.MicroKernel.Registration;
     using Castle.Windsor;
     using Cilesta.Utils.Common;
+    using Cilesta.Web.Interfaces;
 
-    public static class WindsorExtentions
+    public static class WindsorExtension
     {
-        public static void RegisterController<T>(this IWindsorContainer container, Type controller) where T : IController
+        public static void RegisterController (this IWindsorContainer container, Type controller)
         {
             var name = WebUtils.GetControllerName(controller);
 
             container.Register(
-                Component.For<IController>()
+                Component.For<ICilestaController>()
                 .Named(name)
                 .ImplementedBy(controller)
                 .LifeStyle.Transient);

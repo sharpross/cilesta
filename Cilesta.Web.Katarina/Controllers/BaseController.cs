@@ -6,7 +6,7 @@
     using Cilesta.Security.Katarina.Models;
     using Cilesta.Web.Interfaces;
 
-    [OutputCache(Duration = 0)]
+    [OutputCache(Duration = 0, Location = System.Web.UI.OutputCacheLocation.None)]
     public class BaseController : Controller, ICilestaController
     {
         public IWindsorContainer Container { get; set; }
@@ -17,7 +17,7 @@
         {
             base.OnActionExecuted(filterContext);
 
-            /*var isAuth = !(this.HttpContext.User.Identity is AnonymousUser);
+            var isAuth = !(this.HttpContext.User.Identity is AnonymousUser);
 
             ViewBag.IsAuth = isAuth;
 
@@ -26,7 +26,7 @@
                 ViewBag.User = this.HttpContext.User.Identity.Name;
             }
 
-            base.OnActionExecuted(filterContext);*/
+            base.OnActionExecuted(filterContext);
         }
     }
 }

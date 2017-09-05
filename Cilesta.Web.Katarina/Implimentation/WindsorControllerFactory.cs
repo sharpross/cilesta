@@ -1,10 +1,11 @@
 ﻿namespace Cilesta.Web.Katarina.Implimentation
 {
     using System;
-    using System.Web;
     using System.Web.Mvc;
     using System.Web.Routing;
     using Castle.MicroKernel;
+    using Cilesta.Utils.Common;
+    using Cilesta.Web.Interfaces;
 
     public class WindsorControllerFactory : DefaultControllerFactory
     {
@@ -24,13 +25,19 @@
         {
             if (controllerType == null)
             {
-                throw new NotFoundException();
-                //throw new HttpException(404, string.Format("The controller for path '{0}' could not be found.", requestContext.HttpContext.Request.Path));
+                throw new NotFoundException("Контролер не найден.");
             }
 
-            var controller = (Controller)_kernel.Resolve(controllerType);
+            var name = WebUtils.GetControllerName(controllerType);
 
-            return controller;
+            var controller = this._kernel.Resolve<ICilestaController>(name);
+
+            if (controller == null)
+            {
+                throw new NotFoundException("Контролер с именем \"" + name + "\" не найден.");
+            }
+
+            return controller as IController;
         }
     }
 }

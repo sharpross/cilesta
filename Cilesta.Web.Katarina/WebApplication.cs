@@ -34,6 +34,7 @@
             Logger = Container.Resolve<Logging.Interfaces.ILogger>();
 
             DependencyResolver.SetResolver(new CilestaDependencyResolver(Container));
+            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(Container.Kernel));
 
             var filterContainers = Container.ResolveAll<IFilterContainer>();
             foreach (var filterContainer in filterContainers)

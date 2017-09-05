@@ -11,5 +11,10 @@
             : base("Запрашиваемый ресур не найден")
         { 
         }
+
+        public NotFoundException(string message)
+            : base(message)
+        {
+        }
     }
 }
