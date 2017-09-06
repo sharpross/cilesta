@@ -30,7 +30,7 @@
 
         public override void ProcessRequest(ExceptionContext filterContext)
         {
-            filterContext.Result = new RedirectResult(VirtualPathUtility.ToAbsolute("~/User/registration"), true);
+            filterContext.Result = new RedirectResult(VirtualPathUtility.ToAbsolute("~/Login/Index"), false);
         }
 
         public override void ProcessAjaxRequest(ExceptionContext filterContext)

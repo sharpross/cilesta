@@ -15,7 +15,7 @@
 
         public void InitComponents(IWindsorContainer container)
         {
-            container.Register(Component.For<IControllerFactory>().ImplementedBy<WindsorControllerFactory>().LifeStyle.Transient);
+            //container.Register(Component.For<IControllerFactory>().ImplementedBy<WindsorControllerFactory>().LifeStyle.Transient);
             container.Register(Component.For<IFilterContainer>().ImplementedBy<FilterContainer>().LifeStyle.Transient);
             container.Register(Component.For<IRouteContainer>().ImplementedBy<RouteContainer>().LifeStyle.Transient);
         }

@@ -11,10 +11,16 @@
             routeCollection.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "User", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
             routeCollection.MapRoute(
+                name: "Short",
+                url: "{controller}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+
+            /*routeCollection.MapRoute(
                 name: "Error",
                 url: "{controller}/{action}",
                 defaults: new { controller = "Error", action = "Index" }
@@ -30,7 +36,7 @@
                 name: "Login",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
-            );
+            );*/
         }
     }
 }
