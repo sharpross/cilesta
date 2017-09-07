@@ -6,11 +6,14 @@
     using System.Web.Mvc;
     using Castle.Windsor;
 
-    public class CilestaDependencyResolver : IDependencyResolver
+    /// <summary>
+    /// Розолвер зависимостей (Castle Windsor)
+    /// </summary>
+    public class WindsorDependencyResolver : IDependencyResolver
     {
         private readonly IWindsorContainer container;
 
-        public CilestaDependencyResolver(IWindsorContainer container)
+        public WindsorDependencyResolver(IWindsorContainer container)
         {
             this.container = container;
         }

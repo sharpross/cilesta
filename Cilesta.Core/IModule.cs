@@ -19,6 +19,9 @@
         /// </summary>
         void InitComponents(IWindsorContainer container);
 
+        /// <summary>
+        /// Проверить на требования проведения миграции
+        /// </summary>
         void Validate();
     }
 }

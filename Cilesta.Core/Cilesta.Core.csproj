@@ -69,7 +69,7 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="IModule.cs" />
-    <Compile Include="IoC\CilestaDependencyResolver.cs" />
+    <Compile Include="IoC\WindsorDependencyResolver.cs" />
     <Compile Include="IWindsorController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

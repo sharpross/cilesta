@@ -37,12 +37,12 @@
             }
         }
 
-        [HttpGet]
+        /*[HttpGet]
         [OutputCache(Duration = 10)]
         public JsonNetResult GetAll()
         {
             return this.GetAll(new Filter());
-        }
+        }*/
 
         [HttpGet]
         [OutputCache(Duration = 10)]

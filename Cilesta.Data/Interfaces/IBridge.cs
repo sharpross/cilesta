@@ -4,6 +4,10 @@
     using Cilesta.Data.Models;
     using NHibernate;
 
+    /// <summary>
+    /// Итеррфейс доступа к хранилищу
+    /// </summary>
+    /// <typeparam name="T">Тип сищности</typeparam>
     public interface IBridge<T> where T : class, IEntity
     {
         ISession Session { get; }
