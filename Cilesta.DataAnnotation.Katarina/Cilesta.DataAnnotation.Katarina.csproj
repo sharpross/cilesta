@@ -44,6 +44,7 @@
     <Compile Include="Attributes\StringValidatorAttribute.cs" />
     <Compile Include="Implimentation\FieldValidationInfo.cs" />
     <Compile Include="Implimentation\ValidationModel.cs" />
+    <Compile Include="Implimentation\ValidationResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

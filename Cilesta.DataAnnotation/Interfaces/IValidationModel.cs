@@ -6,9 +6,9 @@
     public interface IValidationModel
     {
         /// <summary>
-        /// Проверить можель 
+        /// Проверить модель 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Результат валидации</returns>
         IValidationResult Validate();
     }
 }

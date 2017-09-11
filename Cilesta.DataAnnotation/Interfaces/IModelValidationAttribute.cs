@@ -2,8 +2,15 @@
 {
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Итерфейс атрибута валидации поля
+    /// </summary>
     public interface IModelValidationAttribute
     {
-        List<IFieldValidationInfo> Proccess();
+        /// <summary>
+        /// Проверить поле на ошибки    
+        /// </summary>
+        /// <returns>Список ошибок по полю</returns>
+        List<IFieldValidationInfo> Proccess(object value);
     }
 }
