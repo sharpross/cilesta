@@ -5,6 +5,10 @@
     /// </summary>
     public interface IValidationModel
     {
+        /// <summary>
+        /// Проверить можель 
+        /// </summary>
+        /// <returns></returns>
         IValidationResult Validate();
     }
 }
