@@ -27,9 +27,11 @@
         [SkipAuthorization]
         public ActionResult Registration(RegistrationModel model)
         {
-            if (model.IsValid())
-            {
+            var validationResult = model.Validate();
 
+            if (validationResult.IsValid)
+            {
+                
             }
 
             return View(model);

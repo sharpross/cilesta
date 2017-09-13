@@ -12,16 +12,24 @@
             var errors = new List<IFieldValidationInfo>();
 
             var fields = this.GetType()
-                .GetProperties(System.Reflection.BindingFlags.Public);
-
+                .GetProperties(BindingFlags.Public);
+            
             foreach (var field in fields)
             {
-                var attributes = field.GetCustomAttributes(false)
-                    .Where(x => x.GetType().BaseType is IModelValidationAttribute);
+                var attributes = new List<IModelValidationAttribute>();
+
+                field.GetCustomAttributes(false)
+                    .Where(x => x.GetType().BaseType is IModelValidationAttribute)
+                    .Select(x => {
+                        attributes.Add(x as IModelValidationAttribute);
+                        return false;
+                    });
 
                 if (attributes.Count() > 0)
-                {  
-                    
+                {
+                    var fieldErrors = this.ProccessField(field, (List<IModelValidationAttribute>)attributes);
+
+                    errors.AddRange(fieldErrors);
                 }
             }
 
@@ -30,7 +38,7 @@
             return result;
         }
 
-        private List<IFieldValidationInfo> ProccessField(PropertyInfo prop, IModelValidationAttribute[] attributes)
+        private List<IFieldValidationInfo> ProccessField(PropertyInfo prop, List<IModelValidationAttribute> attributes)
         {
             var result = new List<IFieldValidationInfo>();
 
@@ -38,7 +46,7 @@
 
             foreach (var attribute in attributes)
             {
-                var errors = attribute.Proccess(value);
+                var errors = attribute.Proccess(value, prop.Name);
             }
 
             return result;

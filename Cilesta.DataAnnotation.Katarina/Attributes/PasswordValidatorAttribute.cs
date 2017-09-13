@@ -1,18 +1,31 @@
 ﻿namespace Cilesta.DataAnnotation.Katarina.Attributes
 {
+    using System;
     using System.Collections.Generic;
+    using Castle.Windsor;
     using Cilesta.DataAnnotation.Interfaces;
+    using Cilesta.DataAnnotation.Katarina.Validators;
 
-    public class PasswordValidatorAttribute : IModelValidationAttribute
+    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class PasswordValidatorAttribute : Attribute, IModelValidationAttribute
     {
-        private const string Error_EmptyPassword = "";
-        private const string Error_LowLenght = "";
+        public IWindsorContainer Container { get; set; }
 
-        private const string RegexSymbols = "[a-z A-Z а-яА-Я ёЁ 0-9]";
-
-        public List<IFieldValidationInfo> Proccess()
+        public const string Code = "validator-password";
+        
+        public List<IFieldValidationInfo> Proccess(object value, string fieldCode)
         {
-            return new List<IFieldValidationInfo>();
+            var validator = this.Container.Resolve<IFieldValidator>(Code);
+
+            var config = new PasswordValidatorConfig()
+            {
+                Value = value,
+                FieldCode = fieldCode
+            };
+
+            var errors = validator.Validate(config);
+
+            return errors;
         }
     }
 }

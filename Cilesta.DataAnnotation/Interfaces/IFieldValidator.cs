@@ -1,10 +1,12 @@
 ﻿namespace Cilesta.DataAnnotation.Interfaces
 {
+    using System.Collections.Generic;
+
     /// <summary>
     /// Интерфейс валидатора значения
     /// </summary>
     public interface IFieldValidator
     {
-        void Validate(object value);
+        List<IFieldValidationInfo> Validate(IValidatorConfig config);
     }
 }

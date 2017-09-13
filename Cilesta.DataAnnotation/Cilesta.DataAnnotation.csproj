@@ -46,6 +46,7 @@
     <Compile Include="Interfaces\IModelValidationAttribute.cs" />
     <Compile Include="Interfaces\IValidationModel.cs" />
     <Compile Include="Interfaces\IValidationResult.cs" />
+    <Compile Include="Interfaces\IValidatorConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

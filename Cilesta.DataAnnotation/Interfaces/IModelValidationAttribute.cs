@@ -11,6 +11,6 @@
         /// Проверить поле на ошибки    
         /// </summary>
         /// <returns>Список ошибок по полю</returns>
-        List<IFieldValidationInfo> Proccess(object value);
+        List<IFieldValidationInfo> Proccess(object value, string fieldCode);
     }
 }
