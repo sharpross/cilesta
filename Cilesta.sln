@@ -43,6 +43,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cilesta.DataAnnotation", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cilesta.DataAnnotation.Katarina", "Cilesta.DataAnnotation.Katarina\Cilesta.DataAnnotation.Katarina.csproj", "{932224E9-91F0-44C6-A8FD-1AD6D9E1390C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cilesta.DataAnnotation.Katarina.Tests", "Cilesta.DataAnnotation.Katarina.Tests\Cilesta.DataAnnotation.Katarina.Tests.csproj", "{3B7B3E29-F7C0-482C-9F2B-7E02005276E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DE5BB027-B58C-4720-AD29-80EAE4D8CF30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -121,6 +125,10 @@ Global
 		{932224E9-91F0-44C6-A8FD-1AD6D9E1390C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{932224E9-91F0-44C6-A8FD-1AD6D9E1390C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{932224E9-91F0-44C6-A8FD-1AD6D9E1390C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B7B3E29-F7C0-482C-9F2B-7E02005276E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B7B3E29-F7C0-482C-9F2B-7E02005276E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B7B3E29-F7C0-482C-9F2B-7E02005276E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B7B3E29-F7C0-482C-9F2B-7E02005276E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,6 +151,7 @@ Global
 		{FA53AEC9-9E4D-4793-95F2-CE09C13392B3} = {E126E539-F7AC-41D4-AE25-1429B6FB86FE}
 		{A0B849B2-48BD-4415-A574-F8567486359E} = {E126E539-F7AC-41D4-AE25-1429B6FB86FE}
 		{932224E9-91F0-44C6-A8FD-1AD6D9E1390C} = {2089CEA8-57F9-4856-B2D3-CE26BCA1FAD9}
+		{3B7B3E29-F7C0-482C-9F2B-7E02005276E0} = {DE5BB027-B58C-4720-AD29-80EAE4D8CF30}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD10F2CE-28C5-457A-B1E5-974958F052BC}

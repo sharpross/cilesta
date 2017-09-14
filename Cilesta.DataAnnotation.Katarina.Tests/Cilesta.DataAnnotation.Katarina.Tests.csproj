@@ -48,11 +48,22 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Attributes\PasswordValidatorAttribute.cs" />
+    <Compile Include="AttributeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cilesta.DataAnnotation.Katarina\Cilesta.DataAnnotation.Katarina.csproj">
+      <Project>{932224e9-91f0-44c6-a8fd-1ad6d9e1390c}</Project>
+      <Name>Cilesta.DataAnnotation.Katarina</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cilesta.DataAnnotation\Cilesta.DataAnnotation.csproj">
+      <Project>{a0b849b2-48bd-4415-a574-f8567486359e}</Project>
+      <Name>Cilesta.DataAnnotation</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
