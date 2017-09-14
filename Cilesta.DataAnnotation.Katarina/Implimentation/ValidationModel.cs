@@ -11,15 +11,18 @@
         {
             var errors = new List<IFieldValidationInfo>();
 
-            var fields = this.GetType()
-                .GetProperties(BindingFlags.Public);
-            
+            var fields = this.GetType().GetProperties();
+            var va = typeof(IModelValidationAttribute);
+
             foreach (var field in fields)
             {
                 var attributes = new List<IModelValidationAttribute>();
 
                 field.GetCustomAttributes(false)
-                    .Where(x => x.GetType().BaseType is IModelValidationAttribute)
+                    .Where(x => {
+                        //x.GetType().Inte is IModelValidationAttribute
+                        return true;
+                    })
                     .Select(x => {
                         attributes.Add(x as IModelValidationAttribute);
                         return false;

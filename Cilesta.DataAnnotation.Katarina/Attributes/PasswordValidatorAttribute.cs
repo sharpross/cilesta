@@ -12,7 +12,11 @@
         public IWindsorContainer Container { get; set; }
 
         public const string Code = "validator-password";
-        
+
+        public PasswordValidatorAttribute()
+        { 
+        }
+
         public List<IFieldValidationInfo> Proccess(object value, string fieldCode)
         {
             var validator = this.Container.Resolve<IFieldValidator>(Code);

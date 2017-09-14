@@ -21,7 +21,7 @@
         public void InitComponents(IWindsorContainer container)
         {
             container.Register(Component.For<IFieldValidator>().ImplementedBy<PasswordValidator>().Named(PasswordValidator.Code));
-            container.Register(Component.For<IFieldValidator>().ImplementedBy<PasswordValidator>().Named(PasswordValidator.Code));
+            container.Register(Component.For<IFieldValidator>().ImplementedBy<PasswordValidator>().Named(StringValidator.Code));
         }
 
         public void Validate()
