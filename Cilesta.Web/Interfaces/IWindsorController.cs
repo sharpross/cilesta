@@ -1,4 +1,4 @@
-﻿namespace Cilesta.Core
+﻿namespace Cilesta.Web.Interfaces
 {
     using Castle.Windsor;
 

@@ -40,13 +40,23 @@
         {
             var configText = string.Empty;
 
-            var path = HostingHelper.GetAppDirectory() + "\\" + Constants.AppConfigurationFileName;
-
-            using (var reader = new StreamReader(path))
+            if (HostingHelper.GetAppDirectory() == null)
             {
-                configText = reader.ReadToEnd();
+                using (var reader = new StreamReader("..\\..\\cilesta.config.json"))
+                {
+                    configText = reader.ReadToEnd();
+                }
             }
+            else
+            {
+                var path = HostingHelper.GetAppDirectory() + "\\" + Constants.AppConfigurationFileName;
 
+                using (var reader = new StreamReader(path))
+                {
+                    configText = reader.ReadToEnd();
+                }
+            }
+            
             this.Configuration = JsonHelper.Deserialize<ConfigurationSectionCollection>(configText);
         }
 

@@ -54,7 +54,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoreTest.cs" />
+    <Compile Include="Activator.cs" />
+    <Compile Include="BaseTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -66,9 +67,17 @@
       <Project>{d0649389-fdc1-4f75-b590-0023f670f1de}</Project>
       <Name>Cilesta.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Data.Katarina\Cilesta.Data.Katarina.csproj">
+      <Project>{37d96218-e119-4efa-8e96-7399b5acfae7}</Project>
+      <Name>Cilesta.Data.Katarina</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cilesta.Data\Cilesta.Data.csproj">
       <Project>{7F0F91EE-C9D7-41E9-9027-116044C6744F}</Project>
       <Name>Cilesta.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Security.Katarina\Cilesta.Security.Katarina.csproj">
+      <Project>{b97085eb-d2c1-4a69-8c26-784bbb81ad29}</Project>
+      <Name>Cilesta.Security.Katarina</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cilesta.Web.Katarina\Cilesta.Web.Katarina.csproj">
       <Project>{48ADC878-5691-47C8-A780-72D724F1BB35}</Project>

@@ -18,21 +18,17 @@
             {
                 var attributes = new List<IModelValidationAttribute>();
 
-                field.GetCustomAttributes(false)
-                    .Where(x => {
-                        //x.GetType().Inte is IModelValidationAttribute
-                        return true;
-                    })
-                    .Select(x => {
-                        attributes.Add(x as IModelValidationAttribute);
-                        return false;
-                    });
+                var customAttributes = field.GetCustomAttributes(false);
 
-                if (attributes.Count() > 0)
+                foreach (var attribute in customAttributes)
                 {
-                    var fieldErrors = this.ProccessField(field, (List<IModelValidationAttribute>)attributes);
+                    var isValidationAttribute = attribute.GetType().GetInterfaces().Any(x => x == typeof(IModelValidationAttribute));
 
-                    errors.AddRange(fieldErrors);
+                    if (isValidationAttribute)
+                    {
+                        var fieldErrors = this.ProccessField(field, (IModelValidationAttribute)attribute);
+                        errors.AddRange(fieldErrors);
+                    }
                 }
             }
 
@@ -41,16 +37,13 @@
             return result;
         }
 
-        private List<IFieldValidationInfo> ProccessField(PropertyInfo prop, List<IModelValidationAttribute> attributes)
+        private List<IFieldValidationInfo> ProccessField(PropertyInfo prop, IModelValidationAttribute attribute)
         {
             var result = new List<IFieldValidationInfo>();
 
             var value = prop.GetValue(this);
 
-            foreach (var attribute in attributes)
-            {
-                var errors = attribute.Proccess(value, prop.Name);
-            }
+            var errors = attribute.Proccess(value, prop.Name);
 
             return result;
         }

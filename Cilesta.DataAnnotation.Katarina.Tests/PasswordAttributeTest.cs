@@ -1,10 +1,11 @@
 ﻿namespace Cilesta.DataAnnotation.Katarina.Tests
 {
     using Cilesta.DataAnnotation.Katarina.Tests.Models;
+    using Cilesta.Test;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
-    public class PasswordAttributeTest
+    public class PasswordAttributeTest : BaseTest
     {
         [TestMethod]
         public void Test()
@@ -14,12 +15,12 @@
             model.Password = "qwe132asd";
             var trueResult = model.Validate();
 
-            Assert.Equals(trueResult.IsValid, true);
+            Assert.IsTrue(trueResult.IsValid);
 
             model.Password = "123";
             var falseResult = model.Validate();
 
-            Assert.Equals(trueResult.IsValid, false);
+            Assert.IsFalse(trueResult.IsValid);
         }
     }
 }

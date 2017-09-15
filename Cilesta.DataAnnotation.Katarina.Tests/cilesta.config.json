@@ -1,0 +1,66 @@
+﻿[
+  {
+    "Key": "app",
+    "Parametres": [
+      {
+        "Key": "installed",
+        "Value": "false"
+      }
+    ]
+  },
+  {
+    "Key": "data",
+    "Parametres": [
+      {
+        "Key": "type",
+        "Value": "postgresql"
+      },
+      {
+        "Key": "host",
+        "Value": "localhost"
+      },
+      {
+        "Key": "port",
+        "Value": "5432"
+      },
+      {
+        "Key": "database",
+        "Value": "cilesta_tests_123456"
+      },
+      {
+        "Key": "user",
+        "Value": "postgres"
+      },
+      {
+        "Key": "password",
+        "Value": "cnhflbdfhb2"
+      }
+    ]
+  },
+  {
+    "Key": "log",
+    "Parametres": [
+      {
+        "Key": "enabled",
+        "Value": "true" //true,false
+      },
+      {
+        "Key": "type",
+        "Value": "text" //text, db, empty
+      }
+    ]
+  },
+  {
+    "Key": "security",
+    "Parametres": [
+      {
+        "Key": "expiresDefault",
+        "Value": "3"
+      },
+      {
+        "Key": "expiresExtend",
+        "Value": "21"
+      }
+    ]
+  }
+]

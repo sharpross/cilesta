@@ -1,10 +1,11 @@
 ﻿namespace Cilesta.DataAnnotation.Katarina.Tests
 {
     using Cilesta.DataAnnotation.Katarina.Tests.Models;
+    using Cilesta.Test;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
-    public class StringAttributeTest
+    public class StringAttributeTest : BaseTest
     {
         [TestMethod]
         public void Test()
@@ -14,12 +15,12 @@
             model.Name = "123456";
             var trueResult = model.Validate();
 
-            Assert.Equals(trueResult.IsValid, true);
+            Assert.IsTrue(trueResult.IsValid);
 
             model.Name = "123";
             var falseResult = model.Validate();
 
-            Assert.Equals(trueResult.IsValid, false);
+            Assert.IsFalse(trueResult.IsValid);
         }
     }
 }

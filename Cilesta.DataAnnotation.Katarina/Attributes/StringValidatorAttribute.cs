@@ -7,10 +7,8 @@
     using Cilesta.DataAnnotation.Katarina.Validators;
 
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-    public class StringValidatorAttribute : Attribute, IModelValidationAttribute
+    public class StringValidatorAttribute : ValidationAttribute, IModelValidationAttribute
     {
-        public IWindsorContainer Container { get; set; }
-
         public const string Code = "validator-string";
 
         public int MinLenght { get; set; }
@@ -23,7 +21,7 @@
             this.MinLenght = 0;
         }
 
-        public List<IFieldValidationInfo> Proccess(object value, string fieldCode)
+        public override List<IFieldValidationInfo> Proccess(object value, string fieldCode)
         {
             var validator = this.Container.Resolve<IFieldValidator>(Code);
 

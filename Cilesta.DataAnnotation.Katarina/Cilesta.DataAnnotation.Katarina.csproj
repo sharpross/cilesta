@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Attributes\PasswordValidatorAttribute.cs" />
     <Compile Include="Attributes\StringValidatorAttribute.cs" />
+    <Compile Include="Attributes\ValidationAttribute.cs" />
     <Compile Include="Implimentation\FieldValidationInfo.cs" />
     <Compile Include="Implimentation\ValidationModel.cs" />
     <Compile Include="Implimentation\ValidationResult.cs" />

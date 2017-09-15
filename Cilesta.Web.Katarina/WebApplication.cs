@@ -23,6 +23,8 @@
             Container = new WindsorContainer();
             Container.Register(Component.For<IWindsorContainer>().Instance(Container));
 
+            ContainerManager.Container = Container;
+
             //AreaRegistration.RegisterAllAreas();
 
             var preActiation = new PreActivation(Container);
