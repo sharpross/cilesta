@@ -22,5 +22,10 @@
 
             Assert.IsFalse(trueResult.IsValid);
         }
+
+        protected override void AfterInit()
+        {
+            //throw new System.NotImplementedException();
+        }
     }
 }

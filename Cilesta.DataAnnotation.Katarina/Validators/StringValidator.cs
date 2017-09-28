@@ -20,7 +20,12 @@
 
             if (cfg.Value == null)
             {
-                
+                if (cfg.MaxLenght > 0 || cfg.MinLenght > 0)
+                {
+                    result.Add(new FieldValidationInfo(config.FieldCode, error_Empty, ErrorLevel.Critical));
+                }
+                    
+                return result;
             }
 
             var value = cfg.Value.ToString();

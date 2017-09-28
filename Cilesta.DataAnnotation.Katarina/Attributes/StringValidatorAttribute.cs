@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using Castle.Windsor;
     using Cilesta.DataAnnotation.Interfaces;
     using Cilesta.DataAnnotation.Katarina.Validators;
 

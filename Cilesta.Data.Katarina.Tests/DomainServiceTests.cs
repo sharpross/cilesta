@@ -1,10 +1,12 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace Cilesta.Data.Katarina.Tests
+﻿namespace Cilesta.Data.Katarina.Tests
 {
+    using System;
+    using Cilesta.Data.Katarina.Tests.Entities;
+    using Cilesta.Test;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
-    public class DomainServiceTests
+    public class DomainServiceTests : BaseTest
     {
         [TestMethod]
         public void TestCreate()
@@ -19,6 +21,11 @@ namespace Cilesta.Data.Katarina.Tests
         [TestMethod]
         public void TestDelete()
         {
+        }
+
+        protected override void AfterInit()
+        {
+            Container.RegisterDataSource<UserMessage>();
         }
     }
 }

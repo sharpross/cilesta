@@ -2,16 +2,20 @@
 {
     using Castle.Windsor;
 
-    public class BaseTest
+    public abstract class BaseTest
     {
         protected static IWindsorContainer Container { get; set; }
-
+        
         public BaseTest()
         {
             var activator = new Activator();
             activator.Init();
 
             Container = activator.Container;
+
+            AfterInit();
         }
+
+        protected abstract void AfterInit();
     }
 }

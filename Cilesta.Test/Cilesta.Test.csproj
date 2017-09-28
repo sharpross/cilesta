@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Cilesta.Test</RootNamespace>
     <AssemblyName>Cilesta.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
@@ -19,6 +19,7 @@
     <TestProjectType>UnitTest</TestProjectType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -75,9 +76,21 @@
       <Project>{7F0F91EE-C9D7-41E9-9027-116044C6744F}</Project>
       <Name>Cilesta.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Domain.Katarina\Cilesta.Domain.Katarina.csproj">
+      <Project>{6c546924-9df8-4332-8007-7da2dab69488}</Project>
+      <Name>Cilesta.Domain.Katarina</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cilesta.DomainService\Cilesta.Domain.csproj">
+      <Project>{38e15eda-8aec-489a-a6e2-423486bbe126}</Project>
+      <Name>Cilesta.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cilesta.Security.Katarina\Cilesta.Security.Katarina.csproj">
       <Project>{b97085eb-d2c1-4a69-8c26-784bbb81ad29}</Project>
       <Name>Cilesta.Security.Katarina</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cilesta.Security\Cilesta.Security.csproj">
+      <Project>{f0f2d004-edda-4666-b4cf-2747344d18f4}</Project>
+      <Name>Cilesta.Security</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cilesta.Web.Katarina\Cilesta.Web.Katarina.csproj">
       <Project>{48ADC878-5691-47C8-A780-72D724F1BB35}</Project>
