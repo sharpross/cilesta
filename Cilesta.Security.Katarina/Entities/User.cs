@@ -1,6 +1,5 @@
 ﻿namespace Cilesta.Security.Katarina.Entities
 {
-    using System;
     using Cilesta.Security.Models;
     using Data.Katarina.Models;
 

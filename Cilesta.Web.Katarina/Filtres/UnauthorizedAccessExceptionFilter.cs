@@ -12,11 +12,6 @@
             : base(container)
         {
         }
-        
-        public override void OnException(ExceptionContext filterContext)
-        {
-            base.OnException(filterContext);
-        }
 
         public override bool IsThisException(ExceptionContext filterContext)
         {

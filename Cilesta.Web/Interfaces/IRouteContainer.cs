@@ -4,6 +4,6 @@
 
     public interface IRouteContainer
     {
-        void Init(RouteCollection filterCollection);
+        void Init(RouteCollection routeCollection);
     }
 }

@@ -2,18 +2,13 @@
 {
     using System.Web.Mvc;
     using Castle.Windsor;
-    using Cilesta.Web.Katarina.Implimentation;
+    using Implimentation;
 
     public class NotFoundExceptionFilter : BaseExceptionFilter, IExceptionFilter
     {
         public NotFoundExceptionFilter(IWindsorContainer container)
             : base(container)
         {
-        }
-
-        public override void OnException(ExceptionContext filterContext)
-        {
-            base.OnException(filterContext);
         }
 
         public override bool IsThisException(ExceptionContext filterContext)

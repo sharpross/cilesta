@@ -1,7 +1,9 @@
 ﻿namespace Cilesta.Security.Models
 {
+    using System.Collections.Generic;
+
     public interface IRolePermission
     {
-        AccessType Access { get; set; }
+        IEnumerable<AccessType> Accesses { get; set; }
     }
 }

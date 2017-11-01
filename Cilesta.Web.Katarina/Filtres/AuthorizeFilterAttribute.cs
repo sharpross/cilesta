@@ -34,27 +34,27 @@
 
         private bool Skip(AuthorizationContext filterContext)
         {
-            var result = false;
+            var authController = filterContext.Controller.GetType()
+                .GetCustomAttributes(false)
+                .Any(x => x is AuthorizationAttribute);
+
+            var authMethod = filterContext.ActionDescriptor
+                .GetCustomAttributes(false)
+                .Any(x => x is AuthorizationAttribute);
 
             var skipMethod = filterContext.ActionDescriptor
                 .GetCustomAttributes(false)
                 .Any(x => x is SkipAuthorizationAttribute);
-
-            if (skipMethod)
+            
+            if (authController || authMethod)
             {
-                return true;
+                if (!skipMethod)
+                {
+                    return false;
+                }
             }
 
-            var skipController = filterContext.Controller.GetType()
-                .GetCustomAttributes(false)
-                .Any(x => x is SkipAuthorizationAttribute);
-
-            if (skipController)
-            {
-                result = true;
-            }
-
-            return result;
+            return true;
         }
     }
 }

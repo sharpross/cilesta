@@ -1,5 +1,6 @@
 ﻿namespace Cilesta.Security.Katarina.Entities
 {
+    using System.Collections.Generic;
     using Cilesta.Data.Katarina.Models;
     using Cilesta.Security.Models;
 
@@ -9,6 +10,6 @@
 
         public virtual PermissionKey Permission { get; set; }
 
-        public virtual AccessType Access { get; set; }
+        public virtual IEnumerable<AccessType> Accesses { get; set; }
     }
 }

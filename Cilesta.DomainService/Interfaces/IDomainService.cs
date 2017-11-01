@@ -1,7 +1,7 @@
 ﻿namespace Cilesta.Domain.Interfaces
 {
     using System.Collections.Generic;
-    using Cilesta.Data.Models;
+    using Data.Models;
 
     public interface IDomainService<T> where T : class, IEntity
     {

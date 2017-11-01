@@ -2,20 +2,20 @@
 {
     using System.Web;
     using System.Web.Mvc;
-    using Castle.Core.Logging;
     using Castle.Windsor;
+    using Logging.Interfaces;
 
     public abstract class BaseExceptionFilter
     {
-        protected IWindsorContainer Container { get; set; }
-
-        protected Logging.Interfaces.ILogger Logger { get; set; }
-
         public BaseExceptionFilter(IWindsorContainer container)
         {
-            this.Container = container;
-            this.Logger = this.Container.Resolve<Logging.Interfaces.ILogger>();
+            Container = container;
+            Logger = Container.Resolve<ILogger>();
         }
+
+        protected IWindsorContainer Container { get; set; }
+
+        protected ILogger Logger { get; set; }
 
         public abstract void ProcessRequest(ExceptionContext filterContext);
 
@@ -25,33 +25,33 @@
 
         public virtual void OnException(ExceptionContext filterContext)
         {
-            this.WriteToLog(filterContext);
+            WriteToLog(filterContext);
 
             if (filterContext.ExceptionHandled)
             {
                 return;
             }
 
-            if (this.IsThisException(filterContext))
+            if (IsThisException(filterContext))
             {
                 filterContext.ExceptionHandled = true;
                 filterContext.HttpContext.Response.Clear();
                 filterContext.HttpContext.Response.TrySkipIisCustomErrors = true;
 
-                if (this.IsAjaxRequest(filterContext.HttpContext.Request))
+                if (IsAjaxRequest(filterContext.HttpContext.Request))
                 {
-                    this.ProcessAjaxRequest(filterContext);
+                    ProcessAjaxRequest(filterContext);
                 }
                 else
                 {
-                    this.ProcessRequest(filterContext);
+                    ProcessRequest(filterContext);
                 }
             }
         }
 
         protected void WriteToLog(ExceptionContext filterContext)
         {
-            this.Logger.Error(filterContext.Exception);
+            Logger.Error(filterContext.Exception);
         }
 
         public bool IsAjaxRequest(HttpRequestBase requestr)

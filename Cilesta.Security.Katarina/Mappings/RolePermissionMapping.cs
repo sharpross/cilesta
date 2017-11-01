@@ -11,9 +11,12 @@
             Table("rolepermission");
             Id(x => x.Id);
             Map(x => x.DateCreated);
-            References<Role>(x => x.Role);
-            References<PermissionKey>(x => x.Permission);
-            Map(x => x.Access);
+            HasOne(x => x.Role);
+            References(x => x.Permission).Cascade.All();
+            HasMany(x => x.Accesses)
+                .Cascade.All()
+                .Table("permissions")
+                .Element("accesses");;
         }
     }
 }

@@ -1,31 +1,13 @@
 ﻿namespace Cilesta.Security.Katarina.Models
 {
-    using Cilesta.Security.Models;
+    using Security.Models;
 
     public class AnonymousUser : IUserIndentity
     {
-        public string Name
-        {
-            get
-            {
-                return string.Empty;
-            }
-        }
+        public string Name => string.Empty;
 
-        public string AuthenticationType
-        {
-            get
-            {
-                return "Неизвестный пользователь";
-            }
-        }
+        public string AuthenticationType => "Неизвестный пользователь";
 
-        public bool IsAuthenticated
-        {
-            get
-            {
-                return false;
-            }
-        }
+        public bool IsAuthenticated => false;
     }
 }

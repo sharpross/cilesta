@@ -3,68 +3,62 @@
     using System;
     using System.Collections.Generic;
     using Castle.Windsor;
-    using Cilesta.Data.Interfaces;
-    using Cilesta.Data.Models;
-    using Cilesta.Domain.Interfaces;
-    using Cilesta.Logging.Interfaces;
+    using Data.Interfaces;
+    using Data.Models;
+    using Interfaces;
+    using Logging.Interfaces;
 
     public class DomainService<T> : IDomainService<T> where T : class, IEntity
     {
+        private IBridge<T> _bridge;
+
+        private IList<IDomainInterceptor<T>> _interceptors;
+
+        private ILogger _log;
+
         public IWindsorContainer Container { get; set; }
 
-        private ILogger log;
         private ILogger Log
         {
             get
             {
-                if (this.log == null)
+                if (_log == null)
                 {
-                    this.log = this.Container.Resolve<ILogger>();
+                    _log = Container.Resolve<ILogger>();
                 }
 
-                return this.log;
+                return _log;
             }
         }
 
-        private IBridge<T> bridge;
         public IBridge<T> Bridge
         {
             get
             {
-                if (this.bridge == null)
+                if (_bridge == null)
                 {
-                    this.bridge = (IBridge<T>)this.Container.Resolve(typeof(IBridge<>).MakeGenericType(typeof(T)));
+                    _bridge = (IBridge<T>) Container.Resolve(typeof(IBridge<>).MakeGenericType(typeof(T)));
                 }
 
-                return this.bridge;
+                return _bridge;
             }
         }
 
-        private IList<IDomainInterceptor> interceptors;
-        public IList<IDomainInterceptor> Interceptors
-        {
-            get 
-            {
-                if (this.interceptors == null)
-                {
-                    this.interceptors = this.Container.ResolveAll<IDomainInterceptor>();
-                }
-                return this.interceptors;
-            }
-        }
+        public IList<IDomainInterceptor<T>> Interceptors =>
+            _interceptors ?? (_interceptors = Container.ResolveAll<IDomainInterceptor<T>>());
 
         public void Delete(T entity)
         {
             try
             {
-                if (this.OnBefore(OperationType.Delete, entity))
+                if (OnBefore(OperationType.Delete, entity))
                 {
-                    this.Bridge.Delete(entity);
+                    Bridge.Delete(entity);
                 }
             }
             catch (Exception ex)
             {
-                this.OnException(ex);
+                OnException(ex);
                 throw;
             }
         }
@@ -73,14 +67,12 @@
         {
             try
             {
-                if (this.OnBefore(OperationType.Delete, id))
-                {
-                    this.Bridge.Delete(id);
-                }
+                //TODO: интерсептор на get?
+                Bridge.Delete(id);
             }
             catch (Exception ex)
             {
-                this.OnException(ex);
+                OnException(ex);
                 throw;
             }
         }
@@ -89,14 +81,14 @@
         {
             try
             {
-                if (this.OnBefore(OperationType.Delete, entities))
+                if (OnBefore(OperationType.Delete, null, entities))
                 {
-                    this.Bridge.Delete(entities);
+                    Bridge.Delete(entities);
                 }
             }
             catch (Exception ex)
             {
-                this.OnException(ex);
+                OnException(ex);
                 throw;
             }
         }
@@ -105,16 +97,15 @@
         {
             try
             {
-                if (this.OnBefore(OperationType.Get, id))
-                {
-                    return this.Bridge.Get(id);
-                }
-
-                return null;
+                var result = Bridge.Get(id);
+                
+                OnAfter(OperationType.Get, result);
+                
+                return result;
             }
             catch (Exception ex)
             {
-                this.OnException(ex);
+                OnException(ex);
                 throw;
             }
         }
@@ -123,16 +114,20 @@
         {
             try
             {
-                if (this.OnBefore(OperationType.GetAll, null))
+                if (OnBefore(OperationType.GetAll, null))
                 {
-                    return this.Bridge.GetAll();
+                    var result = Bridge.GetAll();
+                    
+                    OnAfter(OperationType.GetAll, entites: result);
+                    
+                    return result;
                 }
 
                 return null;
             }
             catch (Exception ex)
             {
-                this.OnException(ex);
+                OnException(ex);
                 throw;
             }
         }
@@ -141,18 +136,21 @@
         {
             try
             {
-                if (this.OnBefore(OperationType.GetAll, null))
+                if (OnBefore(OperationType.GetAll, null))
                 {
-                    var criteria = filter.Parse(this.Bridge.Session.CreateCriteria<T>()); ;
-
-                    return this.Bridge.GetAll(criteria);
+                    var criteria = filter.Parse(Bridge.Session.CreateCriteria<T>());
+                    var result = Bridge.GetAll(criteria);
+                    
+                    OnAfter(OperationType.GetAll, entites: result);
+                    
+                    return result;
                 }
 
                 return null;
             }
             catch (Exception ex)
             {
-                this.OnException(ex);
+                OnException(ex);
                 throw;
             }
         }
@@ -161,14 +159,15 @@
         {
             try
             {
-                if (this.OnBefore(OperationType.Save, null))
+                if (OnBefore(OperationType.Save, entity))
                 {
-                    this.Bridge.Save(entity);
+                    Bridge.Save(entity);
+                    OnAfter(OperationType.Save, entity);
                 }
             }
             catch (Exception ex)
             {
-                this.OnException(ex);
+                OnException(ex);
                 throw;
             }
         }
@@ -177,46 +176,70 @@
         {
             try
             {
-                if (this.OnBefore(OperationType.Save, null))
+                if (OnBefore(OperationType.Save, entities: entities))
                 {
-                    this.Bridge.Save(entities);
+                    Bridge.Save(entities);
+                    OnAfter(OperationType.Save, null, entities);
                 }
             }
             catch (Exception ex)
             {
-                this.OnException(ex);
+                OnException(ex);
                 throw;
             }
         }
 
-        public bool OnBefore(OperationType operation, object obj)
+        public bool OnBefore(OperationType operation, T entity = null, IList<T> entities = null)
         {
-            var result = true;
-            
-            foreach (var interceptor in this.Interceptors)
+            foreach (var interceptor in Interceptors)
             {
-                var onBeforeResult = interceptor.OnBefore(operation, obj);
-
-                if (!onBeforeResult)
+                if (entity != null)
                 {
-                    return false;
+                    var onBeforeResult = interceptor.OnBefore(operation, entity);
+
+                    if (!onBeforeResult)
+                    {
+                        return false;
+                    }
+                }
+                else if (entities != null)
+                {
+                    foreach (var record in entities)
+                    {
+                        var onBeforeResult = interceptor.OnBefore(operation, record);
+
+                        if (!onBeforeResult)
+                        {
+                            return false;
+                        }
+                    }
                 }
             }
 
-            return result;
+            return true;
         }
 
-        public void OnAfter(OperationType operation, object obj)
+        public void OnAfter(OperationType operation, T entity = null, IList<T> entites = null)
         {
-            foreach (var interceptor in this.Interceptors)
+            foreach (var interceptor in Interceptors)
             {
-                interceptor.OnAfter(operation, obj);
+                if (entity != null)
+                {
+                    interceptor.OnAfter(operation, entity);
+                }
+                else if (entites != null)
+                {
+                    foreach (var record in entites)
+                    {
+                        interceptor.OnAfter(operation, record);
+                    }
+                }
             }
         }
 
         private void OnException(Exception ex)
         {
-            this.Log.Error(ex);
+            Log.Error(ex);
         }
     }
 }

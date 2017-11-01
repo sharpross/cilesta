@@ -1,6 +1,6 @@
 ﻿namespace Cilesta.Security.Katarina.Interfaces
 {
-    using Cilesta.Security.Katarina.Entities;
+    using Entities;
 
     public interface IUserManager
     {

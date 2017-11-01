@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
     using System.Web.Mvc;
+    using System.Web.Optimization;
     using System.Web.Routing;
     using Castle.MicroKernel.Registration;
     using Castle.Windsor;
@@ -25,8 +26,6 @@
 
             ContainerManager.Container = Container;
 
-            //AreaRegistration.RegisterAllAreas();
-
             var preActiation = new PreActivation(Container);
             preActiation.Init();
 
@@ -48,6 +47,12 @@
             foreach (var routeContainer in routeContainers)
             {
                 routeContainer.Init(RouteTable.Routes);
+            }
+            
+            var boundleContainers = Container.ResolveAll<IBoundleContainer>();
+            foreach (var boundleContainer in boundleContainers)
+            {
+                boundleContainer.Init(BundleTable.Bundles);
             }
             
             var migrator = Container.Resolve<IMigrator>();

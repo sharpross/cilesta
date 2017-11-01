@@ -1,7 +1,7 @@
 ﻿namespace Cilesta.Security.Katarina.Interfaces
 {
-    using Cilesta.Domain.Interfaces;
-    using Cilesta.Security.Katarina.Entities;
+    using Domain.Interfaces;
+    using Entities;
 
     public interface IPermissionService : IDomainService<PermissionKey>
     {

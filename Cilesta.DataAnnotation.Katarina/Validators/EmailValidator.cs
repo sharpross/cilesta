@@ -12,7 +12,7 @@
 
         private string error_NullValue = "Значение не может быть пустым.";
         private string error_NoMatch = "Пожалуйста укажите Email.";
-
+        
         public List<IFieldValidationInfo> Validate(IValidatorConfig config)
         {
             var result = new List<IFieldValidationInfo>();

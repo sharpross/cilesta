@@ -1,11 +1,10 @@
 ﻿namespace Cilesta.Security.Katarina.Interfaces
 {
-    using Cilesta.Domain.Interfaces;
-    using Cilesta.Security.Interfaces;
-    using Cilesta.Security.Katarina.Entities;
+    using Domain.Interfaces;
+    using Entities;
+    using Security.Interfaces;
 
-    public interface IUserService : IUserProvider, IDomainService<User>
+    public interface IUserService : IDomainService<User>, IUserProvider
     {
-
     }
 }

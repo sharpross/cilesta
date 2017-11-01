@@ -1,9 +1,13 @@
 ﻿namespace Cilesta.Domain.Interfaces
 {
-    public interface IDomainInterceptor
-    {
-        bool OnBefore(OperationType operation, object data);
+    using Castle.Windsor;
 
-        bool OnAfter(OperationType operation, object data);
+    public interface IDomainInterceptor<T>
+    {
+        IWindsorContainer Container { get; set; }
+
+        bool OnBefore(OperationType operation, T entity);
+
+        void OnAfter(OperationType operation, T entity);
     }
 }

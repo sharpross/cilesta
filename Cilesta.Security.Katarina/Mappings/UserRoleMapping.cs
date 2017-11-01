@@ -11,8 +11,8 @@
             Table("userrole");
             Id(x => x.Id);
             Map(x => x.DateCreated);
-            References<User>(x => x.User).Cascade.All();
-            HasManyToMany<Role>(x => x.Roles).Cascade.All();
+            References(x => x.User).Cascade.All();
+            HasManyToMany(x => x.Roles).Cascade.All().Inverse();
         }
     }
 }

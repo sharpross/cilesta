@@ -1,38 +1,18 @@
 ﻿namespace Cilesta.Security.Katarina.Models
 {
-    using Cilesta.Security.Models;
+    using Security.Models;
 
     public class IndentityUser : IUserIndentity
     {
-        private string _name = string.Empty;
-
         public IndentityUser(string name)
         {
-            _name = name;
+            Name = name;
         }
 
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-        }
+        public string Name { get; } = string.Empty;
 
-        public string AuthenticationType
-        {
-            get
-            {
-                return "Cilesta.Security.Katarina";
-            }
-        }
+        public string AuthenticationType => "Cilesta.Security.Katarina";
 
-        public bool IsAuthenticated
-        {
-            get
-            {
-                return true;
-            }
-        }
+        public bool IsAuthenticated => true;
     }
 }

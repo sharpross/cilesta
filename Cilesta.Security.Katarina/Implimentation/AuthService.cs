@@ -3,36 +3,36 @@
     using System.Linq;
     using System.Web;
     using Castle.Windsor;
-    using Cilesta.Security.Interfaces;
-    using Cilesta.Security.Katarina.Entities;
-    using Cilesta.Security.Katarina.Interfaces;
-    using Cilesta.Security.Katarina.Models;
-    using Cilesta.Security.Models;
+    using Entities;
+    using Interfaces;
+    using Models;
+    using Security.Interfaces;
+    using Security.Models;
 
     public class AuthService : IAuthService
     {
-        public IWindsorContainer  Container { get; set; }
+        public IWindsorContainer Container { get; set; }
 
         public IUserService UserService { get; set; }
-        
+
         public IUser GetCurrentUser()
         {
             User user = null;
 
             var cookie = HttpContext.Current.Request.Cookies;
 
-            if (cookie != null && cookie[Constants.CookieName] != null)
+            if (cookie[Constants.CookieName] != null)
             {
-                return null;   
+                return null;
             }
 
-            this.UserService = this.Container.Resolve<IUserService>();
+            UserService = Container.Resolve<IUserService>();
 
             var cookieKey = cookie[Constants.CookieName];
             var login = cookieKey[Constants.CookieUserName];
             var id = int.Parse(cookieKey[Constants.CookieUserId]);
 
-            user = this.UserService.GetAll()
+            user = UserService.GetAll()
                 .FirstOrDefault(x => x.Login == login && x.Id == id);
 
             return user;
@@ -47,26 +47,26 @@
 
             if (!string.IsNullOrEmpty(login) && id != -1)
             {
-                this.UserService = this.Container.Resolve<IUserService>();
+                UserService = Container.Resolve<IUserService>();
 
-                user = this.UserService.GetByLoginId(login, id);
+                user = UserService.GetByLoginId(login, id);
             }
-            
+
             return user;
         }
 
         public IAuthResult Login(ILoginModel model)
         {
-            var result = new AuthResult()
+            var result = new AuthResult
             {
                 Message = Constants.MessageLoginFailUnknow,
                 Success = false
             };
 
-            this.UserService = this.Container.Resolve<IUserService>();
-            var user = this.UserService.GetByLoginPassword(model.Login.ToLower(), model.Password);
+            UserService = Container.Resolve<IUserService>();
+            var user = UserService.GetByLoginPassword(model.Login.ToLower(), model.Password);
 
-            if(user != null)
+            if (user != null)
             {
                 result.Success = true;
                 result.Message = Constants.MessageLoginSuccess;

@@ -1,29 +1,27 @@
 ﻿namespace Cilesta.Web.Katarina.Controllers
 {
     using System.Web.Mvc;
+    using System.Web.UI;
     using Castle.Core.Logging;
     using Castle.Windsor;
-    using Cilesta.Security.Katarina.Models;
-    using Cilesta.Web.Interfaces;
+    using Interfaces;
 
-    [OutputCache(Duration = 0, Location = System.Web.UI.OutputCacheLocation.None)]
+    [OutputCache(Duration = 0, Location = OutputCacheLocation.None)]
     public class BaseController : Controller, ICilestaController
     {
         public IWindsorContainer Container { get; set; }
 
         public ILogger Log { get; set; }
-        
+
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
             base.OnActionExecuted(filterContext);
 
-            var isAuth = !(this.HttpContext.User.Identity is AnonymousUser);
+            var viewDataBuilders = Container.ResolveAll<IViewDataBuilder>();
 
-            ViewBag.IsAuth = isAuth;
-
-            if (isAuth)
+            foreach (var builder in viewDataBuilders)
             {
-                ViewBag.User = this.HttpContext.User.Identity.Name;
+                builder.Build(this);
             }
 
             base.OnActionExecuted(filterContext);

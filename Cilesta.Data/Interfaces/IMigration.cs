@@ -6,6 +6,10 @@
     {
         string Code { get; }
 
+        string Description { get; }
+
+        string[] Depends { get; }
+
         IWindsorContainer Container { get; set; }
 
         void Migrate();

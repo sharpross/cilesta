@@ -1,6 +1,6 @@
 ﻿namespace Cilesta.Security.Katarina.Models
 {
-    using Cilesta.Security.Models;
+    using Security.Models;
 
     public class LoginModel : ILoginModel
     {

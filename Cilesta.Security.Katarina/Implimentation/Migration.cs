@@ -3,15 +3,17 @@
     using System.Collections.Generic;
     using System.Linq;
     using Castle.Windsor;
-    using Cilesta.Data.Interfaces;
-    using Cilesta.Domain.Katarina.Implimentation;
-    using Cilesta.Security.Katarina.Entities;
-    using Cilesta.Security.Katarina.Interfaces;
     using Cilesta.Utils.Common;
+    using Data.Interfaces;
+    using Domain;
+    using Domain.Katarina.Implimentation;
+    using Entities;
+    using Interfaces;
+    using Constants = Security.Constants;
 
     public class UserMigration : IMigration
     {
-        public IWindsorContainer Container { get; set; }
+        private readonly List<string> RoleNames = new List<string>();
 
         public IUserService UserService { get; set; }
 
@@ -23,28 +25,32 @@
 
         private IUserManager UserManager { get; set; }
 
-        public string Code => "Миграция пользователей и ролей";
+        public string Description => "Миграция пользователей и ролей";
+        
+        public string[] Depends => new string[1];
 
-        private List<string> RoleNames = new List<string>();
+        public IWindsorContainer Container { get; set; }
+
+        public string Code => "UserMigration";
 
         public void Migrate()
         {
-            this.RoleNames.AddRange(new string[]{ "Администратор", "Модератор", "Пользователь" });
+            RoleNames.AddRange(new[] {"Администратор", "Модератор", "Пользователь"});
 
-            this.CreateRoles();
-            this.CreateUsers();
+            CreateRoles();
+            CreateUsers();
         }
 
         public bool Need()
         {
-            this.InitService();
-            
-            if (!this.ValidateRoles())
+            InitService();
+
+            if (!ValidateRoles())
             {
                 return true;
             }
 
-            if (!this.ValidateUsers())
+            if (!ValidateUsers())
             {
                 return true;
             }
@@ -54,19 +60,19 @@
 
         private void InitService()
         {
-            this.RoleService = this.Container.Resolve<IRoleService>();
-            this.UserService = this.Container.Resolve<IUserService>();
-            this.RolePermissionMapService = this.Container.Resolve<IRolePermissionService>();
-            this.UserRoleMapService = this.Container.Resolve<IUserRoleService>();
-            this.UserManager = this.Container.Resolve<IUserManager>();
+            RoleService = Container.Resolve<IRoleService>();
+            UserService = Container.Resolve<IUserService>();
+            RolePermissionMapService = Container.Resolve<IRolePermissionService>();
+            UserRoleMapService = Container.Resolve<IUserRoleService>();
+            UserManager = Container.Resolve<IUserManager>();
         }
 
         private bool ValidateUsers()
         {
             var filter = new Filter();
-            filter.Add("Login", Domain.LogicalType.Eq, Constants.AdminLogin);
+            filter.Add("Login", LogicalType.Eq, Constants.AdminLogin);
 
-            var exist = this.UserService.GetAll(filter).Any();
+            var exist = UserService.GetAll(filter).Any();
 
             if (!exist)
             {
@@ -78,12 +84,12 @@
 
         private bool ValidateRoles()
         {
-            foreach (var role in this.RoleNames)
+            foreach (var role in RoleNames)
             {
                 var filter = new Filter();
-                filter.Add("Name", Domain.LogicalType.Eq, role);
+                filter.Add("Name", LogicalType.Eq, role);
 
-                var exist = this.RoleService.GetAll(filter).Any();
+                var exist = RoleService.GetAll(filter).Any();
 
                 if (!exist)
                 {
@@ -98,27 +104,27 @@
         {
             var password = SecurityHelper.EncryptPassword(Constants.AdminPassword);
 
-            var admin = new User()
+            var admin = new User
             {
                 Email = "rt.sharpross@gmail.com",
                 Login = Constants.AdminLogin,
                 Password = password
             };
 
-            this.UserManager.AddUser(admin, Constants.RoleNameAdmin);
+            UserManager.AddUser(admin, Constants.RoleNameAdmin);
         }
-        
+
         private void CreateRoles()
         {
-            var existRoles = this.RoleService.GetAll();
+            var existRoles = RoleService.GetAll();
 
-            foreach (var name in this.RoleNames)
+            foreach (var name in RoleNames)
             {
                 var exist = existRoles.Any(x => x.Name == name);
 
                 if (!exist)
                 {
-                    this.RoleService.Save(new Role() { Name = name });
+                    RoleService.Save(new Role {Name = name});
                 }
             }
         }
