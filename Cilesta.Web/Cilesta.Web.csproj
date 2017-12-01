@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationState.cs" />
     <Compile Include="Implimentation\ModuleActivator.cs" />
     <Compile Include="Interfaces\IBoundleContainer.cs" />
     <Compile Include="Interfaces\ICilestaController.cs" />

@@ -39,13 +39,11 @@
 
         private List<IFieldValidationInfo> ProccessField(PropertyInfo prop, IModelValidationAttribute attribute)
         {
-            var result = new List<IFieldValidationInfo>();
-
             var value = prop.GetValue(this);
 
             var errors = attribute.Proccess(value, prop.Name);
 
-            return result;
+            return errors;
         }
     }
 }

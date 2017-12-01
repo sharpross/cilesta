@@ -1,19 +1,18 @@
 ﻿namespace Cilesta.DataAnnotation.Katarina.Attributes
 {
-    using System;
     using System.Collections.Generic;
     using Castle.Windsor;
-    using Cilesta.Core.IoC;
-    using Cilesta.DataAnnotation.Interfaces;
+    using Core.IoC;
+    using Interfaces;
 
-    public abstract class ValidationAttribute : Attribute
+    public abstract class ValidationAttribute : BaseAttribute
     {
-        protected IWindsorContainer Container { get; set; }
-
         public ValidationAttribute()
         {
-            this.Container = ContainerManager.Container;
+            Container = ContainerManager.Container;
         }
+
+        protected IWindsorContainer Container { get; set; }
 
         public abstract List<IFieldValidationInfo> Proccess(object value, string fieldCode);
     }

@@ -1,6 +1,6 @@
 ﻿namespace Cilesta.BusinessProcesses
 {
-    public enum ProcessResult
+    public enum ProcessResultType
     {
         Success = 0,
         

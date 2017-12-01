@@ -1,7 +1,7 @@
 ﻿namespace Cilesta.Security.Katarina.Mappings
 {
-    using Cilesta.Data.Interfaces;
-    using Cilesta.Security.Katarina.Entities;
+    using Data.Interfaces;
+    using Entities;
     using FluentNHibernate.Mapping;
 
     public class RolePermissionMapping : ClassMap<RolePermission>, IMapping
@@ -16,7 +16,7 @@
             HasMany(x => x.Accesses)
                 .Cascade.All()
                 .Table("permissions")
-                .Element("accesses");;
+                .Element("accesses");
         }
     }
 }

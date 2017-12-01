@@ -3,47 +3,49 @@
     using System;
     using System.Linq;
     using Castle.Windsor;
-    using Cilesta.Domain.Katarina.Implimentation;
-    using Cilesta.Security.Katarina.Entities;
-    using Cilesta.Security.Katarina.Interfaces;
+    using Domain;
+    using Domain.Katarina.Implimentation;
+    using Entities;
+    using Interfaces;
+    using Constants = Security.Constants;
 
     public class UserManager : IUserManager
     {
         public IWindsorContainer Container { get; set; }
 
+        public IUserRoleService UserRoleService { get; set; }
+
         public IUserService UserService { get; set; }
 
         public IRoleService RoleService { get; set; }
 
-        public IUserRoleService UserRoleService { get; set; }
-
         public void AddUser(User user)
         {
-            this.AddUser(user, Constants.RoleNameUser);
+            AddUser(user, Constants.RoleNameUser);
         }
 
         public void AddUser(User user, string roleName)
         {
-            this.UserService = this.Container.Resolve<IUserService>();
-            this.UserRoleService = this.Container.Resolve<IUserRoleService>();
+            UserService = Container.Resolve<IUserService>();
+            UserRoleService = Container.Resolve<IUserRoleService>();
 
             if (string.IsNullOrEmpty(roleName))
             {
                 roleName = Constants.RoleNameUser;
             }
 
-            var userRole = new UserRole()
+            var userRole = new UserRole
             {
                 User = user
             };
 
-            var role = this.GetRole(roleName);
+            var role = GetRole(roleName);
 
-            this.UserService.Save(user);
+            UserService.Save(user);
 
             userRole.Roles.Add(role);
 
-            this.UserRoleService.Save(userRole);
+            UserRoleService.Save(userRole);
         }
 
         private Role GetRole(string name)
@@ -51,9 +53,9 @@
             Role role = null;
 
             var filter = new Filter();
-            filter.Add("Name", Domain.LogicalType.Eq, name);
+            filter.Add("Name", LogicalType.Eq, name);
 
-            role = this.RoleService.GetAll(filter).FirstOrDefault();
+            role = RoleService.GetAll(filter).FirstOrDefault();
 
             if (role == null)
             {

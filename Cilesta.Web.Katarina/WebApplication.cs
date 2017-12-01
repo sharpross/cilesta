@@ -19,8 +19,12 @@
 
         protected static Logging.Interfaces.ILogger Logger { get; set; }
 
+        public static ApplicationState State { get; set; }
+
         protected void Application_Start()
         {
+            State = ApplicationState.Initialize;
+            
             Container = new WindsorContainer();
             Container.Register(Component.For<IWindsorContainer>().Instance(Container));
 
@@ -55,18 +59,26 @@
                 boundleContainer.Init(BundleTable.Bundles);
             }
             
-            var migrator = Container.Resolve<IMigrator>();
-            var needMigrations = migrator.GetMigrations();
-
             ///TODO: добавить режим обслуживания
-            if (needMigrations.Any())
+            var migrator = Container.Resolve<IMigrator>();
+            
+            try
             {
-                migrator.Migrate();
-            }
-            else
-            {
+                var needMigrations = migrator.GetMigrations();
                 
+                if (needMigrations.Any())
+                {
+                    migrator.Migrate();
+                }
             }
+            catch (Exception e)
+            {
+                State = ApplicationState.Error;
+                
+                throw;
+            }
+
+            State = ApplicationState.Started;
         }
 
         protected void Application_Error(object sender, EventArgs e)

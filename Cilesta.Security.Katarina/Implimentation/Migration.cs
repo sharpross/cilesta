@@ -13,7 +13,7 @@
 
     public class UserMigration : IMigration
     {
-        private readonly List<string> RoleNames = new List<string>();
+        private readonly List<string> _roleNames = new List<string>();
 
         public IUserService UserService { get; set; }
 
@@ -35,7 +35,7 @@
 
         public void Migrate()
         {
-            RoleNames.AddRange(new[] {"Администратор", "Модератор", "Пользователь"});
+            _roleNames.AddRange(new[] {"Администратор", "Модератор", "Пользователь"});
 
             CreateRoles();
             CreateUsers();
@@ -84,7 +84,7 @@
 
         private bool ValidateRoles()
         {
-            foreach (var role in RoleNames)
+            foreach (var role in _roleNames)
             {
                 var filter = new Filter();
                 filter.Add("Name", LogicalType.Eq, role);
@@ -118,7 +118,7 @@
         {
             var existRoles = RoleService.GetAll();
 
-            foreach (var name in RoleNames)
+            foreach (var name in _roleNames)
             {
                 var exist = existRoles.Any(x => x.Name == name);
 

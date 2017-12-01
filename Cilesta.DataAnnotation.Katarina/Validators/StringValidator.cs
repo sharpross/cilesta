@@ -8,10 +8,6 @@
     {
         public const string Code = "validator-string";
 
-        private const string error_Empty = "Поле не может быть пустым.";
-        private const string error_MinLenght = "Минимальная длина поля {0} символов.";
-        private const string error_MaxLenght = "Максимальная длина поля {0} символов.";
-
         public List<IFieldValidationInfo> Validate(IValidatorConfig config)
         {
             var cfg = config as StringValidatorConfig;
@@ -20,32 +16,14 @@
 
             if (cfg.Value == null)
             {
-                if (cfg.MaxLenght > 0 || cfg.MinLenght > 0)
-                {
-                    result.Add(new FieldValidationInfo(config.FieldCode, error_Empty, ErrorLevel.Critical));
-                }
+                var message = FormatMessage(config, Resources.Error_Empty_Field, null);
+                
+                result.Add(new FieldValidationInfo(config.FieldCode, message, ErrorLevel.Critical));
                     
                 return result;
             }
 
-            var value = cfg.Value.ToString();
-
-            if (string.IsNullOrEmpty(value))
-            {
-                
-            }
-
-            return result;
-        }
-
-        private List<IFieldValidationInfo> ValidateEmpty(StringValidatorConfig config)
-        {
-            var result = new List<IFieldValidationInfo>();
-
-            if (string.IsNullOrEmpty(config.Value.ToString()))
-            {
-                result.Add(new FieldValidationInfo(config.FieldCode, error_Empty, ErrorLevel.Critical));
-            }
+            result.AddRange(ValidateMinLenght(cfg));
 
             return result;
         }
@@ -58,15 +36,27 @@
 
             if (config.MinLenght > 0 && value.Length < config.MinLenght)
             {
-                result.Add(new FieldValidationInfo(config.FieldCode, error_MinLenght, ErrorLevel.Critical));
+                var message = FormatMessage(config, Resources.Error_String_Min, null);
+                
+                result.Add(new FieldValidationInfo(config.FieldCode, message, ErrorLevel.Critical));
             }
 
             if (config.MaxLenght > 0 && value.Length > config.MaxLenght)
             {
-                result.Add(new FieldValidationInfo(config.FieldCode, error_MinLenght, ErrorLevel.Critical));
+                var message = FormatMessage(config, Resources.Error_String_Max, null);
+                
+                result.Add(new FieldValidationInfo(config.FieldCode, message, ErrorLevel.Critical));
             }
 
             return result;
+        }
+        
+        private string FormatMessage(IValidatorConfig config, string message, int? val)
+        {
+            var text = string.IsNullOrEmpty(config.Message) ? message : config.Message;
+            var fieldName = string.IsNullOrEmpty(config.FieldCaption) ? config.FieldCode : config.FieldCaption;
+            
+            return val == null ? string.Format(text, fieldName) : string.Format(text, fieldName, val); 
         }
     }
 }

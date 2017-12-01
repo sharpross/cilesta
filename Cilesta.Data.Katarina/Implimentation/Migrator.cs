@@ -3,8 +3,8 @@
     using System;
     using System.Collections.Generic;
     using Castle.Windsor;
-    using Cilesta.Data.Interfaces;
-    using Cilesta.Logging.Interfaces;
+    using Interfaces;
+    using Logging.Interfaces;
 
     public class Migrator : IMigrator
     {
@@ -37,7 +37,7 @@
             {
                 if (migration.Need())
                 {
-                    this.Log.Message("Start migration: " + migration.Code);
+                    Log.Message("Запуск миграции: " + migration.Code);
 
                     try
                     {
@@ -45,7 +45,7 @@
                     }
                     catch (Exception ex)
                     {
-                        this.Log.Error(ex);
+                        Log.Error(ex);
                     }
                 }
             }

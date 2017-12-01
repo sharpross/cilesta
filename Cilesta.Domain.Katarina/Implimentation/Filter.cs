@@ -1,26 +1,27 @@
 ﻿namespace Cilesta.Domain.Katarina.Implimentation
 {
     using System.Collections.Generic;
-    using Cilesta.Domain.Models;
+    using Models;
     using NHibernate;
     using NHibernate.Criterion;
+    using IFilter = Interfaces.IFilter;
 
-    public class Filter : Interfaces.IFilter
+    public class Filter : IFilter
     {
-        public IList<FilterItem> Items { get; set; }
+        private int skip;
 
-        private int skip = 0;
-
-        private int take = 0;
+        private int take;
 
         public Filter()
         {
-            this.Items = new List<FilterItem>();
+            Items = new List<FilterItem>();
         }
-        
+
+        public IList<FilterItem> Items { get; set; }
+
         public void Add(string field, LogicalType operation, object value)
         {
-            this.Items.Add(new FilterItem()
+            Items.Add(new FilterItem
             {
                 Field = field,
                 Operation = operation,
@@ -40,54 +41,54 @@
 
         public ICriteria Parse(ICriteria criteria)
         {
-            foreach (var rec in this.Items)
+            foreach (var rec in Items)
             {
                 switch (rec.Operation)
                 {
                     case LogicalType.Eq:
-                        criteria.Add(Expression.Eq(rec.Field, rec.Value));
+                        criteria.Add(Restrictions.Eq(rec.Field, rec.Value));
                         break;
                     case LogicalType.Ge:
-                        criteria.Add(Expression.Ge(rec.Field, rec.Value));
+                        criteria.Add(Restrictions.Ge(rec.Field, rec.Value));
                         break;
                     case LogicalType.Gt:
-                        criteria.Add(Expression.Gt(rec.Field, rec.Value));
+                        criteria.Add(Restrictions.Gt(rec.Field, rec.Value));
                         break;
                     case LogicalType.In:
-                        criteria.Add(Expression.In(rec.Field, new object[1] { rec.Value }));
+                        criteria.Add(Restrictions.In(rec.Field, new object[1] {rec.Value}));
                         break;
                     case LogicalType.Le:
-                        criteria.Add(Expression.Le(rec.Field, rec.Value));
+                        criteria.Add(Restrictions.Le(rec.Field, rec.Value));
                         break;
                     case LogicalType.Like:
-                        criteria.Add(Expression.Like(rec.Field, rec.Value));
+                        criteria.Add(Restrictions.Like(rec.Field, rec.Value));
                         break;
                     case LogicalType.Lt:
-                        criteria.Add(Expression.Lt(rec.Field, rec.Value));
+                        criteria.Add(Restrictions.Lt(rec.Field, rec.Value));
                         break;
                     case LogicalType.NotEq:
-                        criteria.Add(Expression.Not(Expression.Eq(rec.Field, rec.Value)));
+                        criteria.Add(Restrictions.Not(Restrictions.Eq(rec.Field, rec.Value)));
                         break;
                     case LogicalType.NotLike:
-                        criteria.Add(Expression.Not(Expression.Like(rec.Field, rec.Value)));
+                        criteria.Add(Restrictions.Not(Restrictions.Like(rec.Field, rec.Value)));
                         break;
                     case LogicalType.NotNull:
-                        criteria.Add(Expression.Not(Expression.IsNull(rec.Field)));
+                        criteria.Add(Restrictions.Not(Restrictions.IsNull(rec.Field)));
                         break;
                     case LogicalType.Null:
-                        criteria.Add(Expression.IsNull(rec.Field));
+                        criteria.Add(Restrictions.IsNull(rec.Field));
                         break;
                 }
             }
-            
+
             if (take > 0)
             {
-                criteria.SetMaxResults(this.take);
+                criteria.SetMaxResults(take);
             }
 
             if (skip > 0)
             {
-                criteria.SetFirstResult(this.skip);
+                criteria.SetFirstResult(skip);
             }
 
             return criteria;

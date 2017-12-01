@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\BaseAttribute.cs" />
     <Compile Include="Attributes\EmailValidationAttribute.cs" />
     <Compile Include="Attributes\PasswordValidatorAttribute.cs" />
     <Compile Include="Attributes\RangeValidatorAttribute.cs" />
@@ -60,10 +61,14 @@
     <Compile Include="Implimentation\ValidationResult.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.cs" />
     <Compile Include="Validators\BaseValidatorConfig.cs" />
     <Compile Include="Validators\EmailValidator.cs" />
+    <Compile Include="Validators\EmailValidatorConfig.cs" />
     <Compile Include="Validators\PasswordValidator.cs" />
     <Compile Include="Validators\PasswordValidatorConfig.cs" />
+    <Compile Include="Validators\RangeValidator.cs" />
+    <Compile Include="Validators\RangeValidatorConfig.cs" />
     <Compile Include="Validators\StringValidator.cs" />
     <Compile Include="Validators\StringValidatorConfig.cs" />
   </ItemGroup>

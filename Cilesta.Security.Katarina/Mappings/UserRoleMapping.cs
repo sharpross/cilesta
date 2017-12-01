@@ -1,7 +1,7 @@
 ﻿namespace Cilesta.Security.Katarina.Mappings
 {
-    using Cilesta.Data.Interfaces;
-    using Cilesta.Security.Katarina.Entities;
+    using Data.Interfaces;
+    using Entities;
     using FluentNHibernate.Mapping;
 
     public class UserRoleMapping : ClassMap<UserRole>, IMapping

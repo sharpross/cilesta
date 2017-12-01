@@ -2,28 +2,24 @@
 {
     using System;
     using System.Collections.Generic;
-    using Cilesta.DataAnnotation.Interfaces;
-    using Cilesta.DataAnnotation.Katarina.Validators;
+    using Interfaces;
+    using Validators;
 
-    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.Property)]
     public class PasswordValidatorAttribute : ValidationAttribute, IModelValidationAttribute
     {
         public const string Code = "validator-password";
 
-        public PasswordValidatorAttribute()
-            : base()
-        { 
-            
-        }
-
         public override List<IFieldValidationInfo> Proccess(object value, string fieldCode)
         {
-            var validator = this.Container.Resolve<IFieldValidator>(Code);
+            var validator = Container.Resolve<IFieldValidator>(Code);
 
-            var config = new PasswordValidatorConfig()
+            var config = new PasswordValidatorConfig
             {
                 Value = value,
-                FieldCode = fieldCode
+                FieldCode = fieldCode,
+                FieldCaption = Caption,
+                Message = Message
             };
 
             var errors = validator.Validate(config);

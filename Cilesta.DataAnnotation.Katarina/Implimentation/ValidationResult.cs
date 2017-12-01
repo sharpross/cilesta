@@ -10,7 +10,8 @@
         {
             get
             {
-                return this.Results.Any(x => x.Level == ErrorLevel.Critical);
+                
+                return Results.Where(x => x.Level == ErrorLevel.Critical).Count() == 0;
             }
         }
 
@@ -18,7 +19,7 @@
 
         public ValidationResult(List<IFieldValidationInfo> errors)
         {
-            this.Results = errors;
+            Results = errors;
         }
     }
 }

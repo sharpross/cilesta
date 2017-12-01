@@ -29,11 +29,15 @@
             UserService = Container.Resolve<IUserService>();
 
             var cookieKey = cookie[Constants.CookieName];
-            var login = cookieKey[Constants.CookieUserName];
-            var id = int.Parse(cookieKey[Constants.CookieUserId]);
+            
+            if (cookieKey != null)
+            {
+                var login = cookieKey[Constants.CookieUserName];
+                var id = int.Parse(cookieKey[Constants.CookieUserId]);
 
-            user = UserService.GetAll()
-                .FirstOrDefault(x => x.Login == login && x.Id == id);
+                user = UserService.GetAll()
+                    .FirstOrDefault(x => x.Login.ToLower() == login.ToLower() && x.Id == id);
+            }
 
             return user;
         }
