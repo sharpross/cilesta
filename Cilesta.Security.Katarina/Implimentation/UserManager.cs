@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
     using Castle.Windsor;
+    using Cilesta.Utils.Common;
     using Domain;
     using Domain.Katarina.Implimentation;
     using Entities;
@@ -38,7 +39,10 @@
             {
                 User = user
             };
-
+            
+            var mdmPassword = SecurityHelper.EncryptPassword(user.Password);
+            user.Password = mdmPassword;
+            
             var role = GetRole(roleName);
 
             UserService.Save(user);

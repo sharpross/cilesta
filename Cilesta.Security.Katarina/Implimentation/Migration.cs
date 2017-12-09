@@ -102,13 +102,11 @@
 
         private void CreateUsers()
         {
-            var password = SecurityHelper.EncryptPassword(Constants.AdminPassword);
-
             var admin = new User
             {
                 Email = "rt.sharpross@gmail.com",
                 Login = Constants.AdminLogin,
-                Password = password
+                Password = Constants.AdminPassword
             };
 
             UserManager.AddUser(admin, Constants.RoleNameAdmin);

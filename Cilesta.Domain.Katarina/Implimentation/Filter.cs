@@ -1,6 +1,7 @@
 ﻿namespace Cilesta.Domain.Katarina.Implimentation
 {
     using System.Collections.Generic;
+    using System.Linq;
     using Models;
     using NHibernate;
     using NHibernate.Criterion;
@@ -27,6 +28,13 @@
                 Operation = operation,
                 Value = value
             });
+        }
+
+        public void Clear()
+        {
+            Items.Clear();
+            skip = 0;
+            take = 0;
         }
 
         public void Skip(int count)

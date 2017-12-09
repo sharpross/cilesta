@@ -21,7 +21,7 @@
 
             var cookie = HttpContext.Current.Request.Cookies;
 
-            if (cookie[Constants.CookieName] != null)
+            if (cookie[Constants.CookieName] == null)
             {
                 return null;
             }
@@ -29,12 +29,13 @@
             UserService = Container.Resolve<IUserService>();
 
             var cookieKey = cookie[Constants.CookieName];
-            
+
             if (cookieKey != null)
             {
                 var login = cookieKey[Constants.CookieUserName];
                 var id = int.Parse(cookieKey[Constants.CookieUserId]);
 
+                ///TODO: make filter
                 user = UserService.GetAll()
                     .FirstOrDefault(x => x.Login.ToLower() == login.ToLower() && x.Id == id);
             }
